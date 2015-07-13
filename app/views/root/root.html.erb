@@ -1,0 +1,27 @@
+<h1>Root Page</h1>
+
+<h1>Create a new Account</h1>
+
+
+<div id="rootContainer" class="rootContainer">
+
+  <form action="/users/new" method="GET" class="newUserForm">
+    <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+    <label> Email:
+      <input type="text" name="user[email]">
+    </label>
+    <label>Password:
+      <input type="password" name="user[password]">
+    </label>
+    <label>Retype Password:
+      <input type="password" name="user[password2]">
+    </label>
+    <button class="button">Create Account</button>
+  </form>
+</div>
+
+<script>
+  $(".newUserForm").on("submit", function () {
+    $(".button").prop("disabled", true)
+  })
+</script>

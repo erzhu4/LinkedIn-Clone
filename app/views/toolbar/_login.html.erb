@@ -1,0 +1,10 @@
+<form action="/session" method="POST" class="login-from-bar">
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+  <label> Email:
+    <input type="text" name="email">
+  </label>
+  <label>Password:
+    <input type="password" name="password">
+  </label>
+  <button>Sign In</button>
+</form>

@@ -11,6 +11,7 @@ fname           | string    | not null
 lname           | string    | not null
 title           | string    |
 employer        | string    |
+summary         | text      |
 
 ## connections
 column name | data type | details
@@ -55,5 +56,25 @@ body        | text      |
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-user_id   | integer   | not null, foreign key
+user_id     | integer   | not null, foreign key
+title       | string    | not null
+employer    | string    | not null
+description | text      |
+
+## education
+
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+user_id     | integer   | not null, foreign key
+school      | string    | not null
+field       | string    | not null
+location    | string    |
+
+##skills
+
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+user_id     | integer   | not null, foreign key
 title       | string    | not null

@@ -1,0 +1,31 @@
+<h1>Enter Personal Information</h1>
+
+<%= @user.errors.full_messages if @user.errors %>
+
+<form action="/users" method="POST" class="personal-info-form">
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+  <input type="hidden" name="user[email]" value="<%=@user.email%>">
+  <input type="hidden" name="user[password_digest]" value="<%=@user.password_digest%>">
+  <label>First Name
+  <input type="text" name="user[fname]" value="<%=@user.fname%>">
+  </label>
+  <label>Last Name
+  <input type="text" name="user[lname]" value="<%=@user.lname%>">
+  </label>
+  <label>Title
+  <input type="text" name="user[title]" value="<%=@user.title%>">
+  </label>
+  <label>Current Employer
+  <input type="text" name="user[employer]" value="<%=@user.employer%>">
+  </label>
+  <label>Summary of Yourself
+    <textarea name="user[summary]"><%=@user.summary%></textarea>
+  </label>
+
+  <button class="makeUserButton">Submit</button>
+
+  <script>
+    $(".personal-info-form").on("submit", function () {
+      $(".makeUserButton").prop("disabled", true)
+    })
+  </script>
