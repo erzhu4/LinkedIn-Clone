@@ -10,6 +10,7 @@ session_token   | string    |
 fname           | string    | not null
 lname           | string    | not null
 title           | string    |
+employer        | string    |
 
 ## connections
 column name | data type | details
@@ -48,3 +49,11 @@ id          | integer   | not null, primary key
 author_id   | integer   | not null, foreign key
 title       | string    | not null
 body        | text      |
+
+## experiences
+
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+user_id   | integer   | not null, foreign key
+title       | string    | not null

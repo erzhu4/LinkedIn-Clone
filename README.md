@@ -8,9 +8,6 @@ Users can:
 - Users can make posts
 - Users can comment on posts
 
-## Design Docs
-
-
 ## Implementation Timeline
 
 ### Phase 1: User Authentication, Blog Creation (~1 day)
