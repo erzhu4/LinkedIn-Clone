@@ -11,7 +11,7 @@ Users can:
 ## Implementation Timeline
 
 ### Phase 1: User Authentication, Blog Creation (~1 day)
-Basic user authentication and setup of basic user home page view. And header bar at the top of the page.
+Basic user authentication and setup of basic user home page and profile view. And header bar at the top of the page.
 
 [Details][phase-one]
 

@@ -21,5 +21,4 @@ window.Home = {
     });
     Backbone.history.start();
   }
-
 }
