@@ -6,7 +6,7 @@ Home.Views.EditUser = Backbone.View.extend({
   },
 
   events: {
-    "click button": "submit"
+    "submit form": "submit"
   },
 
   render: function () {
@@ -17,7 +17,16 @@ Home.Views.EditUser = Backbone.View.extend({
 
   submit: function (event) {
     event.preventDefault();
-    console.log(this.$el.serializeJSON());
+    var email = this.$(".email").val()
+    var fname = this.$(".fname").val()
+    var lname = this.$(".lname").val()
+    var title = this.$(".title").val()
+    var employer = this.$(".employer").val()
+    var summary = this.$(".summary").val()
+    this.model.set({email: email, fname: fname, lname: lname,
+                    title: title, employer: employer, summary: summary})
+    this.model.save();
+    Backbone.history.navigate("", {trigger: true});
   }
 
 

@@ -39,12 +39,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def update
-    @user = User.find_by(id: params[:id])
-    @user.update(user_params)
-    redirect_to "user/home"
-  end
-
   def destroy
   end
 
@@ -57,6 +51,12 @@ class UsersController < ApplicationController
   def user
     @user = self.current_user
     render "user"
+  end
+
+  def update_current
+    @user = User.find_by(id: params[:id])
+    @user.update(user_params)
+    render text: "something"
   end
 
   private

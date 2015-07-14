@@ -1,21 +1,21 @@
-<form action="" method="post" class="user-form">
+<form>
   <label>email
-    <input type="text" name="email" value=<%=user.escape("email")%>>
+    <input type="text" name="user[email]" value="<%=user.escape('email')%>" class="email">
   </label>
   <label>First Name
-    <input type="text" name="fname" value=<%=user.escape("fname")%>>
+    <input type="text" name="user[fname]" value="<%=user.escape('fname')%>" class="fname">
   </label>
   <label>Last Name
-    <input type="text" name="lname" value=<%=user.escape("lname")%>>
+    <input type="text" name="user[lname]" value="<%=user.escape('lname')%>" class="lname">
   </label>
   <label>Title
-    <input type="text" name="title" value=<%=user.escape("title")%>>
+    <input type="text" name="user[title]" value="<%=user.escape('title')%>" class="title">
   </label>
   <label>Employer
-    <input type="text" name="employer" value=<%=user.escape("employer")%>>
+    <input type="text" name="user[employer]" value="<%=user.escape('employer')%>" class="employer">
   </label>
   <label>Summary
-    <textarea name="summary"><%=user.escape("summary")%></textarea>
+    <textarea name="user[summary]" class="summary"><%=user.escape('summary')%></textarea>
   </label>
-  <button>Submit</button>
+  <button class="submit">Submit</button>
 </form>
