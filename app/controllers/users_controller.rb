@@ -1,14 +1,17 @@
 class UsersController < ApplicationController
 
   def new
-    if (params[:user][:password] != params[:user][:password2])## bugs with redirect?
-      render "alerts/pwMatch"
+    if (params[:user][:password] != params[:user][:password2])
+      @msg = "Your passwords did not match!"
+      render "root/root"
       return
     elsif (params[:user][:password].length < 6)
-      render "alerts/pwLength"
+      @msg = "Password must be atleast six characters long!!"
+      render "root/root"
       return
     elsif (params[:user][:email].length == 0)
-      render "alerts/email"
+      @msg = "Email can't be blank!!"
+      render "root/root"
       return
     end
     @user = User.new({email: params[:user][:email]})
@@ -27,12 +30,12 @@ class UsersController < ApplicationController
       summary: params[:user][:summary]
       })
 
-      if @user.save
-        self.login(@user)
-        redirect_to "/user/home"
-      else
-        render :new
-      end
+    if @user.save
+      self.login(@user)
+      redirect_to "/user/home"
+    else
+      render :new
+    end
   end
 
   def home

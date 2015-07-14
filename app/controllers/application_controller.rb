@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
   helper_method :logged_in?
+  helper_method :ensure_loggin
+  helper_method :display_msg
 
   def login(user)
     if user
@@ -28,6 +30,16 @@ class ApplicationController < ActionController::Base
     else
       return false
     end
+  end
+
+  def ensure_loggin
+    if !logged_in?
+      redirect_to "/"
+    end
+  end
+
+  def display_msg
+    return @msg
   end
 
 

@@ -1,6 +1,5 @@
 <h1>Enter Personal Information</h1>
 
-<%= @user.errors.full_messages if @user.errors %>
 
 <form action="/users" method="POST" class="personal-info-form">
   <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">

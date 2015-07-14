@@ -1,5 +1,3 @@
-<% if !logged_in? %>
-  <% redirect_to "/" %>
-<%end%>
+<% ensure_loggin %>
 
 <h1>User Home Page</h1>
