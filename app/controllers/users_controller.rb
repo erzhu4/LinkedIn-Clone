@@ -63,6 +63,11 @@ class UsersController < ApplicationController
     render text: "something"
   end
 
+  def profile_user
+    @user = User.find_by(id: params[:id]);
+    render "user"
+  end
+
   private
   def user_params
     params.require(:user).permit(:email, :fname, :lname, :title, :summary)
