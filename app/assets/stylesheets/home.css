@@ -1,11 +1,18 @@
 .home-info-panel {
+  padding: 10px;
   border: solid 5px black;
 }
 
 .home-feed-panel {
+  padding: 10px;
   border: solid 4px red;
 }
 
-.home-connections-panel {
+.others-panel {
+  padding: 10px;
   border: solid lightblue 5px;
+}
+
+.home-container {
+  padding: 25px;
 }

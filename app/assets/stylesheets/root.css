@@ -15,8 +15,7 @@ html, body, ul, li {
 }
 
 .main-bar {
-	width: 1000px;
-	height: 70px;
+	height: 60px;
 	border: solid 5px blue;
 }
 

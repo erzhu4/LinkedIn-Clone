@@ -2,7 +2,7 @@
 <div class="bar-right">
   <% if logged_in? %>
 
-  <form action="/session" method="post" class="logout-button">
+  <form action="/session" method="POST" class="logout-button">
     <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
     <input type="hidden" name="_method" value="DELETE">
     <button class="logout-button">Log Out</button>
@@ -22,3 +22,9 @@
   </form>
   <% end %>
 </div>
+
+<script>
+  $("form").on("submit", function () {
+    $("button").prop("disabled", true)
+  })
+</script>
