@@ -21,10 +21,9 @@ Home.Views.EditUser = Backbone.View.extend({
     var fname = this.$(".fname").val()
     var lname = this.$(".lname").val()
     var title = this.$(".title").val()
-    var employer = this.$(".employer").val()
     var summary = this.$(".summary").val()
     this.model.set({email: email, fname: fname, lname: lname,
-                    title: title, employer: employer, summary: summary})
+                    title: title, summary: summary})
     this.model.save();
     Backbone.history.navigate("", {trigger: true});
   }

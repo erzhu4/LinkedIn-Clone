@@ -27,7 +27,6 @@ class UsersController < ApplicationController
       fname: params[:user][:fname],
       lname: params[:user][:lname],
       title: params[:user][:title],
-      employer: params[:user][:employer],
       summary: params[:user][:summary]
       })
 
@@ -61,8 +60,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:email, :fname, :lname, :title,
-                    :employer, :summary)
+    params.require(:user).permit(:email, :fname, :lname, :title, :summary)
   end
 
 end################
