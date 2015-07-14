@@ -39,10 +39,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    @user = User.find_by(id: params[:id])
+    @user.update(user_params)
+    redirect_to "user/home"
+  end
+
   def destroy
   end
 
-  ############################## end of user create/destroy
+  ############################## end of basic user functions
 
   def home
     render :home
@@ -50,7 +56,13 @@ class UsersController < ApplicationController
 
   def user
     @user = self.current_user
-    render json: @user
+    render "user"
+  end
+
+  private
+  def user_params
+    params.require(:user).permit(:email, :fname, :lname, :title,
+                    :employer, :summary)
   end
 
 end################
