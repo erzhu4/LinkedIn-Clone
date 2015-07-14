@@ -1,10 +1,4 @@
 <div class="main-bar">
       <img class="logo" src="">
-    <% if logged_in? %>
-      <div class="logged-in-crap">
-        <%=render "toolbar/logout" %>
-      </div>
-    <% else %>
-      <%= render "toolbar/login" %>
-    <% end %>
+    <%= render "toolbar/bar_right" %>
 </div>

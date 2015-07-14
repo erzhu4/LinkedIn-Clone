@@ -1,0 +1,39 @@
+html, body, ul, li {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	font: inherit;
+	text-decoration: inherit;
+	text-align: inherit;
+}
+
+.logo {
+	width: 100px;
+	height: 50px;
+	background: gray;
+	border: red solid 2px;
+}
+
+.main-bar {
+	width: 1000px;
+	height: 70px;
+	border: solid 5px blue;
+}
+
+.logged-in-crap {
+	float: right;
+  width: 200px;
+  height: 50px;
+  border: solid 5px green;
+}
+
+.bar-right {
+	float: right;
+  width: 480px;
+  height: 50px;
+  border: solid 5px green;
+}
+
+.logout-button{
+	float:right;
+}
