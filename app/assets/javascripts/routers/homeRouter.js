@@ -7,13 +7,19 @@ Home.Routers.Router = Backbone.Router.extend({
 
   routes: {
     "": "index",
-    
+    "edit/info": "editInfo"
   },
 
   index: function () {
     //info panel view
     this.user.fetch();
     var view = new Home.Views.InfoPanel({model: this.user});
+    this.swapInfoView(view);
+  },
+
+  editInfo: function () {
+    // this.user.fetch();
+    var view = new Home.Views.EditUser({model: this.user});
     this.swapInfoView(view);
   },
 
