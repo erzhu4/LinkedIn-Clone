@@ -1,0 +1,11 @@
+.home-info-panel {
+  border: solid 5px black;
+}
+
+.home-feed-panel {
+  border: solid 4px red;
+}
+
+.home-connections-panel {
+  border: solid lightblue 5px;
+}

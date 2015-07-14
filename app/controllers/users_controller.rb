@@ -1,16 +1,17 @@
 class UsersController < ApplicationController
 
-  def new
-    if (params[:user][:password] != params[:user][:password2])
-      @msg = "Your passwords did not match!"
+
+  def new ## this goes from root page to personal info
+    if (params[:user][:email].length == 0)
+      @msg = "Email can't be blank!!"
       render "root/root"
       return
     elsif (params[:user][:password].length < 6)
       @msg = "Password must be atleast six characters long!!"
       render "root/root"
       return
-    elsif (params[:user][:email].length == 0)
-      @msg = "Email can't be blank!!"
+    elsif (params[:user][:password] != params[:user][:password2])
+      @msg = "Your passwords did not match!"
       render "root/root"
       return
     end
@@ -38,8 +39,18 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+  end
+
+  ############################## end of user create/destroy
+
   def home
     render :home
+  end
+
+  def user
+    @user = self.current_user
+    render json: @user
   end
 
 end################
