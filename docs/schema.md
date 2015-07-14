@@ -13,6 +13,13 @@ title           | string    |
 employer        | string    |
 summary         | text      |
 
+## requests
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+sender_id   | integer   | not null, foreign key
+responder_id| integer   | not null, foreign key
+
 ## connections
 column name | data type | details
 ------------|-----------|-----------------------

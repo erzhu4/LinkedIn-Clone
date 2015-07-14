@@ -1,0 +1,23 @@
+.profile-container {
+  border: black solid 2px;
+  padding: 25px;
+}
+
+.profile-info {
+  padding: 10px;
+  border: solid 4px brown;
+}
+
+.profile-experiences {
+  padding: 10px;
+  border: solid lightgreen 5px;
+}
+
+.profile-education {
+  padding: 10px;
+  border: solid pink 5px;
+}
+
+.connections {
+  border: 3px solid blue;
+}
