@@ -7,9 +7,12 @@
 </div>
 
 <div class="connections">
-
   <% if (user.attributes.connections){ %>
   <%= user.attributes.connections.length %><br>
   <% } %>
   connections
 </div>
+
+<% if (currentId != user.id) { %>
+  <button class="connect-button">Connect</button>
+<% } %>

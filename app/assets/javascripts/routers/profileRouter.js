@@ -2,6 +2,7 @@ Profile.Routers.Router = Backbone.Router.extend({
 
   initialize: function (options) {
     this.user = options.user;
+    this.currentUser = options.currentUser;
     this.$infoPanel = options.infoPanel;
   },
 
@@ -11,6 +12,7 @@ Profile.Routers.Router = Backbone.Router.extend({
 
   index: function () {
     this.user.fetch();
+    this.currentUser.fetch();
     var view = new Profile.Views.InfoPanel({model: this.user});
     this.swapInfoView(view);
   },

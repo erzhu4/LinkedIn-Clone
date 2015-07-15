@@ -30,11 +30,13 @@ window.Profile = {
   Routers: {},
   Views: {},
   initialize: function () {
+    var currentUser = new Profile.Models.CurrentUser();
     var user = new Profile.Models.User({
       id: parseInt($(".profile-container").attr("user-id"))
     });
     new Profile.Routers.Router({
       user: user,
+      currentUser: currentUser,
       infoPanel: $(".profile-info"),
       experiencesPanel: $(".profile-experiences"),
       educationPanel: $(".profile-education")

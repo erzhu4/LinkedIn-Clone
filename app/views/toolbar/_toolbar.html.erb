@@ -1,4 +1,7 @@
 <div class="main-bar">
       <img class="logo" src="">
     <%= render "toolbar/bar_right" %>
+    <% if current_user %>
+      <%= render "toolbar/mini_bar" %>
+    <% end %>
 </div>
