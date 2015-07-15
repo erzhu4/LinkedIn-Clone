@@ -3,6 +3,7 @@ Profile.Views.InfoPanel = Backbone.View.extend({
 
   initialize: function () {
     this.requested = false;
+    this.currentId = parseInt($(".profile-container").attr("current-id"));
     this.listenTo(this.model, "sync", this.render);
   },
 
@@ -15,7 +16,7 @@ Profile.Views.InfoPanel = Backbone.View.extend({
     var content = this.template({
                     requested: this.requested,
                     user: this.model,
-                    currentId: $(".profile-container").attr("current-id")
+                    currentId: this.currentId
                   });
     this.$el.html(content);
     return this;
@@ -27,13 +28,15 @@ Profile.Views.InfoPanel = Backbone.View.extend({
       url: "/request/" + this.model.id,
       method: "post"
     })
-    this.render();
+    this.model.fetch();
   },
 
   checkRequests: function () {
     var requests = this.model.attributes.requests;
     if (requests){
-
+      for (var i = 0; i < requests.length; i++){
+        if (requests[i].id === this.currentId) {this.requested = true;}
+      }
     }
   }
 

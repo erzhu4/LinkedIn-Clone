@@ -30,7 +30,9 @@ window.Profile = {
   Routers: {},
   Views: {},
   initialize: function () {
-    var currentUser = new Profile.Models.CurrentUser();
+    if ($(".profile-container").attr("current-id") != "0") {
+      var currentUser = new Profile.Models.CurrentUser();
+    }
     var user = new Profile.Models.User({
       id: parseInt($(".profile-container").attr("user-id"))
     });

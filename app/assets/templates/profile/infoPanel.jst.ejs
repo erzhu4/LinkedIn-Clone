@@ -13,7 +13,7 @@
   connections
 </div>
 
-<% if (currentId != user.id) { %>
+<% if ((currentId !== 0)&&(currentId !== user.id)) { %>
   <% if (requested) {%>
     Request Sent!!
   <%} else { %>

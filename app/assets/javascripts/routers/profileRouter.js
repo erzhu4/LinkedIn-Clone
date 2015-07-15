@@ -12,7 +12,6 @@ Profile.Routers.Router = Backbone.Router.extend({
 
   index: function () {
     this.user.fetch();
-    this.currentUser.fetch();
     var view = new Profile.Views.InfoPanel({model: this.user});
     this.swapInfoView(view);
   },
@@ -21,6 +20,10 @@ Profile.Routers.Router = Backbone.Router.extend({
     this.infoView && this.infoView.remove();
     this.infoView = view;
     this.$infoPanel.html(this.infoView.render().$el);
+  },
+
+  loggedIn: function () {
+    return $(".profile-container").attr("current-id") !== "0"
   }
 
 })

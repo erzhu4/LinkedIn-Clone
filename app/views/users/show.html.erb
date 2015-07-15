@@ -1,6 +1,9 @@
 <h1><%=@user.fname%>'s Profile Page </h1>
-
+<% if (logged_in?) %>
 <div class="profile-container" user-id="<%=@user.id%>" current-id="<%=current_user.id%>">
+<% else %>
+<div class="profile-container" user-id="<%=@user.id%>" current-id="0">
+<% end %>
   <div class="profile-info">Info default text</div>
   <div class="profile-experiences">Experiences default text</div>
   <div class="profile-education">Education default text</div>
