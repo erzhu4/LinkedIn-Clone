@@ -6,19 +6,21 @@
 }
 
 .main-bar {
-  background: lightgray;
+  background: gray;
 	height: 50px;
 	border: solid 1px blue;
 }
 
 .mini-bar {
-	border: 5px solid pink;
-	height: 20px;
+	background: black;
+	height: 30px;
 }
 
 .mini-bar a {
 	float: left;
-	margin-left: 30px;
+	color: white;
+	padding: 5px;
+	margin-left: 20px;
 }
 
 .logged-in-crap {
@@ -66,7 +68,7 @@
   display: none;
   width: 250px;
   position: absolute;
-  top: 25px
+  top: 10px
 }
 
 .list li {

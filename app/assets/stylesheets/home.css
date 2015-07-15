@@ -1,16 +1,22 @@
 .home-info-panel {
   padding: 10px;
+  background: white;
   border: solid 5px black;
+  margin-top: 20px;
 }
 
 .home-feed-panel {
   padding: 10px;
+  background: white;
   border: solid 4px red;
+  margin-top: 20px;
 }
 
 .others-panel {
   padding: 10px;
+  background: white;
   border: solid lightblue 5px;
+  margin-top: 20px;
 }
 
 .home-container {

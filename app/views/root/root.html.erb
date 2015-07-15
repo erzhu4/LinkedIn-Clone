@@ -1,35 +1,36 @@
 
-<div class="root-container">
+<div style="background: lightblue">
+  <div class="root-container">
 
-  <h1 class="main-header"> Join the world's largest network of cats!</h1>
+    <h1 class="main-header"> Join the world's largest network of cats!</h1>
 
-  <div id="rootContent" class="root-content">
+    <div id="rootContent" class="root-content">
 
-    <div class="form-container">
-      <h2>Get started now! Its Free!!!!!</h2>
-      <%= display_msg %>
-      <form action="/users/new" method="GET" class="newUserForm">
-        <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
-        <label> Email:
-          <input type="text" name="user[email]">
-        </label><br>
-        <label>Password:
-          <input type="password" name="user[password]">
-        </label><br>
-        <label>Retype Password:
-          <input type="password" name="user[password2]">
-        </label><br>
-        <button class="button">Create Account</button>
-      </form>
+      <div class="form-container">
+        <h2>Get started now! Its Free!!!!!</h2>
+        <%= display_msg %>
+        <form action="/users/new" method="GET" class="newUserForm">
+          <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+          <label> Email:
+            <input type="text" name="user[email]">
+          </label><br>
+          <label>Password:
+            <input type="password" name="user[password]">
+          </label><br>
+          <label>Retype Password:
+            <input type="password" name="user[password2]">
+          </label><br>
+          <button class="button">Create Account</button>
+        </form>
+      </div>
+
     </div>
 
-
   </div>
-
-
 </div>
-
 <hr>
+
+some stuff goes here
 <script>
   $(".newUserForm").on("submit", function () {
     $(".button").prop("disabled", true)

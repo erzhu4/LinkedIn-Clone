@@ -5,17 +5,23 @@
 
 .profile-info {
   padding: 10px;
+  background: white;
   border: solid 4px brown;
+  margin-top: 40px;
 }
 
 .profile-experiences {
   padding: 10px;
+  background: white;
   border: solid lightgreen 5px;
+  margin-top: 40px;
 }
 
 .profile-education {
   padding: 10px;
+  background: white;
   border: solid pink 5px;
+  margin-top: 40px;
 }
 
 .connections {

@@ -1,9 +1,7 @@
-<h1>Info Panel template</h1>
+<h1><%= user.escape("fname") %> <%= user.escape("lname") %></h1>
 <div class="user-info">
-  email: <%= user.escape("email") %><br>
-  First Name: <%= user.escape("fname") %><br>
-  Last Name: <%= user.escape("lname") %><br>
   Title: <%= user.escape("title") %><br>
+  email: <%= user.escape("email") %><br>
 </div>
 
 <div class="connections">
