@@ -14,7 +14,9 @@
 <% if ((currentId !== 0)&&(currentId !== user.id)) { %>
   <% if (requested) {%>
     Request Sent!!
-  <%} else { %>
+  <%} else if (connected) { %>
+    You are connected with <%=user.escape("fname")%>
+  <% } else { %>
     <button class="connect-button">Connect</button>
     <% } %>
 <% } %>

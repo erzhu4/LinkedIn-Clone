@@ -3,6 +3,7 @@ Profile.Views.InfoPanel = Backbone.View.extend({
 
   initialize: function () {
     this.requested = false;
+    this.connected = false;
     this.currentId = parseInt($(".profile-container").attr("current-id"));
     this.listenTo(this.model, "sync", this.render);
   },
@@ -13,8 +14,10 @@ Profile.Views.InfoPanel = Backbone.View.extend({
 
   render: function () {
     this.checkRequests();
+    this.checkConnected();
     var content = this.template({
                     requested: this.requested,
+                    connected: this.connected,
                     user: this.model,
                     currentId: this.currentId
                   });
@@ -36,6 +39,15 @@ Profile.Views.InfoPanel = Backbone.View.extend({
     if (requests){
       for (var i = 0; i < requests.length; i++){
         if (requests[i].id === this.currentId) {this.requested = true;}
+      }
+    }
+  },
+
+  checkConnected: function () {
+    var connections = this.model.attributes.connections;
+    if (connections){
+      for (var i = 0; i < connections.length; i++){
+        if (connections[i].id === this.currentId) {this.connected = true;}
       }
     }
   }

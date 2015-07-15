@@ -40,3 +40,8 @@ body {
 	margin-top: 100px;
 	width: 400px;
 }
+
+.create-account-button {
+	background: yellow;
+	border-radius: 10px;
+}
