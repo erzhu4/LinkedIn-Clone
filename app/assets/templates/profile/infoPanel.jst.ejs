@@ -14,5 +14,9 @@
 </div>
 
 <% if (currentId != user.id) { %>
-  <button class="connect-button">Connect</button>
+  <% if (requested) {%>
+    Request Sent!!
+  <%} else { %>
+    <button class="connect-button">Connect</button>
+    <% } %>
 <% } %>

@@ -1,1 +1,2 @@
-json.(@user, :id, :email, :fname, :lname, :title, :employer, :summary, :connections)
+json.(@user, :id, :email, :fname, :lname, :title, :employer, :summary, :requests,
+:connections)
