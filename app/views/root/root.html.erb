@@ -1,26 +1,35 @@
-<h1>Root Page</h1>
 
-<h1>Create a new Account</h1>
+<div class="root-container">
 
-<%= display_msg %>
+  <h1 class="main-header"> Join the world's largest network of cats!</h1>
 
-<div id="rootContainer" class="rootContainer">
+  <div id="rootContent" class="root-content">
 
-  <form action="/users/new" method="GET" class="newUserForm">
-    <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
-    <label> Email:
-      <input type="text" name="user[email]">
-    </label>
-    <label>Password:
-      <input type="password" name="user[password]">
-    </label>
-    <label>Retype Password:
-      <input type="password" name="user[password2]">
-    </label>
-    <button class="button">Create Account</button>
-  </form>
+    <div class="form-container">
+      <h2>Get started now! Its Free!!!!!</h2>
+      <%= display_msg %>
+      <form action="/users/new" method="GET" class="newUserForm">
+        <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+        <label> Email:
+          <input type="text" name="user[email]">
+        </label><br>
+        <label>Password:
+          <input type="password" name="user[password]">
+        </label><br>
+        <label>Retype Password:
+          <input type="password" name="user[password2]">
+        </label><br>
+        <button class="button">Create Account</button>
+      </form>
+    </div>
+
+
+  </div>
+
+
 </div>
 
+<hr>
 <script>
   $(".newUserForm").on("submit", function () {
     $(".button").prop("disabled", true)

@@ -1,6 +1,6 @@
-html, body, ul, li {
+html, body, ul, li, div {
 	padding: 0;
-	margin: 0;
+	margin: none;
 	border: 0;
 	font: inherit;
 	text-decoration: inherit;
@@ -11,43 +11,28 @@ ul {
 	list-style: none;
 }
 
-.logo {
-	width: 100px;
-	height: 50px;
-	background: gray;
-	border: red solid 5px;
+.root-container{
+	margin: auto;
+	width: 1000px;
+	height: 600px;
+	border-radius: 10px;
+	background-image: url(mainkittens.jpg);
 }
 
-.main-bar {
-	height: 60px;
-	border: solid 5px blue;
+.main-header{
+	text-align: center;
+	width: 1000px;
 }
 
-.mini-bar {
-	border: 5px solid pink;
-	height: 20px;
+.newUserForm input {
+	margin: 10px;
 }
 
-.mini-bar a {
+
+.form-container{
+	font-style: oblique;
 	float: left;
-	margin-left: 30px;
-}
-
-.logged-in-crap {
-	float: right;
-  width: 200px;
-  height: 50px;
-  border: solid 5px green;
-}
-
-.bar-right {
-	position: relative;
-	float: right;
-  width: 480px;
-  height: 50px;
-  border: solid 5px green;
-}
-
-.logout-button{
-	float:right;
+	text-align: right;
+	margin-top: 100px;
+	width: 400px;
 }

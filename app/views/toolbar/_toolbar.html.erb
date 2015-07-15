@@ -1,6 +1,11 @@
 <div class="main-bar">
       <img class="logo" src="">
-    <%= render "toolbar/bar_right" %>
+    <% if logged_in? %>
+      <%= render "toolbar/bar_right" %>
+      <%else%>
+      <%= render "toolbar/bar_light" %>
+    <% end %>
+
     <% if current_user %>
       <%= render "toolbar/mini_bar" %>
     <% end %>

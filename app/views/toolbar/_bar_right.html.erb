@@ -1,6 +1,5 @@
 
 <div class="bar-right">
-  <% if logged_in? %>
 
   <div class="icon-container">
 
@@ -83,24 +82,4 @@
     <input type="hidden" name="_method" value="DELETE">
     <button class="logout-button">Log Out</button>
   </form>
-
-  <% else %>
-
-  <form action="/session" method="POST" class="login-from-bar">
-    <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
-    <label> Email:
-      <input type="text" name="email">
-    </label>
-    <label>Password:
-      <input type="password" name="password">
-    </label>
-    <button>Sign In</button>
-  </form>
-  <% end %>
 </div>
-
-<script>
-  $("form").on("submit", function () {
-    $("button").prop("disabled", true)
-  })
-</script>

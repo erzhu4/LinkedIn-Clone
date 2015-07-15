@@ -1,9 +1,61 @@
+.logo {
+	width: 100px;
+	height: 40px;
+	background: lightblue;
+	border: red solid 5px;
+}
+
+.main-bar {
+  background: lightgray;
+	height: 50px;
+	border: solid 1px blue;
+}
+
+.mini-bar {
+	border: 5px solid pink;
+	height: 20px;
+}
+
+.mini-bar a {
+	float: left;
+	margin-left: 30px;
+}
+
+.logged-in-crap {
+	float: right;
+  width: 200px;
+  height: 50px;
+  border: solid 5px green;
+}
+
+.bar-right {
+	position: relative;
+	float: right;
+  width: 280px;
+  height: 30px;
+  padding: 15px;
+}
+
+.bar-light {
+	position: relative;
+	float: right;
+  width: 480px;
+  height: 30px;
+  padding: 15px;
+}
+
+.logout-button{
+	float:right;
+}
+
 .icon {
+  position: relative;
   float: left;
-  border: 2px pink solid;
-  width: 40px;
-  height: 40px;
-  margin-left: 30px;
+  top: -5px;
+  border: 1px pink solid;
+  width: 30px;
+  height: 30px;
+  margin-left: 20px;
 }
 
 .icon:hover {
@@ -12,13 +64,14 @@
 
 .list {
   display: none;
-  width: 400px;
+  width: 250px;
   position: absolute;
-  top: 40px
+  top: 25px
 }
 
 .list li {
   border: 1px solid black;
+  height: 50px;
 }
 
 .big:hover .list {
