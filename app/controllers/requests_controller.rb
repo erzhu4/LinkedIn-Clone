@@ -7,6 +7,9 @@ class RequestsController < ApplicationController
   end
 
   def destroy
+    @request = Request.find_by({sender_id: params[:senderid], responder_id: params[:responderid]})
+    @request.destroy if @request
+    render text: "something"
   end
 
 end

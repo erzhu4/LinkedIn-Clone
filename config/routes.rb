@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   get "/user/:id", to: "users#profile_user", defaults: {format: :json}
   put "/current", to: "users#update_current"
   post "request/:id", to: "requests#create"
-
+  post "/request/destroy/:senderid/:responderid", to: "requests#destroy"
   root "site#root"
 end

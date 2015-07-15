@@ -11,6 +11,13 @@ class User < ActiveRecord::Base
   has_many(:connections, through: :connects, source: :user2)
 
   has_many(
+    :outgoing_requests,
+    class_name: "Request",
+    foreign_key: :sender_id,
+    primary_key: :id
+  )
+
+  has_many(
     :incoming_requests,
     class_name: "Request",
     foreign_key: :responder_id,

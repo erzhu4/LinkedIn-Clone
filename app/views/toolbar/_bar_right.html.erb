@@ -31,9 +31,39 @@
     <div class="big">
       <div id="Request" class="icon">R</div>
         <ul class="list">
-          <li>ddddddd</li>
+          <% if current_user.requests.length == 0 %>
+              <li>You have no pending requests.</li>
+          <% else %>
+              <% current_user.requests.each_with_index do |requester, idx| %>
+                <li>
+                  <%= requester.fname + " " + requester.lname%> wants to connect with you!
+                  <div id="<%=idx%>">
+                    <button class="accept-button" sender-id="<%=requester.id%>" responder-id="<%=current_user.id%>" form-id="<%=idx%>">Accept</button>
+                    <button class="deny-button" sender-id="<%=requester.id%>" responder-id="<%=current_user.id%>" form-id="<%=idx%>">Deny</button>
+                  </div>
+                </li>
+              <% end %>
+          <% end %>
         </ul>
     </div>
+
+<script>
+  $(".accept-button").on("click", function (event) {
+    $.ajax({
+      url: "/request/destroy/" + $(event.target).attr("sender-id") + "/" + $(event.target).attr("responder-id"),
+      method: "POST"
+    })
+    $("#" + $(event.target).attr("form-id")).html("You have accepted this request.")
+  })
+
+  $(".deny-button").on("click", function (event){
+    $.ajax({
+      url: "/request/destroy/" + $(event.target).attr("sender-id") + "/" + $(event.target).attr("responder-id"),
+      method: "POST"
+    })
+    $("#" + $(event.target).attr("form-id")).html("You have denied this request.")
+  })
+</script>
 
 
   </div>
