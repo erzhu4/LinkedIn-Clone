@@ -1,0 +1,32 @@
+.icon {
+  float: left;
+  border: 2px pink solid;
+  width: 40px;
+  height: 40px;
+  margin-left: 30px;
+}
+
+.icon:hover {
+  background: lightblue;
+}
+
+.list {
+  display: none;
+  width: 400px;
+  position: absolute;
+  top: 40px
+}
+
+.list li {
+  border: 1px solid black;
+}
+
+.big:hover .list {
+  display: block;
+  background: pink;
+}
+
+
+.big {
+  position: relative;
+}

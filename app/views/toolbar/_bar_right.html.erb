@@ -2,6 +2,41 @@
 <div class="bar-right">
   <% if logged_in? %>
 
+  <div class="icon-container">
+
+
+    <div class="big">
+      <div id="messages" class="icon">M</div>
+        <ul class="list">
+          <li>adsgager</li>
+          <li>aawervaer</li>
+          <li>adsgager</li>
+          <li>aawervaer</li>
+          <li>adsgager</li>
+          <li>aawervaer</li>
+        </ul>
+    </div>
+
+    <div class="big">
+      <div id="notifications" class="icon">N</div>
+        <ul class="list">
+          <li>ddddddd</li>
+          <li>aawervaer</li>
+          <li>adddddder</li>
+          <li>adsgzzzzzer</li>
+          <li>zzzzzzzzz</li>
+        </ul>
+    </div>
+
+    <div class="big">
+      <div id="Request" class="icon">R</div>
+        <ul class="list">
+          <li>ddddddd</li>
+        </ul>
+    </div>
+
+
+  </div>
   <form action="/session" method="POST" class="logout-button">
     <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
     <input type="hidden" name="_method" value="DELETE">

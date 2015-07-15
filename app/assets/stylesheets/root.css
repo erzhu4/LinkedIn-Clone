@@ -7,6 +7,10 @@ html, body, ul, li {
 	text-align: inherit;
 }
 
+ul {
+	list-style: none;
+}
+
 .logo {
 	width: 100px;
 	height: 50px;
@@ -27,6 +31,7 @@ html, body, ul, li {
 }
 
 .bar-right {
+	position: relative;
 	float: right;
   width: 480px;
   height: 50px;
