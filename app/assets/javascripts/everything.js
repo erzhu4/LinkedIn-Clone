@@ -48,8 +48,8 @@ window.Profile = {
       educationPanel: $(".profile-education"),
       connectionsPanel: $(".connections-panel")
     });
+    
     Backbone.history.start();
-
   }//end of initialize
 
 }

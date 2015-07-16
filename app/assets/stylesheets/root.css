@@ -24,7 +24,7 @@ a {
 	width: 1000px;
 	height: 600px;
 	border-radius: 10px;
-	background-image: url(mainkittens.jpg);
+	background-image: url(https://scontent-lga1-1.xx.fbcdn.net/hphotos-xtf1/v/t1.0-9/11262305_10153471063687095_2574111308727366184_n.jpg?oh=85a585dc224381735664e3cd5de3f220&oe=56138CC9);
 }
 
 .main-header{
@@ -39,9 +39,10 @@ a {
 
 .form-container{
 	font-style: oblique;
+	text-shadow: 0px 1px 1px red;
 	float: left;
 	text-align: right;
-	margin-top: 100px;
+	margin-top: 20px;
 	width: 400px;
 }
 

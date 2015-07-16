@@ -2,7 +2,7 @@
 	width: 100px;
 	height: 40px;
 	background: lightblue;
-	border: red solid 5px;
+	border: #007799 solid 5px;
 }
 
 .main-bar {
@@ -14,6 +14,7 @@
 .mini-bar {
 	background: black;
 	height: 30px;
+	margin-top: -3px;
 }
 
 .mini-bar .item {

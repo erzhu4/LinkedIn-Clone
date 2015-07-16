@@ -1,0 +1,9 @@
+<h3><%=user.escape("fname")%>'s connections:</h3>
+
+<% connections.forEach(function (connection) {%>
+
+    <div class="connections-list-item">
+      <a href="/users/<%=connection.id%>"><%= connection.fname + " " + connection.lname %></a>
+    </div>
+
+<%})%>

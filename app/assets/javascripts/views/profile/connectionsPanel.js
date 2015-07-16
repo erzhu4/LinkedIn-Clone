@@ -5,11 +5,17 @@ Profile.Views.ConnectionsPanel = Backbone.View.extend({
   //this.model.attributes
 
   initialize: function () {
-    // this.listenTo(this.model)
+     this.listenTo(this.model, "sync", this.render);
   },
 
   render: function () {
-    this.$el.html("blahblahablah")
+    if (this.model.attributes.connections){
+      this.userConnections = this.model.attributes.connections
+    } else {
+      this.userConnections = [];
+    }
+    var content = this.template({user: this.model, connections: this.userConnections.slice(0,10)});
+    this.$el.html(content);
     return this;
   }
 
