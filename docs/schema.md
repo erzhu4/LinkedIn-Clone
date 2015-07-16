@@ -67,6 +67,8 @@ user_id     | integer   | not null, foreign key
 title       | string    | not null
 employer    | string    | not null
 description | text      |
+start_date  | date      |
+end_date    | date      |
 
 ## education
 

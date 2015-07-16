@@ -3,6 +3,7 @@ Home.Routers.Router = Backbone.Router.extend({
   initialize: function (options) {
     this.user = options.user;
     this.$infoPanel = options.infoPanel;
+    this.user.fetch();
   },
 
   routes: {
@@ -12,7 +13,6 @@ Home.Routers.Router = Backbone.Router.extend({
 
   index: function () {
     //info panel view
-    this.user.fetch();
     var view = new Home.Views.InfoPanel({model: this.user});
     this.swapInfoView(view);
   },

@@ -24,6 +24,13 @@ class User < ActiveRecord::Base
     primary_key: :id
   )
 
+  has_many(
+    :experiences,
+    class_name: "Experience",
+    foreign_key: :user_id,
+    primary_key: :id
+  )
+
   has_many(:requests, through: :incoming_requests, source: :sender)
 
   def self.find_by_creds(email, password)
