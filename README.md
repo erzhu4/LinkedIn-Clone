@@ -15,7 +15,7 @@ Basic user authentication and setup of basic user home page and profile view. An
 
 [Details][phase-one]
 
-### Phase 2: Viewing Blogs and Posts (~2 days)
+### Phase 2: Viewing Connections and Experiences (~2 days)
 I will add backbone app to the home page view for the information section at the top of the user homepage. Also add the ability for users to connect with each other.
 
 [Details][phase-two]

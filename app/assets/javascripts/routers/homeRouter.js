@@ -18,7 +18,6 @@ Home.Routers.Router = Backbone.Router.extend({
   },
 
   editInfo: function () {
-    // this.user.fetch();
     var view = new Home.Views.EditUser({model: this.user});
     this.swapInfoView(view);
   },

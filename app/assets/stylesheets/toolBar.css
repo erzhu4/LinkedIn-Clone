@@ -16,7 +16,7 @@
 	height: 30px;
 }
 
-.mini-bar a {
+.mini-bar .item {
 	float: left;
 	color: white;
 	padding: 5px;
@@ -34,8 +34,8 @@
 	position: relative;
 	float: right;
   width: 280px;
-  height: 30px;
-  padding: 15px;
+  height: 20px;
+  padding: 10px;
 }
 
 .bar-light {
@@ -76,12 +76,40 @@
   height: 50px;
 }
 
+.list li:hover {
+  background: lightgray;
+}
+
+
 .big:hover .list {
   display: block;
   background: pink;
 }
 
-
 .big {
   position: relative;
+}
+
+.connect-big:hover .connection-list{
+	display: block;
+}
+
+.connection-list {
+	display: none;
+	position: absolute;
+	margin-top: -30px;
+	margin-left: -20px;
+	width: 300px;
+}
+
+.connection-list li {
+	height: 50px;
+	border: 2px solid green;
+	background: lightblue;
+	position: relative;
+	top: 30px;
+}
+
+.connection-list li:hover {
+	background: blue;
 }
