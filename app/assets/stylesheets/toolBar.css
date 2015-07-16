@@ -61,10 +61,6 @@
   margin-left: 20px;
 }
 
-.icon:hover {
-  background: lightblue;
-}
-
 .list {
   display: none;
   width: 250px;
@@ -74,7 +70,9 @@
 
 .list li {
   border: 1px solid black;
-  height: 50px;
+	padding: 5px;
+  height: 70px;
+	border-radius: 5px;
 }
 
 .list li:hover {
@@ -85,6 +83,10 @@
 .big:hover .list {
   display: block;
   background: pink;
+}
+
+.big:hover .icon {
+  border: 3px solid red;
 }
 
 .big {
@@ -112,5 +114,5 @@
 }
 
 .connection-list li:hover {
-	background: blue;
+	background: gray;
 }

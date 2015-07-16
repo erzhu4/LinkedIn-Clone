@@ -14,7 +14,9 @@
   padding: 10px;
   background: white;
   border: solid lightgreen 5px;
+  margin: auto;
   margin-top: 40px;
+  width: 700px;
 }
 
 .profile-education {
@@ -33,4 +35,13 @@
   background: white;
   border: solid lightblue 5px;
   margin-top: 20px;
+}
+
+.experience-panel-item {
+  border: 1px solid black;
+  width: 600px;
+  margin: auto;
+  margin-bottom: 10px;
+  padding: 30px;
+  border-radius: 20px;
 }

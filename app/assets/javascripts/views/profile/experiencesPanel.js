@@ -17,7 +17,7 @@ Profile.Views.ExperiencesPanel = Backbone.View.extend({
     } else {
       var experiences = [];
     }
-    var content = this.template({experiences: experiences});
+    var content = this.template({user: this.model, experiences: experiences});
     this.$el.html(content);
     return this;
   },

@@ -28,14 +28,14 @@
     </div>
 
     <div class="big">
-      <div id="Request" class="icon">R</div>
+      <img src="https://scontent-lga1-1.xx.fbcdn.net/hphotos-xtp1/v/t1.0-9/11755236_10153471072757095_6661556200496909375_n.jpg?oh=22115abb3b6ded53e4219bff9288a058&oe=560FE488" class="icon">
         <ul class="list">
           <% if current_user.requests.length == 0 %>
               <li>You have no pending requests.</li>
           <% else %>
               <% current_user.requests.each_with_index do |requester, idx| %>
                 <li>
-                  <b><%= requester.fname + " " + requester.lname%></b> wants to connect with you!
+                  <b><a href="/users/<%=requester.id%>"><%= requester.fname + " " + requester.lname%></a></b> wants to connect with you!
                   <div id="<%=idx%>">
                     <button class="accept-button" sender-id="<%=requester.id%>" responder-id="<%=current_user.id%>" form-id="<%=idx%>">Accept</button>
                     <button class="deny-button" sender-id="<%=requester.id%>" responder-id="<%=current_user.id%>" form-id="<%=idx%>">Deny</button>
