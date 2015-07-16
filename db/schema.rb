@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150716183728) do
+ActiveRecord::Schema.define(version: 20150716201631) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20150716183728) do
     t.text    "description"
     t.date    "start_date"
     t.date    "end_date"
+    t.boolean "current",     default: false
   end
 
   add_index "experiences", ["user_id"], name: "index_experiences_on_user_id", using: :btree
