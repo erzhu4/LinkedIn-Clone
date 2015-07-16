@@ -1,6 +1,8 @@
 <form>
-
-  <input type="text">
+  <input type='text' name='title'>
+  <input type='text' name='employer'>
+  <input type='date' name='start_date'>
+  <input type='date' name='end_date'>
+  <textarea name='description'></textarea>
   <button>submit</button>
-
 </form>

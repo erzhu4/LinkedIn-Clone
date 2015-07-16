@@ -10,7 +10,7 @@
       <h3><%= experience.employer %></h3>
       Title: <%=experience.title%><br>
       <%=experience.description%>
-
+      <br>
       <% if (experience.start_date) {%>
         <% if (experience.current) {%>
           <%=experience.start_date%> to present
@@ -25,7 +25,5 @@
 <%}%>
 
 <% if ($(".profile-container").attr("user-id") === $(".profile-container").attr("current-id")) {%>
-
   <button class="add-experience-button">Add a new experience</button>
-
 <%}%>
