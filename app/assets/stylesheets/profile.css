@@ -27,3 +27,10 @@
 .connections {
   border: 3px solid blue;
 }
+
+.connections-panel {
+  padding: 10px;
+  background: white;
+  border: solid lightblue 5px;
+  margin-top: 20px;
+}

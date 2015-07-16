@@ -4,6 +4,8 @@ Profile.Routers.Router = Backbone.Router.extend({
     this.user = options.user;
     this.currentUser = options.currentUser;
     this.$infoPanel = options.infoPanel;
+    this.$connectionsPanel = options.connectionsPanel;
+    this.user.fetch();
   },
 
   routes: {
@@ -11,15 +13,22 @@ Profile.Routers.Router = Backbone.Router.extend({
   },
 
   index: function () {
-    this.user.fetch();
-    var view = new Profile.Views.InfoPanel({model: this.user});
-    this.swapInfoView(view);
+    var infoView = new Profile.Views.InfoPanel({model: this.user});
+    this.swapInfoView(infoView);
+    var connectionsView = new Profile.Views.ConnectionsPanel({model: this.user});
+    this.swapConnectionsView(connectionsView);
   },
 
   swapInfoView: function (view) {
     this.infoView && this.infoView.remove();
     this.infoView = view;
     this.$infoPanel.html(this.infoView.render().$el);
+  },
+
+  swapConnectionsView: function (view){
+    this.connectionsView && this.connectionsView.remove();
+    this.connectionsView = view;
+    this.$connectionsPanel.html(this.connectionsView.render().$el);
   },
 
   loggedIn: function () {

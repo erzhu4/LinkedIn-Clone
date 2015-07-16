@@ -1,4 +1,4 @@
-html, body, ul, li, div {
+html, body, ul, li, div, a {
 	padding: 0;
 	margin: none;
 	border: 0;
@@ -13,6 +13,10 @@ ul {
 
 body {
 	background: lightgray;
+}
+
+a {
+	text-decoration: none;
 }
 
 .root-container{

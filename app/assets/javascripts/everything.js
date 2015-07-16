@@ -30,9 +30,13 @@ window.Profile = {
   Routers: {},
   Views: {},
   initialize: function () {
+
     if ($(".profile-container").attr("current-id") != "0") {
       var currentUser = new Profile.Models.CurrentUser();
+    } else {
+      var currentUser = {};
     }
+
     var user = new Profile.Models.User({
       id: parseInt($(".profile-container").attr("user-id"))
     });
@@ -41,8 +45,11 @@ window.Profile = {
       currentUser: currentUser,
       infoPanel: $(".profile-info"),
       experiencesPanel: $(".profile-experiences"),
-      educationPanel: $(".profile-education")
+      educationPanel: $(".profile-education"),
+      connectionsPanel: $(".connections-panel")
     });
     Backbone.history.start();
-  }
+
+  }//end of initialize
+
 }
