@@ -38,22 +38,33 @@
 
         <% experiences.forEach( function (experience) { %>
 
-          <div class="experience-panel-item">
-            <h3><%= experience.employer %></h3>
-            Title: <%=experience.title%><br>
-            <%=experience.description%>
+          <div class="experience-panel-item <%=experience.id%>">
+            <h3 class="employer"><%= experience.employer %></h3>
+            Title: <div class="title"><%=experience.title%></div><br>
+            <div class="description"><%=experience.description%></div>
             <br>
             <% if (experience.start_date) {%>
               <% if (experience.current) {%>
-                <%=experience.start_date%> to present
+                <div class="start"><%=experience.start_date%></div> to present
               <%} else {%>
                 <% if (experience.end_date){%>
-                  <%=experience.start_date%> to <%=experience.end_date%>
+                  <div class="start"><%=experience.start_date%></div> to <div class="end"><%=experience.end_date%></div>
                 <%}%>
               <%}%>
             <%}%>
+
+            <% if (userId === currentId) {%>
+              <br>
+              <button class="delete-experience-button" experience-id="<%=experience.id%>">Remove</button>
+
+              <button class="edit-experience-button" experience-id="<%=experience.id%>">Edit</button>
+            <%}%>
+
           </div>
+
         <% }) %>
+
+
       <%}%>
 
       <% if (userId === currentId) {%>

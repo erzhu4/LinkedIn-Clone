@@ -10,8 +10,11 @@ LynxIn.Views.Profile = Backbone.View.extend({
 
   events: {
     "click .connect-button": "connect",
-    "click .add-experience-button": "renderForm",
-    "submit form": "addExperience"
+    "click .add-experience-button": "renderNewForm",
+    "submit .new-experience-form": "addExperience",
+    "click .delete-experience-button": "deleteExperience",
+    "click .edit-experience-button": "renderEditForm",
+    "submit .edit-experience-form": "editExperience"
   },
 
   render: function () {
@@ -71,11 +74,13 @@ LynxIn.Views.Profile = Backbone.View.extend({
     }
   },
 
-  //End of info panel helper methods
+  //End of info panel helper methods///////////////////////////////
 
-  renderForm: function (event) {
+  renderNewForm: function (event) {
+    var temp = JST["profile/newform"];
+    var form = temp({experience: {}})
     if (this.flag) {
-      this.$(".profile-experiences").append("<form class='new-experience-form'>Title: <input type='text' name='title'><br>Employer: <input type='text' name='employer'><br>Start date: <input type='date' name='start_date'><br>End date: <input type='date' name='end_date'><br>Description: <textarea name='description'></textarea><br><button>submit</button></form>");
+      this.$(".profile-experiences").append(form);
       this.flag = false;
     }
   },
@@ -86,6 +91,51 @@ LynxIn.Views.Profile = Backbone.View.extend({
     var experience = new LynxIn.Models.Experience(attr);
     experience.save();
     this.model.fetch();
+  },
+
+  deleteExperience: function (event) {
+    var experience = new LynxIn.Models.Experience({
+                          id: parseInt($(event.target).attr("experience-id"))
+                        });
+    $.ajax({
+      url: "/experiences/" + experience.escape("id"),
+      method: "delete"
+    })
+    this.model.fetch();
+  },
+
+  renderEditForm: function (event){
+    var temp = JST["profile/editform"];
+    var id = $(event.target).attr("experience-id");
+    var employer = this.$("." + id).find(".employer").html();
+    var title = this.$("." + id).find(".title").html();
+    var description = this.$("." + id).find(".description").html();
+    var start = this.$("." + id).find(".start").html();
+    var end = this.$("." + id).find(".end").html();
+    var experience = {
+          id: id,
+          employer: employer,
+          title: title,
+          description: description,
+          start_date: start,
+          end_date: end
+        }
+    this.$("." + id).html(temp({experience: experience}));
+  },
+
+  editExperience: function () {
+    event.preventDefault();
+    var id = $(event.target).attr("data-id");
+    var experience = $(event.target).serializeJSON();
+    experience.id = id;
+    $.ajax({
+      url: "/experiences/" + id,
+      method: "PUT",
+      data: experience
+    })
+    this.model.fetch();
   }
+
+//end of experiences panel helper_methods////////////////////////////
 
 })//End of everything////////
