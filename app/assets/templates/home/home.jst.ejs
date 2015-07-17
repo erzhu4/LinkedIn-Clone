@@ -1,9 +1,26 @@
 
-<div class="home-info-panel">
-  <h1><%= user.escape("fname") %> <%= user.escape("lname") %></h1>
+<div class="home-info-panel group">
+  <div class="home-profile-picture">profile picture</div>
+  <div class="home-user-info-container">
+    <name class="user-name"><%= user.escape("fname") %> <%= user.escape("lname") %></name><br>
     Title: <%= user.escape("title") %><br>
     email: <%= user.escape("email") %><br>
-  <a href="#" class="edit-info-button">Edit Personal Info<a>
+  </div>
+
+  <div class="edit-and-connect-container">
+
+    <div class="edit-button-container">
+      <a href="#" class="edit-info-button">Edit Personal Info<a>
+    </div>
+
+    <div class="home-connection-number-container">
+      <% if (user.attributes.connections) {%>
+        <%= user.attributes.connections.length %> Connections
+      <% } %>
+    </div>
+
+  </div>
+
 </div>
 
 

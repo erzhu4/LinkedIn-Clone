@@ -32,16 +32,12 @@ class UsersController < ApplicationController
 
     if @user.save
       self.login(@user)
-      redirect_to "/user/home"
+      redirect_to "/site"
     else
       render :new
     end
   end
 
-  def show
-    @user = User.find_by(id: params[:id])
-    render :show
-  end
 
   def destroy
   end

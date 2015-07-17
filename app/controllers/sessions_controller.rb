@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     @user = User.find_by_creds(params[:email], params[:password])
     if @user
       login(@user)
-      redirect_to "/user/home"
+      redirect_to "/site"
     else
       render "root/root"
     end

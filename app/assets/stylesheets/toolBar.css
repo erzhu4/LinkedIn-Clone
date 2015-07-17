@@ -8,13 +8,18 @@
 .main-bar {
   background: gray;
 	height: 50px;
-	border: solid 1px blue;
+	border-bottom: solid 1px black;
 }
 
 .mini-bar {
 	background: black;
 	height: 30px;
 	margin-top: -3px;
+}
+
+.bar-items-container {
+	width: 1100px;
+	margin: auto;
 }
 
 .mini-bar .item {
@@ -42,7 +47,7 @@
 .bar-light {
 	position: relative;
 	float: right;
-  width: 480px;
+  width: 500px;
   height: 30px;
   padding: 15px;
 }
@@ -65,7 +70,7 @@
   display: none;
   width: 250px;
   position: absolute;
-  top: 10px
+  top: 29px
 }
 
 .list li {

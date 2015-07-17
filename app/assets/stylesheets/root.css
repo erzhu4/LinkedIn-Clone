@@ -1,10 +1,24 @@
-html, body, ul, li, div, a {
-	padding: 0;
-	margin: none;
-	border: 0;
-	font: inherit;
-	text-decoration: inherit;
-	text-align: inherit;
+/* --- RESET --- */
+
+html, body, header, nav, ul, li,
+strong, main, section, img, div, p,
+form, fieldset, label, article, footer, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  box-sizing: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  color: inherit;
+  background: transparent;
+}
+
+name {
+  font-weight: 100;
+  font-size: 40px;
 }
 
 ul {
@@ -17,6 +31,12 @@ body {
 
 a {
 	text-decoration: none;
+}
+
+.group:after {
+  content: "";
+  clear: both;
+  display: block;
 }
 
 .root-container{
@@ -39,11 +59,12 @@ a {
 
 .form-container{
 	font-style: oblique;
-	text-shadow: 0px 1px 1px red;
+	color: gray;
+	text-shadow: 0px 1px 1px black;
 	float: left;
 	text-align: right;
 	margin-top: 20px;
-	width: 300px;
+	width: 340px;
 }
 
 .create-account-button {

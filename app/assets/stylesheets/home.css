@@ -3,6 +3,8 @@
   background: white;
   border: solid 5px black;
   margin-top: 20px;
+  width: 700px;
+  height: 120px;
 }
 
 .home-feed-panel {
@@ -14,4 +16,39 @@
 
 .home-container {
   padding: 25px;
+  width: 1000px;
+  margin: auto;
+}
+
+.home-user-info-container {
+  float: left;
+  width: 400px;
+  height: 125px;
+  padding-left: 20px;
+  border-right: 1px solid lightgray;
+}
+
+.edit-button-container {
+  border-bottom: solid 1px lightgray;
+  padding-top: 20px;
+  height: 50px;
+}
+
+.home-connection-number-container {
+  padding-top: 20px;
+  height: 50px;
+}
+
+.edit-and-connect-container{
+  text-align: center;
+  float: left;
+  width: 150px;
+}
+
+.home-profile-picture{
+  float: left;
+  width: 100px;
+  height: 120px;
+  border: 1px solid blue;
+  margin-right: 20px;
 }
