@@ -1,3 +1,3 @@
-Home.Models.CurrentUser = Backbone.Model.extend({
+LynxIn.Models.CurrentUser = Backbone.Model.extend({
   url: "/current"
 })

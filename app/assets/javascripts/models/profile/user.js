@@ -1,3 +1,3 @@
-Profile.Models.User = Backbone.Model.extend({
-  urlRoot: "/user"
-})
+// Profile.Models.User = Backbone.Model.extend({
+//   urlRoot: "/user"
+// })

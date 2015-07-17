@@ -1,12 +1,13 @@
-Home.Views.EditUser = Backbone.View.extend({
-  template: JST["home/userForm"],
+LynxIn.Views.Info = Backbone.View.extend({
+  template: JST["home/home"],
 
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
   },
 
   events: {
-    "submit form": "submit"
+    "click .edit-info-button": "editInfo",
+    "submit .user-form": "submitEdit"
   },
 
   render: function () {
@@ -15,7 +16,13 @@ Home.Views.EditUser = Backbone.View.extend({
     return this;
   },
 
-  submit: function (event) {
+  editInfo: function () {
+    var temp = JST["home/userForm"];
+    var form = temp({user: this.model});
+    this.$(".home-info-panel").html(form);
+  },
+
+  submitEdit: function (event) {
     event.preventDefault();
     var email = this.$(".email").val()
     var fname = this.$(".fname").val()
@@ -25,8 +32,7 @@ Home.Views.EditUser = Backbone.View.extend({
     this.model.set({email: email, fname: fname, lname: lname,
                     title: title, summary: summary})
     this.model.save();
-    Backbone.history.navigate("", {trigger: true});
+    this.$(".home-info-panel").html(this.template({user: this.model}));
   }
-
 
 })
