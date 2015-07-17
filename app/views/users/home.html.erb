@@ -1,8 +1,9 @@
-<% ensure_loggin %>
+<% if (logged_in?) %>
+  <div class="home-container" current-id="<%=current_user.id%>">
+<% else %>
+  <div class="home-container" current-id="0">
+<% end %>
 
-<div class="home-container">
-  <div class="home-info-panel">Default info panel text</div>
-  <div class="home-feed-panel">Default feed panel text</div>
 </div>
 
 <script>

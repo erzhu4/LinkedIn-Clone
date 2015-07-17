@@ -1,3 +1,3 @@
-// Profile.Models.Experience = Backbone.Model.extend({
-//   url: "/experiences"
-// })
+LynxIn.Models.Experience = Backbone.Model.extend({
+  url: "/experiences"
+})

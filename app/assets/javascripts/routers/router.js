@@ -1,17 +1,25 @@
 LynxIn.Routers.Router = Backbone.Router.extend({
 
   initialize: function (options) {
-    this.user = options.user;
+    this.currentUser = options.user;
     this.$rootEl = options.rootEl;
   },
 
   routes: {
-    "": "index"
+    "": "index",
+    "profile/:id": "profileShow"
   },
 
   index: function () {
-    this.user.fetch();
-    var view = new LynxIn.Views.Info({model: this.user});
+    this.currentUser.fetch();
+    var view = new LynxIn.Views.Home({model: this.currentUser});
+    this.swapView(view);
+  },
+
+  profileShow: function (id){
+    var user = new LynxIn.Models.User({id: id});
+    user.fetch();
+    var view = new LynxIn.Views.Profile({model: user});
     this.swapView(view);
   },
 

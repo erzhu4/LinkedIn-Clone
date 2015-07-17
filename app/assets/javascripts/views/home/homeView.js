@@ -1,4 +1,4 @@
-LynxIn.Views.Info = Backbone.View.extend({
+LynxIn.Views.Home = Backbone.View.extend({
   template: JST["home/home"],
 
   initialize: function () {
@@ -32,7 +32,7 @@ LynxIn.Views.Info = Backbone.View.extend({
     this.model.set({email: email, fname: fname, lname: lname,
                     title: title, summary: summary})
     this.model.save();
-    this.$(".home-info-panel").html(this.template({user: this.model}));
+    this.$el.html(this.template({user: this.model}));
   }
 
 })
