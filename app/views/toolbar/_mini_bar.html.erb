@@ -11,7 +11,7 @@
           <% current_user.connections.each do |connection| %>
 
             <li>
-              <a href="/users/<%=connection.id%>"><%=connection.fname%></a>
+              <a href="#profile/<%=connection.id%>"><%=connection.fname%></a>
               is a connection.
             </li>
 

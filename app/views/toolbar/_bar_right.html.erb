@@ -35,7 +35,7 @@
           <% else %>
               <% current_user.requests.each_with_index do |requester, idx| %>
                 <li>
-                  <b><a href="/users/<%=requester.id%>"><%= requester.fname + " " + requester.lname%></a></b> wants to connect with you!
+                  <b><a href="#profile/<%=requester.id%>"><%= requester.fname + " " + requester.lname%></a></b> wants to connect with you!
                   <div id="<%=idx%>">
                     <button class="accept-button" sender-id="<%=requester.id%>" responder-id="<%=current_user.id%>" form-id="<%=idx%>">Accept</button>
                     <button class="deny-button" sender-id="<%=requester.id%>" responder-id="<%=current_user.id%>" form-id="<%=idx%>">Deny</button>
@@ -53,6 +53,13 @@
       url: "/request/destroy/" + $(event.target).attr("sender-id") + "/" + $(event.target).attr("responder-id"),
       method: "POST"
     })
+
+    $.ajax({
+      url: "/request/destroy/" + $(event.target).attr("responder-id") + "/" + $(event.target).attr("sender-id"),
+      method: "POST"
+    })
+
+
     $("#" + $(event.target).attr("form-id")).html("You have accepted this request.")
 
     $.ajax({

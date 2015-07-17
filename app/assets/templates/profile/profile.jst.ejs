@@ -1,87 +1,95 @@
 
-<div class="profile-container" user-id="<%=userId%>">
-      <div class="profile-info">
-        <h1><%= user.escape("fname") %> <%= user.escape("lname") %></h1>
-    <div class="user-info">
-      Title: <%= user.escape("title") %><br>
-      email: <%= user.escape("email") %><br>
-    </div>
+<div class="profile-container group" user-id="<%=userId%>">
+  <div class="profile-main">
 
-    <div class="connections">
-      <% if (user.attributes.connections){ %>
-      <%= user.attributes.connections.length %><br>
-      <% } %>
-      connections
-    </div>
-
-    <% if ((currentId !== 0)&&(currentId !== user.id)) { %>
-      <% if (requested) {%>
-        Request Sent!!
-      <%} else if (connected) { %>
-        You are connected with <%=user.escape("fname")%>
-      <% } else { %>
-        <button class="connect-button">Connect</button>
-        <% } %>
-    <% } %>
-  </div>
-
-
-
-
-  <div class="profile-experiences">
-    <h2><%= user.escape('fname') %>'s work experiences:</h2>
-
-      <% if (experiences.length === 0) {%>
-        No experiences to show.
-      <%} else {%>
-
-
-        <% experiences.forEach( function (experience) { %>
-
-          <div class="experience-panel-item <%=experience.id%>">
-            <h3 class="employer"><%= experience.employer %></h3>
-            Title: <div class="title"><%=experience.title%></div><br>
-            <div class="description"><%=experience.description%></div>
-            <br>
-            <% if (experience.start_date) {%>
-              <% if (experience.current) {%>
-                <div class="start"><%=experience.start_date%></div> to present
-              <%} else {%>
-                <% if (experience.end_date){%>
-                  <div class="start"><%=experience.start_date%></div> to <div class="end"><%=experience.end_date%></div>
-                <%}%>
-              <%}%>
-            <%}%>
-
-            <% if (userId === currentId) {%>
-              <br>
-              <button class="delete-experience-button" experience-id="<%=experience.id%>">Remove</button>
-
-              <button class="edit-experience-button" experience-id="<%=experience.id%>">Edit</button>
-            <%}%>
-
+    <div class="profile-info group">
+      <div class="profile-profile-picture">profile picture</div>
+      <div class="profile-user-info-container">
+              <name><%= user.escape("fname") %> <%= user.escape("lname") %></name>
+          <div class="user-info">
+            Title: <%= user.escape("title") %><br>
+            email: <%= user.escape("email") %><br>
           </div>
 
-        <% }) %>
+
+          <% if ((currentId !== 0)&&(currentId !== user.id)) { %>
+            <% if (requested) {%>
+              Request Sent!!
+            <%} else if (connected) { %>
+              You are connected with <%=user.escape("fname")%>
+            <% } else { %>
+              <button class="connect-button">Connect</button>
+              <% } %>
+          <% } %>
+      </div>
+
+      <div class="connections">
+        <% if (user.attributes.connections){ %>
+        <%= user.attributes.connections.length %><br>
+        <% } %>
+        connections
+      </div>
+
+    </div>
 
 
-      <%}%>
 
-      <% if (userId === currentId) {%>
-        <button class="add-experience-button">Add a new experience</button>
-      <%}%>
+
+      <div class="profile-experiences">
+        <h2><%= user.escape('fname') %>'s work experiences:</h2>
+
+          <% if (experiences.length === 0) {%>
+            No experiences to show.
+          <%} else {%>
+
+
+            <% experiences.forEach( function (experience) { %>
+
+              <div class="experience-panel-item <%=experience.id%>">
+                <h3 class="employer"><%= experience.employer %></h3>
+                Title: <div class="title"><%=experience.title%></div><br>
+                <div class="description"><%=experience.description%></div>
+                <br>
+                <% if (experience.start_date) {%>
+                  <% if (experience.current) {%>
+                    <div class="start"><%=experience.start_date%></div> to present
+                  <%} else {%>
+                    <% if (experience.end_date){%>
+                      <div class="start"><%=experience.start_date%></div> to <div class="end"><%=experience.end_date%></div>
+                    <%}%>
+                  <%}%>
+                <%}%>
+
+                <% if (userId === currentId) {%>
+                  <br>
+                  <button class="delete-experience-button" experience-id="<%=experience.id%>">Remove</button>
+
+                  <button class="edit-experience-button" experience-id="<%=experience.id%>">Edit</button>
+                <%}%>
+
+              </div>
+
+            <% }) %>
+
+
+          <%}%>
+
+          <% if (userId === currentId) {%>
+            <div class="add-experience-button">Add a new experience</div>
+          <%}%>
+      </div>
+
+
+
+
+      <div class="profile-education">Education default text
+      </div>
   </div>
 
 
+<div class="profile-right">
 
-
-  <div class="profile-education">Education default text
-  </div>
-
-
-
-
-  <div class="connections-panel">Default connections panel text
+  <div class="connections-panel">
     <h3><%=user.escape("fname")%>'s connections:</h3>
     <% if (connections.length === 0){ %>
 
@@ -99,6 +107,8 @@
     <%}%>
 
   </div>
+
+</div>
 
 
 

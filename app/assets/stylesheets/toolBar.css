@@ -6,7 +6,8 @@
 }
 
 .main-bar {
-  background: gray;
+	color: white;
+  background: #3f3f3f;
 	height: 50px;
 	border-bottom: solid 1px black;
 }
@@ -67,6 +68,7 @@
 }
 
 .list {
+	color: black;
   display: none;
   width: 250px;
   position: absolute;

@@ -12,6 +12,7 @@ LynxIn.Views.Profile = Backbone.View.extend({
     "click .connect-button": "connect",
     "click .add-experience-button": "renderNewForm",
     "submit .new-experience-form": "addExperience",
+    "click .cancel-button": "render",
     "click .delete-experience-button": "deleteExperience",
     "click .edit-experience-button": "renderEditForm",
     "submit .edit-experience-form": "editExperience"

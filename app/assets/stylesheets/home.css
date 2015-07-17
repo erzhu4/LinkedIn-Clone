@@ -9,6 +9,7 @@
 
 .home-feed-panel {
   padding: 10px;
+  width: 700px;
   background: white;
   border: solid 4px red;
   margin-top: 20px;
@@ -16,7 +17,7 @@
 
 .home-container {
   padding: 25px;
-  width: 1000px;
+  width: 1100px;
   margin: auto;
 }
 

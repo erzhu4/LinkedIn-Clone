@@ -4,36 +4,70 @@
 
 .profile-info {
   padding: 10px;
+  width: 700px;
   background: white;
-  border: solid 4px brown;
+  border-bottom: solid 4px brown;
+  border-right: solid 4px brown;
+  border-radius: 5px;
   margin-top: 40px;
 }
 
+.profile-profile-picture{
+  float: left;
+  width: 100px;
+  height: 120px;
+  border: 1px solid blue;
+  margin-right: 20px;
+}
+
+.profile-user-info-container{
+  float: left;
+  width: 400px;
+  height: 125px;
+  padding-left: 20px;
+}
+
 .profile-experiences {
-  padding: 10px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   background: white;
-  border: solid lightgreen 5px;
-  margin: auto;
+  border-bottom: solid gray 2px;
+  border-right: solid gray 2px;
+  border-radius: 5px;
   margin-top: 40px;
   width: 700px;
 }
 
 .profile-education {
   padding: 10px;
+  width: 700px;
   background: white;
-  border: solid pink 5px;
+  border: solid pink 1px;
   margin-top: 40px;
 }
 
+.profile-main {
+  float: left;
+}
+
+.profile-right{
+  float: left;
+  margin-left: 20px;
+}
+
 .connections {
-  border: 3px solid blue;
+  text-align: center;
+  float: right;
+  margin-top: 100px;
 }
 
 .connections-panel {
   padding: 10px;
+  width: 200px;
   background: white;
   border: solid lightblue 5px;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .experience-panel-item {
@@ -43,4 +77,28 @@
   margin-bottom: 10px;
   padding: 30px;
   border-radius: 20px;
+}
+
+.add-experience-button {
+  color: gray;
+  width: 720px;
+  margin-left: -10px;
+  height: 30px;
+  border: 1px black solid;
+  text-align: center;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-weight: bold;
+  margin: none;
+  background: lightgray;
+}
+
+.add-experience-button:hover {
+  color: white;
+  cursor: pointer;
+  background: gray;
+}
+
+.new-experience-form {
+  margin: 10px;
 }
