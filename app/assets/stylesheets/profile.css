@@ -4,18 +4,16 @@
 
 .profile-info {
   padding: 10px;
-  width: 700px;
   background: white;
-  border-bottom: solid 4px brown;
-  border-right: solid 4px brown;
+  box-shadow: 2px 2px 2px grey;
   border-radius: 5px;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .profile-profile-picture{
   float: left;
-  width: 100px;
-  height: 120px;
+  width: 150px;
+  height: 180px;
   border: 1px solid blue;
   margin-right: 20px;
 }
@@ -27,17 +25,20 @@
   padding-left: 20px;
 }
 
+.profile-main {
+  float: left;
+  width: 650px;
+}
+
 .profile-experiences {
   font-family: sans-serif;
   padding-top: 10px;
   padding-left: 10px;
   padding-right: 10px;
   background: white;
-  border-bottom: solid gray 2px;
-  border-right: solid gray 2px;
+  box-shadow: 2px 2px 2px grey;
   border-radius: 5px;
-  margin-top: 40px;
-  width: 700px;
+  margin-top: 15px;
 }
 
 .profile-experiences .save-button {
@@ -97,33 +98,28 @@
 
 .profile-education {
   padding: 10px;
-  width: 700px;
   background: white;
-  border: solid pink 1px;
-  margin-top: 40px;
-}
-
-.profile-main {
-  float: left;
+  box-shadow: 2px 2px 2px grey;
+  margin-top: 15px;
 }
 
 .profile-right{
   float: left;
   margin-left: 20px;
+  width: 280px;
 }
 
 .connections {
   text-align: center;
   float: right;
-  margin-top: 100px;
+  margin-top: 20px;
 }
 
 .connections-panel {
   padding: 10px;
-  width: 200px;
   background: white;
-  border: solid lightblue 5px;
-  margin-top: 40px;
+  box-shadow: 2px 2px 2px grey;
+  margin-top: 20px;
 }
 
 .experience-panel-item {
@@ -137,17 +133,17 @@
 
 .add-experience-button {
   color: gray;
-  width: 720px;
+  width: 646px;
   margin-left: -10px;
   height: 30px;
-  border: 1px black solid;
+  border: 1px lightgray solid;
   text-align: center;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   font-weight: bold;
   margin: none;
   padding-top: 10px;
-  background: lightgray;
+  background: #eee;
 }
 
 .add-experience-button:hover {
