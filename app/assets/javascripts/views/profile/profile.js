@@ -88,6 +88,7 @@ LynxIn.Views.Profile = Backbone.View.extend({
 
   addExperience: function (event) {
     event.preventDefault();
+    this.$(".save-button").prop("disabled", true);
     var attr = $(event.target).serializeJSON();
     var experience = new LynxIn.Models.Experience(attr);
     experience.save();

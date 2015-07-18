@@ -48,7 +48,7 @@
 
 <script>
   $(".accept-button").on("click", function (event) {
-
+    $(event.target).prop("disabled", true)
     $.ajax({
       url: "/request/destroy/" + $(event.target).attr("sender-id") + "/" + $(event.target).attr("responder-id"),
       method: "POST"
@@ -69,11 +69,8 @@
 
   })
 
-  $(".accept-button").on("click", function (event) {
-    $(event.target).prop("disabled", true)
-  })
-
   $(".deny-button").on("click", function (event){
+    $(event.target).prop("disabled", true)
     $.ajax({
       url: "/request/destroy/" + $(event.target).attr("sender-id") + "/" + $(event.target).attr("responder-id"),
       method: "POST"
