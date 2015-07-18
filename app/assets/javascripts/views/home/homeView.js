@@ -3,6 +3,7 @@ LynxIn.Views.Home = Backbone.View.extend({
 
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
+    this.listenTo(this.model, "accepted", this.acceptRequest);
   },
 
   events: {
@@ -11,9 +12,14 @@ LynxIn.Views.Home = Backbone.View.extend({
   },
 
   render: function () {
+    console.log("rendered");
     var content = this.template({user: this.model});
     this.$el.html(content);
     return this;
+  },
+
+  acceptRequest: function () {
+    this.model.fetch();
   },
 
   editInfo: function () {

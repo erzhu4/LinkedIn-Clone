@@ -68,6 +68,7 @@ a {
 }
 
 .create-account-button {
+  font-weight: bold;
 	background: yellow;
 	border-radius: 10px;
 }

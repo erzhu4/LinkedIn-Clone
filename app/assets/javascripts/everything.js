@@ -17,7 +17,8 @@ window.LynxIn = {
     var user = new LynxIn.Models.CurrentUser();
     new LynxIn.Routers.Router({
       rootEl: $(".home-container"),
-      user: user
+      user: user,
+      toolBar: $(".main-bar")
     });
     Backbone.history.start();
   }

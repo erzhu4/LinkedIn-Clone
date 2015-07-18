@@ -45,7 +45,7 @@ class UsersController < ApplicationController
   ############################## end of basic user functions
 
   def home
-    render :home
+    render :app
   end
 
   def user
