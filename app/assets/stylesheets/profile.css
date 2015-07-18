@@ -40,6 +40,61 @@
   width: 700px;
 }
 
+.profile-experiences .save-button {
+  color: white;
+  font-size: 15px;
+  border-radius: 5px;
+  background: #069;
+  height: 40px;
+  width: 70px;
+}
+
+.profile-experiences .cancel-button {
+  color: gray;
+  font-size: 15px;
+  border-radius: 5px;
+  background: #f2f2f2;
+  height: 40px;
+  width: 70px;
+}
+
+.profile-experiences .delete-experience-button {
+  color: white;
+  font-size: 15px;
+  border-radius: 5px;
+  background: #069;
+  height: 30px;
+  width: 80px;
+}
+
+.profile-experiences .edit-experience-button {
+  font-size: 15px;
+  border-radius: 5px;
+  background: #f6e312;
+  height: 30px;
+  width: 60px;
+}
+
+.profile-experiences .delete-experience-button:hover {
+  cursor: pointer;
+  background: #1b5480
+}
+
+.profile-experiences .edit-experience-button:hover {
+  cursor: pointer;
+  background: #e9ac1a;
+}
+
+.profile-experiences .cancel-button:hover {
+  cursor: pointer;
+  background: white;
+}
+
+.profile-experiences .save-button:hover {
+  cursor: pointer;
+  background: #1b5480;
+}
+
 .profile-education {
   padding: 10px;
   width: 700px;
@@ -91,6 +146,7 @@
   border-bottom-right-radius: 5px;
   font-weight: bold;
   margin: none;
+  padding-top: 10px;
   background: lightgray;
 }
 

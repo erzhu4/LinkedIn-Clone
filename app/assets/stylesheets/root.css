@@ -43,6 +43,8 @@ a {
 	margin: auto;
 	width: 1000px;
 	height: 600px;
+  border-style: ridge;
+  border: gray 2px solid;
 	border-radius: 10px;
 	background-image: url(https://scontent-lga1-1.xx.fbcdn.net/hphotos-xtf1/v/t1.0-9/11262305_10153471063687095_2574111308727366184_n.jpg?oh=85a585dc224381735664e3cd5de3f220&oe=56138CC9);
 }
@@ -60,7 +62,12 @@ a {
 }
 
 .newUserForm input:hover {
-	border: 4px solid blue;
+	border: 4px solid lightblue;
+  border-style: ridge;
+}
+
+.newUserForm label:hover{
+  color: red;
 }
 
 .form-container{
