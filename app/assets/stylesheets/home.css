@@ -4,7 +4,7 @@
   border: solid 5px black;
   margin-top: 20px;
   width: 700px;
-  height: 120px;
+  height: 140px;
 }
 
 .home-feed-panel {
@@ -24,7 +24,7 @@
 .home-user-info-container {
   float: left;
   width: 400px;
-  height: 125px;
+  height: 130px;
   padding-left: 20px;
   border-right: 1px solid lightgray;
 }
