@@ -28,7 +28,7 @@ LynxIn.Views.Profile = Backbone.View.extend({
     this.checkConnected();
 
     if (this.model.attributes.connections){
-      var userConnections = this.model.attributes.connections.slice(0, 6);
+      var userConnections = this.model.attributes.connections.slice(0, 8);
     } else {
       var userConnections = [];
     }// For connections panel

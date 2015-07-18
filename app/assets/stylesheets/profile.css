@@ -31,14 +31,16 @@
 }
 
 .profile-experiences {
+  padding: 5px;
   font-family: sans-serif;
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
   background: white;
   box-shadow: 2px 2px 2px grey;
   border-radius: 5px;
   margin-top: 15px;
+}
+
+.profile-experiences-list {
+  margin: 20px;
 }
 
 .profile-experiences .save-button {
@@ -97,7 +99,7 @@
 }
 
 .profile-education {
-  padding: 10px;
+  padding: 5px;
   background: white;
   box-shadow: 2px 2px 2px grey;
   margin-top: 15px;
@@ -109,6 +111,10 @@
   width: 280px;
 }
 
+.profile-connections-list{
+  margin: 10px;
+}
+
 .connections {
   text-align: center;
   float: right;
@@ -116,32 +122,64 @@
 }
 
 .connections-panel {
-  padding: 10px;
+  font-family: sans-serif;
+  padding: 5px;
   background: white;
   box-shadow: 2px 2px 2px grey;
   margin-top: 20px;
 }
 
+.profile-connections-list-item {
+  margin-top: 10px;
+}
+.profile-connections-list-item:hover {
+  background: lightgray;
+}
+
+.connections-panel-bottom {
+  height: 30px;
+  width: 103.7%;
+  margin-left: -5px;
+  margin-bottom: -5px;
+  background: lightgray;
+}
+
+.connections-panel-bottom a {
+  color: #007799;
+  float: right;
+  margin-right: 5px;
+  margin-top: 7px;
+}
+
+.small-profile-picture {
+  width: 50px;
+  height: 50px;
+  margin-right: 5px;
+  float: left;
+}
+
+.small-title {
+  font-size: 80%;
+}
+
 .experience-panel-item {
-  border: 1px solid black;
-  width: 600px;
+  border-top: 1px solid lightgray;
   margin: auto;
   margin-bottom: 10px;
   padding: 30px;
-  border-radius: 20px;
 }
 
 .add-experience-button {
   color: gray;
-  width: 646px;
-  margin-left: -10px;
+  width: 648px;
+  margin-left: -5px;
+  margin-bottom: -5px;
   height: 30px;
   border: 1px lightgray solid;
   text-align: center;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   font-weight: bold;
-  margin: none;
   padding-top: 10px;
   background: #eee;
 }
