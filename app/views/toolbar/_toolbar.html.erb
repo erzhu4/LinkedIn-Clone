@@ -1,10 +1,11 @@
 <div class="main-bar group">
       <div class="bar-items-container">
-        <a href="/"><img class="logo" src="https://scontent-lga1-1.xx.fbcdn.net/hphotos-xtf1/v/t1.0-9/11751873_10153471066517095_5884653905177897451_n.jpg?oh=1760214011fb8de93465d72f9677c873&oe=561215F1"></a>
       <% if logged_in? %>
-        <%= render "toolbar/bar_right" %>
+          <a href="/site"><img class="logo" src="https://scontent-lga1-1.xx.fbcdn.net/hphotos-xtf1/v/t1.0-9/11751873_10153471066517095_5884653905177897451_n.jpg?oh=1760214011fb8de93465d72f9677c873&oe=561215F1"></a>
+          <%= render "toolbar/bar_right" %>
         <%else%>
-        <%= render "toolbar/bar_light" %>
+          <a href="/"><img class="logo" src="https://scontent-lga1-1.xx.fbcdn.net/hphotos-xtf1/v/t1.0-9/11751873_10153471066517095_5884653905177897451_n.jpg?oh=1760214011fb8de93465d72f9677c873&oe=561215F1"></a>
+          <%= render "toolbar/bar_light" %>
       <% end %>
       <% if current_user %>
         <%= render "toolbar/mini_bar" %>

@@ -30,6 +30,10 @@
 	margin-left: 20px;
 }
 
+.mini-bar .item:hover{
+	color: lightblue;
+}
+
 .logged-in-crap {
 	float: right;
   width: 200px;
@@ -50,7 +54,8 @@
 	float: right;
   width: 500px;
   height: 30px;
-  padding: 15px;
+  padding: 10px;
+	margin-top: 5px;
 }
 
 .logout-button{
@@ -113,13 +118,14 @@
 }
 
 .connection-list li {
+	color: black;
 	height: 50px;
 	border: 2px solid green;
-	background: lightblue;
+	background: lightgray;
 	position: relative;
 	top: 30px;
 }
 
 .connection-list li:hover {
-	background: gray;
+	background: white;
 }
