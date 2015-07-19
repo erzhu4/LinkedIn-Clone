@@ -12,7 +12,6 @@ LynxIn.Views.Home = Backbone.View.extend({
   },
 
   render: function () {
-    console.log("rendered");
     var content = this.template({user: this.model});
     this.$el.html(content);
     return this;
