@@ -33,7 +33,7 @@
 }
 
 .mini-bar {
-	background: #1a1a1a;;
+	background: #333;
 	height: 25px;
 	margin-top: -3px;
 }
@@ -52,7 +52,7 @@
 .mini-bar .item {
 	font-family: sans-serif;
 	font-weight: lighter;
-	font-size: 90%;
+	font-size: 85%;
 	float: left;
 	color: lightgray;
 	padding: 5px;
