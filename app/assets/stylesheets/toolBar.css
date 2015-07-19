@@ -9,13 +9,21 @@
 
 .search {
 	float: left;
-	margin-left: 180px;
+	margin-left: 200px;
 	margin-top: 8px;
 }
 
 .search-input {
 	width: 300px;
 	height: 20px;
+	border-radius: 5px;
+}
+
+.search-button {
+	width: 30px;
+	height: 27px;
+	margin-left: 5px;
+	float: right;
 }
 
 .main-bar {
@@ -65,7 +73,7 @@
 .bar-right {
 	position: relative;
 	float: right;
-  width: 280px;
+  width: 180px;
   height: 20px;
   padding: 10px;
 }
@@ -84,10 +92,10 @@
 }
 
 .icon {
+	background: transparent;
   position: relative;
   float: left;
   top: -5px;
-  border: 1px pink solid;
   width: 30px;
   height: 30px;
   margin-left: 20px;
@@ -119,7 +127,7 @@
 }
 
 .big:hover .icon {
-  border: 3px solid red;
+  border: 3px solid lightgray;
 }
 
 .big {
