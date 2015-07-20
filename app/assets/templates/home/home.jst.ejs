@@ -1,59 +1,62 @@
-
-<div class="home-info-panel group">
-
-
-  <div class="home-profile-picture">
-    <% if (user.escape("img-url")) { %>
-      <img src="<%=user.escape('img_url')%>">
-    <%} else {%>
-    <img src="https://scontent-lga1-1.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/11700831_10153479851122095_4006613064403614225_n.jpg?oh=4b411779d59b81fe9a8fa539ff375604&oe=56565282">
-    <%}%>
-  </div>
+<div class="home-main">
+  <div class="home-info-panel group">
 
 
-  <div class="home-user-info-container">
-    <name class="user-name"><%= user.escape("fname") %> <%= user.escape("lname") %></name><br>
-    Title: <%= user.escape("title") %><br>
-    email: <%= user.escape("email") %><br>
-  </div>
-
-  <div class="edit-and-connect-container">
-
-    <div class="edit-button-container">
-      <a href="#" class="edit-info-button">Edit Personal Info<a>
+    <div class="home-profile-picture">
+      <% if (user.escape("img-url")) { %>
+        <img src="<%=user.escape('img_url')%>">
+      <%} else {%>
+      <img src="https://scontent-lga1-1.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/11700831_10153479851122095_4006613064403614225_n.jpg?oh=4b411779d59b81fe9a8fa539ff375604&oe=56565282">
+      <%}%>
     </div>
 
-    <div class="home-connection-number-container">
-      <% if (user.attributes.connections) {%>
-        <b><%= user.attributes.connections.length %></b> Connections
-      <% } %>
+
+    <div class="home-user-info-container">
+      <name class="user-name"><%= user.escape("fname") %> <%= user.escape("lname") %></name><br>
+      Title: <%= user.escape("title") %><br>
+      email: <%= user.escape("email") %><br>
     </div>
 
-  </div>
+    <div class="edit-and-connect-container">
 
-</div>
-
-
-<div class="home-user-panel">
-  <div class="home-user-corner">Connect with others</div>
-
-  <div class="people-you-may-know-word">People you may know</div>
-
-  <div class="random-users-container group">
-    <% randoms.each(function (user) { %>
-      <div class="random-users-item">
-        <a href="#profile/<%=user.id%>">
-        <%if (user.escape('img_url')) {%>
-          <img class="home-random-profile-picture" src="<%=user.escape('img_url')%>"><br>
-        <%} else {%>
-          <img class=home-random-profile-picture src="https://scontent-lga1-1.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/11700831_10153479851122095_4006613064403614225_n.jpg?oh=4b411779d59b81fe9a8fa539ff375604&oe=56565282"><br>
-        <%}%>
-
-        <%=user.escape("fname") + " " + user.escape("lname")%><br></a>
-        <div class="random-description"><%=user.escape("title")%></div>
+      <div class="edit-button-container">
+        <a href="#" class="edit-info-button">Edit Personal Info<a>
       </div>
 
-    <%})%>
+      <div class="home-connection-number-container">
+        <% if (user.attributes.connections) {%>
+          <b><%= user.attributes.connections.length %></b> Connections
+        <% } %>
+      </div>
+
+    </div>
+
   </div>
 
+
+  <div class="home-user-panel">
+    <div class="home-user-corner">Connect with others</div>
+
+    <div class="people-you-may-know-word">People you may know</div>
+
+    <div class="random-users-container group">
+      <% randoms.each(function (user) { %>
+        <div class="random-users-item">
+          <a href="#profile/<%=user.id%>">
+          <%if (user.escape('img_url')) {%>
+            <img class="home-random-profile-picture" src="<%=user.escape('img_url')%>"><br>
+          <%} else {%>
+            <img class=home-random-profile-picture src="https://scontent-lga1-1.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/11700831_10153479851122095_4006613064403614225_n.jpg?oh=4b411779d59b81fe9a8fa539ff375604&oe=56565282"><br>
+          <%}%>
+
+          <%=user.escape("fname") + " " + user.escape("lname")%><br></a>
+          <div class="random-description"><%=user.escape("title")%></div>
+        </div>
+
+      <%})%>
+    </div>
+
+  </div>
 </div>
+
+<div class="home-right"></div>

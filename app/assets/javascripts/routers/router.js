@@ -21,7 +21,7 @@ LynxIn.Routers.Router = Backbone.Router.extend({
   },
 
   profileShow: function (id){
-    var user = new LynxIn.Models.User({id: id});
+    var user = new LynxIn.Models.User({id: parseInt(id)});
     user.fetch();
     var view = new LynxIn.Views.Profile({model: user});
     this.swapView(view);

@@ -177,7 +177,7 @@ Experience.create({
 
 Experience.create({
     user_id: 3,
-    title: "Prelance painter",
+    title: "Freelance painter",
     employer: "Self Employment",
     description: "Expereinced painter, please contact to set up appointment!"
 })
@@ -247,6 +247,14 @@ Experience.create({
     description: "Buy and sell ice cream for all the hungry kittens",
     start_date: "2010-10-24",
     end_date: "2012-09-14"
+})
+
+Experience.create({
+    user_id: 11,
+    title: "Assembly Engineer",
+    employer: "Volkswagen Group of America",
+    description: "Worked on exterior quality improvement projects",
+    start_date: "2013-10-24",
 })
   # create_table "experiences", force: :cascade do |t|
   #   t.integer "user_id"

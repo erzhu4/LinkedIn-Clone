@@ -59,8 +59,11 @@
               <% experiences.forEach( function (experience) { %>
 
                 <div class="experience-panel-item <%=experience.id%>">
-                  <h3 class="employer"><%= experience.employer %></h3>
-                  Title: <div class="title"><%=experience.title%></div><br>
+                  <h3 class="employer">
+                    <img src="https://scontent-lga1-1.xx.fbcdn.net/hphotos-xtp1/v/t1.0-9/11012055_10153480090967095_6732516601998388768_n.jpg?oh=d22fc664adb669e167946f7d97f047f8&oe=56183AA7">
+                    <%= experience.employer %>
+                  </h3>
+                  <div class="title"><%=experience.title%></div><br>
                   <div class="description"><%=experience.description%></div>
                   <br>
                       <% if (experience.start_date && experience.end_date){%>

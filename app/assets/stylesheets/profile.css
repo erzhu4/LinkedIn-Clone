@@ -117,7 +117,6 @@
 .connections {
   text-align: center;
   float: right;
-  margin-top: 20px;
 }
 
 .connections-panel {
@@ -166,6 +165,25 @@
   margin: auto;
   margin-bottom: 10px;
   padding: 30px;
+}
+
+.experience-panel-item .employer {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.experience-panel-item .title {
+  padding-left: 30px;
+}
+
+.experience-panel-item .description {
+  font-style: oblique;
+  font-size: 90%;
+  padding-left: 30px;
+}
+
+.employer img {
+  width: 30px;
 }
 
 .add-experience-button {

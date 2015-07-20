@@ -49,8 +49,8 @@ class UsersController < ApplicationController
                     summary: "Sample user summary (all saved data on this account will be deleted upon log out).", sample: true)
     if user.save
       self.login(user);
-      Request.create(sender_id: 1, responder_id: user.id)
       Request.create(sender_id: 11, responder_id: user.id)
+      Request.create(sender_id: 1, responder_id: user.id)
       redirect_to "/site"
     else
       redirect_to "/"
