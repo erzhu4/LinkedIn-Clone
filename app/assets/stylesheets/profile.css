@@ -182,7 +182,14 @@
   padding-left: 30px;
 }
 
-.employer img {
+.employer {
+  float: left;
+}
+
+.icon-employer-container img {
+  float: left;
+  margin-top: 25px;
+  margin-right: 10px;
   width: 30px;
 }
 
