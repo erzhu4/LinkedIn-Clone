@@ -47,13 +47,13 @@ sennacy = User.create({
                         summary: "I Scratch up people's faces when they least expect it."
                       })
 sennacy = User.create({
-                        email: "Scottie@cats.com",
+                        email: "scottie@cats.com",
                         password_digest: password,
                         fname: "Scottie",
                         lname: "Ogden",
                         session_token: "rsesdsa",
                         title: "Cattar(guitar for cats) player",
-                        summary: "Musicalliy is virtue!"
+                        summary: "Musicallity is virtue!"
                       })
 sennacy = User.create({
                         email: "darth@cats.com",

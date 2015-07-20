@@ -5,30 +5,42 @@ class User < ActiveRecord::Base
     :connects,
     class_name: "Connection",
     foreign_key: :user_id1,
-    primary_key: :id
+    primary_key: :id,
+    dependent: :destroy
   )
-
+  ##### for dependent destroy only
+  has_many(
+    :connects_other_side,
+    class_name: "Connection",
+    foreign_key: :user_id2,
+    primary_key: :id,
+    dependent: :destroy
+  )
+#################################
   has_many(:connections, through: :connects, source: :user2)
 
   has_many(
     :outgoing_requests,
     class_name: "Request",
     foreign_key: :sender_id,
-    primary_key: :id
+    primary_key: :id,
+    dependent: :destroy
   )
 
   has_many(
     :incoming_requests,
     class_name: "Request",
     foreign_key: :responder_id,
-    primary_key: :id
+    primary_key: :id,
+    dependent: :destroy
   )
 
   has_many(
     :experiences,
     class_name: "Experience",
     foreign_key: :user_id,
-    primary_key: :id
+    primary_key: :id,
+    dependent: :destroy
   )
 
   has_many(:requests, through: :incoming_requests, source: :sender)

@@ -1,0 +1,31 @@
+.new-experience-form {
+  background: #f4f4f4;
+  border: 1px solid lightgray;
+  padding: 20px;
+}
+
+.new-experience-form input {
+  height: 20px;
+  width: 100%;
+}
+
+.new-experience-form textarea {
+  width: 100%;
+  height: 100px;
+}
+
+.edit-experience-form {
+  background: #f4f4f4;
+  border: 1px solid lightgray;
+  padding: 20px;
+}
+
+.edit-experience-form input {
+  height: 20px;
+  width: 100%;
+}
+
+.edit-experience-form textarea {
+  width: 100%;
+  height: 100px;
+}
