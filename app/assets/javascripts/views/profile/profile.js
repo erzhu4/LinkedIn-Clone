@@ -101,11 +101,8 @@ LynxIn.Views.Profile = Backbone.View.extend({
   },
 
   deleteExperience: function (event) {
-    var experience = new LynxIn.Models.Experience({
-                          id: parseInt($(event.target).attr("experience-id"))
-                        });
     $.ajax({
-      url: "/experiences/" + experience.escape("id"),
+      url: "/experiences/" + $(event.target).attr("experience-id"),
       method: "delete"
     })
     this.model.fetch();
