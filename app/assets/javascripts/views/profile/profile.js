@@ -108,11 +108,7 @@ LynxIn.Views.Profile = Backbone.View.extend({
       url: "/experiences/" + experience.escape("id"),
       method: "delete"
     })
-    this.model.fetch({
-      success: function () {
-        experience.remove();
-      }
-    });
+    this.model.fetch();
   },
 
   renderEditForm: function (event){
