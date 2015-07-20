@@ -32,7 +32,6 @@
 
 .profile-experiences {
   padding: 5px;
-  font-family: sans-serif;
   background: white;
   box-shadow: 2px 2px 2px grey;
   border-radius: 5px;
@@ -96,6 +95,11 @@
 .profile-experiences .save-button:hover {
   cursor: pointer;
   background: #1b5480;
+}
+
+.summary {
+  font-family: cursive;
+  margin-left: 70px;
 }
 
 .profile-education {

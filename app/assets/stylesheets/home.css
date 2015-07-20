@@ -7,7 +7,7 @@
   height: 140px;
 }
 
-.home-feed-panel {
+.home-user-panel {
   padding: 10px;
   width: 650px;
   background: white;
@@ -40,16 +40,55 @@
   height: 50px;
 }
 
-.edit-and-connect-container{
+.edit-and-connect-container {
   text-align: center;
   float: left;
   width: 150px;
 }
 
-.home-profile-picture{
+.home-profile-picture {
   float: left;
   width: 100px;
   height: 120px;
   border: 1px solid blue;
   margin-right: 20px;
+}
+
+.home-random-profile-picture {
+  width: 80px;
+  height: 100px;
+  border: 1px solid blue;
+  margin: auto;
+}
+
+.random-users-item {
+  float: left;
+  text-align: center;
+  width: 200px;
+}
+
+.random-users-container {
+  width: 600px;
+}
+
+.home-user-corner {
+  font-size: 90%;
+  font-weight: bold;
+  color: white;
+  padding: 5px 15px;
+  background: #333;
+  margin-left: -10px;
+  margin-top: -10px;
+  border-top: 1px solid black;
+  border-radius: 2px;
+  width: 140px;
+}
+
+.people-you-may-know-word {
+  color: gray;
+  margin: 20px 30px;
+}
+
+.random-description {
+  font-size: 80%;
 }

@@ -2,6 +2,7 @@ LynxIn.Routers.Router = Backbone.Router.extend({
 
   initialize: function (options) {
     this.currentUser = options.user;
+    this.randomUsers = options.randomUsers;
     this.$rootEl = options.rootEl;
     this.$toolBar = options.toolBar;
   },
@@ -13,7 +14,8 @@ LynxIn.Routers.Router = Backbone.Router.extend({
 
   index: function () {
     this.currentUser.fetch();
-    var view = new LynxIn.Views.Home({model: this.currentUser});
+    this.randomUsers.fetch();
+    var view = new LynxIn.Views.Home({model: this.currentUser, collection: this.randomUsers});
     this.swapView(view);
     this.$toolBar.find(".accept-button").on("click", function (){view.model.trigger("accepted")});
   },

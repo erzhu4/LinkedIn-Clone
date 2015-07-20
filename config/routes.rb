@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "/site", to: "users#home"
   get "/current", to: "users#user", defaults: {format: :json}
   get "/user/:id", to: "users#profile_user", defaults: {format: :json}
+  get "/randomusers", to: "users#random_users"
   put "/current", to: "users#update_current"
   put "/experiences/:id", to: "experiences#edit"
   post "request/:id", to: "requests#create"

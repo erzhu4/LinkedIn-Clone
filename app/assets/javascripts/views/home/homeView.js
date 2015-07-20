@@ -4,6 +4,7 @@ LynxIn.Views.Home = Backbone.View.extend({
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.model, "accepted", this.acceptRequest);
+    this.listenTo(this.collection, "sync", this.render);
   },
 
   events: {
@@ -12,7 +13,7 @@ LynxIn.Views.Home = Backbone.View.extend({
   },
 
   render: function () {
-    var content = this.template({user: this.model});
+    var content = this.template({user: this.model, randoms: this.collection});
     this.$el.html(content);
     return this;
   },
@@ -37,7 +38,7 @@ LynxIn.Views.Home = Backbone.View.extend({
     this.model.set({email: email, fname: fname, lname: lname,
                     title: title, summary: summary})
     this.model.save();
-    this.$el.html(this.template({user: this.model}));
+    this.$el.html(this.template({user: this.model, randoms: this.collection}));
   }
 
 })

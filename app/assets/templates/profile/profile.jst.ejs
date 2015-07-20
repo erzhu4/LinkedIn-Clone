@@ -37,6 +37,8 @@
 
       <div class="profile-experiences">
         <corner><%=user.escape("fname")%>'s background</corner><br>
+        <h2 class="experience-word">Summary</h2>
+          <div class="summary"><%=user.escape("summary")%></div>
         <h2 class="experience-word">Experience</h2>
           <div class="profile-experiences-list">
             <% if (experiences.length === 0) {%>

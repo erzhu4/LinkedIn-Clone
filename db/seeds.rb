@@ -80,7 +80,7 @@ sennacy = User.create({
                         lname: "Fye",
                         session_token: "rsesdsa",
                         title: "Comcats wifi technician",
-                        summary: "I play ball"
+                        summary: "I am a skilled professional in the world of analogue electronics!"
                       })
 sennacy = User.create({
                         email: "bart@cats.com",

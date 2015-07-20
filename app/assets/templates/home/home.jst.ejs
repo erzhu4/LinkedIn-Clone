@@ -24,4 +24,20 @@
 </div>
 
 
-<div class="home-feed-panel">Default feed panel text</div>
+<div class="home-user-panel">
+  <div class="home-user-corner">Connect with others</div>
+
+  <div class="people-you-may-know-word">People you may know</div>
+
+  <div class="random-users-container group">
+    <% randoms.each(function (user) { %>
+      <div class="random-users-item">
+        <a href="#profile/<%=user.id%>"><img class="home-random-profile-picture" src=""><br>
+        <%=user.escape("fname") + " " + user.escape("lname")%><br></a>
+        <div class="random-description"><%=user.escape("title")%></div>
+      </div>
+
+    <%})%>
+  </div>
+
+</div>

@@ -64,6 +64,21 @@ class UsersController < ApplicationController
     render "user"
   end
 
+  def random_users
+    if logged_in?
+      @users = []
+      @current_connects = self.current_user.connections
+      all_users = User.all
+      all_users.each do |user|
+        @users.push(user) if !(@current_connects.include?(user)) && user.id != current_user.id
+      end
+      @users = @users.sample(3)
+      render json: @users
+    else
+      render ""
+    end
+  end
+
   private
   def user_params
     params.require(:user).permit(:email, :fname, :lname, :title, :summary)
