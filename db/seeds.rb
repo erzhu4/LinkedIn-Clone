@@ -161,8 +161,8 @@ Experience.create({
 Experience.create({
     user_id: 1,
     title: "Hairball roller",
-    employer: "Fuzz inc",
-    description: "Roller of final fuzzballs to ensure no production defects.",
+    employer: "CatsAtomic inc",
+    description: "Lead researcher in the atomic physics department.",
     start_date: "2014-03-24",
     end_date: "2015-01-14"
 })
