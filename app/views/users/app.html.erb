@@ -3,10 +3,18 @@
 <% else %>
   <div class="home-container" current-id="0">
 <% end %>
-
 </div>
 
+<% if current_user.sample && current_user.connections.length == 0 %>
 
-<script>
-  $(window.LynxIn.initialize)
-</script>
+  <script>
+    $( function () {
+      window.LynxIn.initialize();
+      alert("HI GUEST! You may have connection requests!!! Check your pending requests in the top right hand corner!");
+    })
+  </script>
+<%else%>
+  <script>
+    $(window.LynxIn.initialize)
+  </script>
+<% end %>

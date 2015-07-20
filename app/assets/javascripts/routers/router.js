@@ -17,7 +17,7 @@ LynxIn.Routers.Router = Backbone.Router.extend({
     this.randomUsers.fetch();
     var view = new LynxIn.Views.Home({model: this.currentUser, collection: this.randomUsers});
     this.swapView(view);
-    this.$toolBar.find(".accept-button").on("click", function (){view.model.trigger("accepted")});
+    $(".accept-button").on("click", function (){view.model.trigger("accepted")});
   },
 
   profileShow: function (id){
@@ -25,7 +25,7 @@ LynxIn.Routers.Router = Backbone.Router.extend({
     user.fetch();
     var view = new LynxIn.Views.Profile({model: user});
     this.swapView(view);
-    this.$toolBar.find(".accept-button").on("click", function (){view.model.trigger("accepted")});
+    $(".accept-button").on("click", function (){view.model.trigger("accepted")});
   },
 
   swapView: function (view){
