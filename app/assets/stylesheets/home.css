@@ -49,15 +49,11 @@
 .home-profile-picture {
   float: left;
   width: 100px;
-  height: 120px;
-  border: 1px solid blue;
   margin-right: 20px;
 }
 
 .home-random-profile-picture {
   width: 80px;
-  height: 100px;
-  border: 1px solid blue;
   margin: auto;
 }
 

@@ -3,7 +3,17 @@
   <div class="profile-main">
 
     <div class="profile-info group">
-      <div class="profile-profile-picture">profile picture</div>
+
+
+      <div class="profile-profile-picture">
+        <% if (user.escape("img-url")) { %>
+          <img src="<%=user.escape('img_url')%>">
+        <%} else {%>
+          <img src="https://scontent-lga1-1.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/11700831_10153479851122095_4006613064403614225_n.jpg?oh=4b411779d59b81fe9a8fa539ff375604&oe=56565282">
+        <%}%>
+      </div>
+
+
       <div class="profile-user-info-container">
               <name><%= user.escape("fname") %> <%= user.escape("lname") %></name>
           <div class="user-info">
@@ -37,8 +47,10 @@
 
       <div class="profile-experiences">
         <corner><%=user.escape("fname")%>'s background</corner><br>
-        <h2 class="experience-word">Summary</h2>
+        <%if (user.escape("summary")) {%>
+          <h2 class="experience-word">Summary</h2>
           <div class="summary"><%=user.escape("summary")%></div>
+        <%}%>
         <h2 class="experience-word">Experience</h2>
           <div class="profile-experiences-list">
             <% if (experiences.length === 0) {%>
@@ -51,15 +63,12 @@
                   Title: <div class="title"><%=experience.title%></div><br>
                   <div class="description"><%=experience.description%></div>
                   <br>
-                  <% if (experience.start_date) {%>
-                    <% if (experience.current) {%>
-                      <div class="start"><%=experience.start_date%></div> to present
-                    <%} else {%>
-                      <% if (experience.end_date){%>
-                        <div class="start"><%=experience.start_date%></div> to <div class="end"><%=experience.end_date%></div>
+                      <% if (experience.start_date && experience.end_date){%>
+                        <div class="date-section"><%=experience.start_date%> to <%=experience.end_date%></div>
                       <%}%>
-                    <%}%>
-                  <%}%>
+                      <% if (experience.start_date && !experience.end_date){%>
+                        <div class="date-section"><%=experience.start_date%> to Present</div>
+                      <%}%>
 
                   <% if (userId === currentId) {%>
                     <br>
@@ -103,7 +112,13 @@
             <%} else {%>
             <% connections.forEach(function (connection) {%>
               <div class="profile-connections-list-item group">
-                  <a href="#profile/<%=connection.id%>"><img src="" class="small-profile-picture"></a>
+                  <a href="#profile/<%=connection.id%>">
+                    <% if (user.escape("img-url")) { %>
+                      <img class="small-profile-picture" src="<%=user.escape('img_url')%>">
+                    <%} else {%>
+                      <img class="small-profile-picture" src="https://scontent-lga1-1.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/11700831_10153479851122095_4006613064403614225_n.jpg?oh=4b411779d59b81fe9a8fa539ff375604&oe=56565282">
+                    <%}%>
+                  </a>
                   <a href="#profile/<%=connection.id%>"><%= connection.fname + " " + connection.lname %></a>
                   <div class="small-title"><%=connection.title%></div>
               </div>

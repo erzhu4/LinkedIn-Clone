@@ -7,7 +7,7 @@
     <div id="rootContent" class="root-content">
 
       <div class="form-container">
-        <h2>Get started now! Its Free!</h2>
+        <h2>Get started now - Its Free!</h2>
         <%= display_msg %>
         <form action="/users/new" method="GET" class="newUserForm">
           <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
@@ -23,7 +23,7 @@
           <button class="create-account-button">JOIN NOW</button>
         </form>
       </div>
-
+      <a class="guest-login-link" href="/guestuser">Sign In as a Guest!!</a>
     </div>
 
   </div>

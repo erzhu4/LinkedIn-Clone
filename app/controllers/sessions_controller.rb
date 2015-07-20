@@ -16,6 +16,9 @@ class SessionsController < ApplicationController
       self.current_user.save
       session[:token] = nil
     end
+    if self.current_user.sample
+      self.current_user.destroy
+    end
     redirect_to "/"
   end
 

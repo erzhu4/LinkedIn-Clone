@@ -1,5 +1,6 @@
 
 password = BCrypt::Password.create("asdfasdf")
+
 sennacy = User.create({
                         email: "sennacy@cats.com",
                         password_digest: password,
@@ -7,7 +8,7 @@ sennacy = User.create({
                         lname: "TheGreat",
                         session_token: "sadfaewf",
                         title: "HairBall developer",
-                        summary: "Hi my name is Sennacy."
+                        summary: "Hi my name is Sennacy, I am app academy's number one cat. Hire me!!."
                       })
 sennacy = User.create({
                       email: "rocky@cats.com",
@@ -61,14 +62,14 @@ sennacy = User.create({
                         fname: "Darth",
                         lname: "Vadar",
                         session_token: "rsesdsa",
-                        title: "Cat saber",
+                        title: "Sith Lord",
                         summary: "I'm your father."
                       })
 sennacy = User.create({
                         email: "mack@cats.com",
                         password_digest: password,
                         fname: "Mack",
-                        lname: "Incheez",
+                        lname: "Encheez",
                         session_token: "rsesdsa",
                         title: "Cheese eater",
                         summary: "Never underestimate the power of the cheese."
@@ -90,6 +91,15 @@ sennacy = User.create({
                         session_token: "rsesdsa",
                         title: "Comedian",
                         summary: "I make people laugh."
+                      })
+sennacy = User.create({
+                        email: "eric@zhu.com",
+                        password_digest: password,
+                        fname: "Eric",
+                        lname: "Zhu",
+                        session_token: "sadfaewf",
+                        title: "Web developer",
+                        summary: "I am the creater of this app."
                       })
 Connection.create({user_id1: 1, user_id2: 2})
 Connection.create({user_id1: 2, user_id2: 1})
@@ -137,12 +147,15 @@ Connection.create({user_id1: 4, user_id2: 9})
 Connection.create({user_id1: 9, user_id2: 4})
 Connection.create({user_id1: 4, user_id2: 10})
 Connection.create({user_id1: 10, user_id2: 4})
+Connection.create({user_id1: 4, user_id2: 11})
+Connection.create({user_id1: 11, user_id2: 4})
 
 Experience.create({
     user_id: 1,
     title: "Hairball tester",
     employer: "Fuzz inc",
     description: "Tested the specs of hairballs to ensure product durability.",
+    start_date: "2015-03-24"
 })
 
 Experience.create({
@@ -160,7 +173,6 @@ Experience.create({
     employer: "Meowological Research Firm",
     description: "Lead team of researchers in the study of how to produce the best meow",
     start_date: "2012-03-24",
-    end_date: "2013-01-14"
 })
 
 Experience.create({
@@ -193,8 +205,7 @@ Experience.create({
     title: "Actor",
     employer: "Itchie and Scratchie's Reality Show",
     description: "Acted in a reality show involving scratching people's faces out of nowhere.",
-    start_date: "2010-10-24",
-    end_date: "2015-06-14"
+    start_date: "2014-10-24"
 })
 
 Experience.create({
@@ -217,14 +228,16 @@ Experience.create({
     user_id: 7,
     title: "Recruiter",
     employer: "The Dark Side",
-    description: "Join the dark side!"
+    description: "Join the dark side!",
+    start_date: "2012-10-24"
 })
 
 Experience.create({
     user_id: 9,
     title: "Wifi technician",
     employer: "ComCats",
-    description: "Repaired receiver components and assisted in system installation."
+    description: "Repaired receiver components and assisted in system installation.",
+    start_date: "2010-10-24"
 })
 
 Experience.create({

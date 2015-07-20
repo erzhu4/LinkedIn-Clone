@@ -42,7 +42,19 @@ class UsersController < ApplicationController
   def destroy
   end
 
-  ############################## end of basic user functions
+  ############################## end of basic user functions start of guest log in
+
+  def make_guest_user
+    user = User.new(email: "guest@lynxin.com", fname: "Guest", lname: "User", title: "Sample user", password_digest: "faewfsdgaeg", summary: "Sample user summary", sample: true)
+    if user.save
+      self.login(user);
+      redirect_to "/site"
+    else
+      redirect_to "/"
+    end
+  end
+
+  ################################ end of guest log in start of api functions
 
   def home
     render :app
