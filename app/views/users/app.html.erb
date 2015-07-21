@@ -5,16 +5,43 @@
 <% end %>
 </div>
 
-<% if current_user.sample && current_user.connections.length == 0 %>
+  <div class="guest-note-container1">
+    <h2>Welcome to LynxIN!!</h2> You are signed in as a guest and all saved data on this accout will be deleted upon logging out.<br>
+    <button class="info1-ok-button">OK</button>
+  </div>
 
-  <script>
-    $( function () {
-      window.LynxIn.initialize();
-      alert("HI GUEST! All data saved to this account will be deleted upon log out.");
-    })
-  </script>
-<%else%>
-  <script>
-    $(window.LynxIn.initialize)
-  </script>
+  <div class="guest-note-container2">
+    <div class="info2-text">
+      <h2>Your MiniBar</h2>
+      From here you can view your profile to edit your experiences and education.<br>
+      <button class="info2-ok-button">OK</button>
+    </div>
+  </div>
+
+  </div>
+
+<% if current_user && current_user.sample && current_user.connections.length == 0 %>
+
+  <script>$(".guest-note-container1").addClass("show");</script>
+
 <% end %>
+
+
+
+
+<script>
+  $(window.LynxIn.initialize)
+
+  $(".info1-ok-button").off("click");
+  $(".info1-ok-button").on("click", function () {
+    $(".guest-note-container1").removeClass("show");
+    $(".guest-note-container2").addClass("slide-in");
+  });
+  $(".guest-note-container1").off("transitionend");
+
+  $(".info2-ok-button").off("click");
+  $(".info2-ok-button").on("click", function () {
+    $(".guest-note-container2").removeClass("slide-in");
+  });
+
+</script>

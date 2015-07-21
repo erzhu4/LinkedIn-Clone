@@ -1,0 +1,60 @@
+.guest-note-container1 {
+  position: relative;
+  font-size: 20px;
+  text-align: center;
+  padding: 20px;
+  border: 5px solid blue;
+  width: 400px;
+  height: 350px;
+  background: lightblue;
+  border-radius: 30px;
+  opacity: 0;
+  left: 500px;
+  right: 500px;
+  top: -250px;
+  transition: 1.3s;
+}
+
+.info1-ok-button {
+  width: 100px;
+  height: 90px;
+  margin-top: 50px;
+}
+
+
+.guest-note-container2 {
+  z-index: 1;
+  position: fixed;
+  top: 70px;
+  left: -1500px;
+  background: transparent;
+  width: 200;
+  height: 200px;
+  transition: 2.5s;
+}
+
+.info2-text {
+  text-align: center;
+  background: lightblue;
+  border: 2px solid blue;
+  border-radius: 10px;
+  width: 250px;
+  height: 200px;
+  padding: 10px;
+}
+
+.info2-ok-button {
+  margin-top: 20px;
+  width: 50px;
+  height: 30px;
+}
+
+.slide-in {
+  top: 70px;
+  left: 500px;
+  transition: 2.5s;
+}
+
+.show {
+  opacity: 1;
+}

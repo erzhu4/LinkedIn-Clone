@@ -20,6 +20,7 @@
 }
 
 .home-container {
+  position: relative;
   padding: 25px;
   width: 1000px;
   margin: auto;
