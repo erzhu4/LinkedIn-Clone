@@ -145,6 +145,16 @@
 	background: red;
 }
 
+.emblum-left {
+	transform: rotate(-20deg);
+	transition: 0.25s;
+}
+
+.emblum-right {
+	transform: rotate(20deg);
+	transition: 0.25s;
+}
+
 .hide {
 	display: none;
 }

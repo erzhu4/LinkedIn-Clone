@@ -44,8 +44,19 @@
     })
     $("#" + $(event.target).attr("form-id")).html("You have denied this request.")
   })
-  
+
   $(".notification-emblum").hover( function (event) {$(event.target).addClass("hide")});
+
+  $(".notification-emblum").on("transitionend", function (event) {
+    if ($(event.target).hasClass("emblum-left")){
+      $(event.target).removeClass("emblum-left");
+      $(event.target).addClass("emblum-right");
+    } else {
+      $(event.target).removeClass("emblum-right");
+      $(event.target).addClass("emblum-left");
+    }
+  });
+  $(".notification-emblum").addClass("emblum-left");
 </script>
 
 
