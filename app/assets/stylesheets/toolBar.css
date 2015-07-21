@@ -144,6 +144,7 @@
 .notification-emblum {
 	position: absolute;
 	background: red;
+	left: 15px;
 }
 
 .emblum-left {

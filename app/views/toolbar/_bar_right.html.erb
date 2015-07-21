@@ -31,7 +31,7 @@
           <% end %>
         </ul>
         <% if current_user.requests.length > 0 %>
-          <div class="notification-emblum">You have Requests!!</div>
+          <div class="notification-emblum">Pending Requests!</div>
         <% end %>
     </div>
 
@@ -45,7 +45,7 @@
     $("#" + $(event.target).attr("form-id")).html("You have denied this request.")
   })
 
-  $(".notification-emblum").hover( function (event) {$(event.target).addClass("hide")});
+  $(".big").hover( function (event) {$(event.currentTarget).find(".notification-emblum").addClass("hide")});
 
   $(".notification-emblum").on("transitionend", function (event) {
     if ($(event.target).hasClass("emblum-left")){
@@ -56,7 +56,7 @@
       $(event.target).addClass("emblum-left");
     }
   });
-  $(".notification-emblum").addClass("emblum-left");
+  $(function () {$(".notification-emblum").addClass("emblum-left");})
 </script>
 
 

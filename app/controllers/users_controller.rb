@@ -46,7 +46,7 @@ class UsersController < ApplicationController
 
   def make_guest_user
     user = User.new(email: "guest" + rand(1000).to_s + "@lynxin.com", fname: "Guest", lname: "User", title: "Sample user", password_digest: "faewfsdgaeg",
-                    summary: "Sample user summary (all saved data on this account will be deleted upon log out).", sample: true)
+                    summary: "Sample user summary.", sample: true)
     if user.save
       self.login(user);
       Request.create(sender_id: 11, responder_id: user.id)

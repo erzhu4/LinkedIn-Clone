@@ -12,7 +12,7 @@ LynxIn.Views.Profile = Backbone.View.extend({
     "click .connect-button": "connect",
     "click .add-experience-button": "renderNewForm",
     "submit .new-experience-form": "addExperience",
-    "click .cancel-button": "render",
+    "click .cancel-button": "cancelNewForm",
     "click .delete-experience-button": "deleteExperience",
     "click .edit-experience-button": "renderEditForm",
     "submit .edit-experience-form": "editExperience"
@@ -84,6 +84,12 @@ LynxIn.Views.Profile = Backbone.View.extend({
       this.$(".profile-experiences").append(form);
       this.flag = false;
     }
+  },
+
+  cancelNewForm: function (event) {
+    event.preventDefault();
+    $(".new-experience-form").remove();
+    this.flag = true;
   },
 
   addExperience: function (event) {
