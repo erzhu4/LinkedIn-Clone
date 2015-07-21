@@ -17,7 +17,7 @@ LynxIn.Routers.Router = Backbone.Router.extend({
     this.randomUsers.fetch();
     var view = new LynxIn.Views.Home({model: this.currentUser, collection: this.randomUsers});
     this.swapView(view);
-    $(".accept-button").on("click", function (){view.model.trigger("accepted")});
+    $(".accept-button").on("click", function (event){view.model.trigger("accepted")});
   },
 
   profileShow: function (id){

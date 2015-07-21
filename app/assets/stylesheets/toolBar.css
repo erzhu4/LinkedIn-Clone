@@ -83,10 +83,14 @@
 .bar-light {
 	position: relative;
 	float: right;
-  width: 500px;
+  width: 520px;
   height: 30px;
   padding: 10px;
 	margin-top: 5px;
+}
+
+.bar-light > form {
+	height: 27px;
 }
 
 .logout-button{
@@ -119,13 +123,13 @@
 }
 
 .list li:hover {
-  background: lightgray;
+  background: gray;
 }
 
 
 .big:hover .list {
   display: block;
-  background: pink;
+	background: lightgray;
 }
 
 .big:hover .icon {
