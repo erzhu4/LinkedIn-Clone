@@ -160,7 +160,7 @@ Experience.create({
 
 Experience.create({
     user_id: 1,
-    title: "Hairball roller",
+    title: "Atomic hairballer",
     employer: "CatsAtomic inc",
     description: "Lead researcher in the atomic physics department.",
     start_date: "2014-03-24",
