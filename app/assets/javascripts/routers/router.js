@@ -4,7 +4,6 @@ LynxIn.Routers.Router = Backbone.Router.extend({
     this.currentUser = options.user;
     this.randomUsers = options.randomUsers;
     this.$rootEl = options.rootEl;
-    this.$toolBar = options.toolBar;
   },
 
   routes: {
@@ -17,7 +16,15 @@ LynxIn.Routers.Router = Backbone.Router.extend({
     this.randomUsers.fetch();
     var view = new LynxIn.Views.Home({model: this.currentUser, collection: this.randomUsers});
     this.swapView(view);
-    $(".accept-button").on("click", function (event){view.model.trigger("accepted")});
+    $(".accept-button").off("click");
+    $(".accept-button").on("click", function () {
+      $.ajax({
+        url: "/connections/" + $(event.target).attr("sender-id") + "/" + $(event.target).attr("responder-id"),
+        method: "POST"
+      }).done(function () {
+        view.model.fetch();
+      });
+    });
   },
 
   profileShow: function (id){
@@ -25,7 +32,15 @@ LynxIn.Routers.Router = Backbone.Router.extend({
     user.fetch();
     var view = new LynxIn.Views.Profile({model: user});
     this.swapView(view);
-    $(".accept-button").on("click", function (){view.model.trigger("accepted")});
+    $(".accept-button").off("click");
+    $(".accept-button").on("click", function () {
+      $.ajax({
+        url: "/connections/" + $(event.target).attr("sender-id") + "/" + $(event.target).attr("responder-id"),
+        method: "POST"
+      }).done(function () {
+        view.model.fetch();
+      });
+    });
   },
 
   swapView: function (view){

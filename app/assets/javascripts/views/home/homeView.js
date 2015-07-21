@@ -3,7 +3,6 @@ LynxIn.Views.Home = Backbone.View.extend({
 
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
-    this.listenTo(this.model, "accepted", this.acceptRequest);
     this.listenTo(this.collection, "sync", this.render);
   },
 
@@ -17,16 +16,6 @@ LynxIn.Views.Home = Backbone.View.extend({
     var content = this.template({user: this.model, randoms: this.collection});
     this.$el.html(content);
     return this;
-  },
-
-  acceptRequest: function () {
-    var model = this.model;
-    $.ajax({
-      url: "/connections/" + $(event.target).attr("sender-id") + "/" + $(event.target).attr("responder-id"),
-      method: "POST"
-    }).done(function () {
-      model.fetch();
-    });
   },
 
   editInfo: function () {

@@ -3,7 +3,6 @@ LynxIn.Views.Profile = Backbone.View.extend({
 
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
-    this.listenTo(this.model, "accepted", this.acceptRequest);
     this.currentId = parseInt($(".home-container").attr("current-id"));
     this.requested = false;
     this.connected = false;
@@ -17,16 +16,6 @@ LynxIn.Views.Profile = Backbone.View.extend({
     "click .delete-experience-button": "deleteExperience",
     "click .edit-experience-button": "renderEditForm",
     "submit .edit-experience-form": "editExperience"
-  },
-
-  acceptRequest: function () {
-    var model = this.model;
-    $.ajax({
-      url: "/connections/" + $(event.target).attr("sender-id") + "/" + $(event.target).attr("responder-id"),
-      method: "POST"
-    }).done(function () {
-      model.fetch();
-    });
   },
 
   render: function () {
