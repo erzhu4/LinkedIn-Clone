@@ -91,16 +91,18 @@ LynxIn.Views.Profile = Backbone.View.extend({
     this.$(".save-button").prop("disabled", true);
     var attr = $(event.target).serializeJSON();
     var experience = new LynxIn.Models.Experience(attr);
-    experience.save();
+    experience.save({wait: true});
     this.model.fetch();
   },
 
   deleteExperience: function (event) {
+    var model = this.model;
     $.ajax({
       url: "/experiences/" + $(event.target).attr("experience-id"),
       method: "delete"
-    })
-    this.model.fetch();
+    }).done(function () {
+      model.fetch();
+    });
   },
 
   renderEditForm: function (event){
@@ -124,6 +126,7 @@ LynxIn.Views.Profile = Backbone.View.extend({
 
   editExperience: function () {
     event.preventDefault();
+    var model = this.model;
     var id = $(event.target).attr("data-id");
     var experience = $(event.target).serializeJSON();
     experience.id = id;
@@ -131,8 +134,9 @@ LynxIn.Views.Profile = Backbone.View.extend({
       url: "/experiences/" + id,
       method: "PUT",
       data: experience
-    })
-    this.model.fetch();
+    }).done( function () {
+      model.fetch();
+    });
   }
 
 //end of experiences panel helper_methods////////////////////////////
