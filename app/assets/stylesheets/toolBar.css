@@ -140,6 +140,15 @@
   position: relative;
 }
 
+.notification-emblum {
+	position: absolute;
+	background: red;
+}
+
+.hide {
+	display: none;
+}
+
 .connect-big:hover .connection-list{
 	display: block;
 }

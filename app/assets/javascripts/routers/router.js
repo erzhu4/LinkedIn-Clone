@@ -16,15 +16,7 @@ LynxIn.Routers.Router = Backbone.Router.extend({
     this.randomUsers.fetch();
     var view = new LynxIn.Views.Home({model: this.currentUser, collection: this.randomUsers});
     this.swapView(view);
-    $(".accept-button").off("click");
-    $(".accept-button").on("click", function () {
-      $.ajax({
-        url: "/connections/" + $(event.target).attr("sender-id") + "/" + $(event.target).attr("responder-id"),
-        method: "POST"
-      }).done(function () {
-        view.model.fetch();
-      });
-    });
+    this.configureAcceptHandler(view);
   },
 
   profileShow: function (id){
@@ -32,8 +24,22 @@ LynxIn.Routers.Router = Backbone.Router.extend({
     user.fetch();
     var view = new LynxIn.Views.Profile({model: user});
     this.swapView(view);
+    this.configureAcceptHandler(view);
+  },
+
+  configureAcceptHandler: function (view) {
     $(".accept-button").off("click");
-    $(".accept-button").on("click", function () {
+    $(".accept-button").on("click", function (event) {
+      $(event.target).prop("disabled", true)
+      $.ajax({
+        url: "/request/destroy/" + $(event.target).attr("sender-id") + "/" + $(event.target).attr("responder-id"),
+        method: "POST"
+      })
+      $.ajax({
+        url: "/request/destroy/" + $(event.target).attr("responder-id") + "/" + $(event.target).attr("sender-id"),
+        method: "POST"
+      })
+      $("#" + $(event.target).attr("form-id")).html("You have accepted this request.")
       $.ajax({
         url: "/connections/" + $(event.target).attr("sender-id") + "/" + $(event.target).attr("responder-id"),
         method: "POST"

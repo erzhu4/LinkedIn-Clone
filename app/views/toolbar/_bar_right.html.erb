@@ -12,6 +12,8 @@
     </div>
 
     <div class="big">
+
+
       <img src="https://scontent-lga1-1.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/10500475_10153476127447095_4419448468542023792_n.jpg?oh=8d37206da2fcb71183cf7ca66108ccf6&oe=5655666D" class="icon">
         <ul class="list">
           <% if current_user.requests.length == 0 %>
@@ -28,27 +30,12 @@
               <% end %>
           <% end %>
         </ul>
+        <% if current_user.requests.length > 0 %>
+          <div class="notification-emblum">You have Requests!!</div>
+        <% end %>
     </div>
 
 <script>
-  $(".accept-button").on("click", function (event) {
-    $(event.target).prop("disabled", true)
-    $.ajax({
-      url: "/request/destroy/" + $(event.target).attr("sender-id") + "/" + $(event.target).attr("responder-id"),
-      method: "POST"
-    })
-
-    $.ajax({
-      url: "/request/destroy/" + $(event.target).attr("responder-id") + "/" + $(event.target).attr("sender-id"),
-      method: "POST"
-    })
-
-
-    $("#" + $(event.target).attr("form-id")).html("You have accepted this request.")
-
-
-  })
-
   $(".deny-button").on("click", function (event){
     $(event.target).prop("disabled", true)
     $.ajax({
@@ -57,6 +44,8 @@
     })
     $("#" + $(event.target).attr("form-id")).html("You have denied this request.")
   })
+  
+  $(".notification-emblum").hover( function (event) {$(event.target).addClass("hide")});
 </script>
 
 
