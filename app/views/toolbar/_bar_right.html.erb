@@ -46,10 +46,6 @@
 
     $("#" + $(event.target).attr("form-id")).html("You have accepted this request.")
 
-    $.ajax({
-      url: "/connections/" + $(event.target).attr("sender-id") + "/" + $(event.target).attr("responder-id"),
-      method: "POST"
-    })
 
   })
 

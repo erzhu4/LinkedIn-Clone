@@ -9,7 +9,8 @@ LynxIn.Views.Home = Backbone.View.extend({
 
   events: {
     "click .edit-info-button": "editInfo",
-    "submit .user-form": "submitEdit"
+    "submit .user-form": "submitEdit",
+    "accepted": "acceptRequest"
   },
 
   render: function () {
@@ -19,7 +20,13 @@ LynxIn.Views.Home = Backbone.View.extend({
   },
 
   acceptRequest: function () {
-    this.model.fetch();
+    var model = this.model;
+    $.ajax({
+      url: "/connections/" + $(event.target).attr("sender-id") + "/" + $(event.target).attr("responder-id"),
+      method: "POST"
+    }).done(function () {
+      model.fetch();
+    });
   },
 
   editInfo: function () {

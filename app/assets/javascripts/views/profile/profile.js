@@ -20,7 +20,13 @@ LynxIn.Views.Profile = Backbone.View.extend({
   },
 
   acceptRequest: function () {
-    this.model.fetch();
+    var model = this.model;
+    $.ajax({
+      url: "/connections/" + $(event.target).attr("sender-id") + "/" + $(event.target).attr("responder-id"),
+      method: "POST"
+    }).done(function () {
+      model.fetch();
+    });
   },
 
   render: function () {
