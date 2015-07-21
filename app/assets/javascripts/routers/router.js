@@ -42,9 +42,10 @@ LynxIn.Routers.Router = Backbone.Router.extend({
       $("#" + $(event.target).attr("form-id")).html("You have accepted this request.")
       $.ajax({
         url: "/connections/" + $(event.target).attr("sender-id") + "/" + $(event.target).attr("responder-id"),
-        method: "POST"
-      }).done(function () {
-        view.model.fetch();
+        method: "POST",
+        complete: function () {
+          view.model.fetch();
+        }
       });
     });
   },
