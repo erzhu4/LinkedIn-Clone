@@ -41,7 +41,18 @@
   width: 100%;
 }
 
-.profile-education .esave-button {
+.edit-education-form {
+  background: #f4f4f4;
+  border: 1px solid lightgray;
+  padding: 20px;
+}
+
+.edit-education-form input {
+  height: 20px;
+  width: 100%;
+}
+
+.profile-education .esave-button, .eeditsave-button {
   color: white;
   font-size: 15px;
   border-radius: 5px;
@@ -50,7 +61,7 @@
   width: 70px;
 }
 
-.profile-education .ecancel-button {
+.profile-education .ecancel-button, .eeditcancel-button {
   color: gray;
   font-size: 15px;
   border-radius: 5px;

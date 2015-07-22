@@ -69,7 +69,8 @@
 }
 
 .profile-education .delete-education-button {
-  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 40px;
   color: white;
   font-size: 15px;
   border-radius: 5px;
@@ -263,4 +264,12 @@
 
 .new-education-form {
   margin-top: 10px;
+}
+
+.editable-education:hover {
+  cursor: pointer;
+}
+
+.editable-education:hover div {
+  text-shadow: 5px 5px 10px gray;
 }

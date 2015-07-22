@@ -1,10 +1,10 @@
-<form class='new-education-form' data-id="<%=education.id%>">
+<form class='edit-education-form'>
   <b>School</b> * <br> <input type='text' name='school' value="<%=education.school%>"><br><br>
 
   <b>Field of Study</b><br> <input type='text' name='field' value="<%=education.field%>"><br><br>
 
   <b>Guaduation Year</b> <br><input type='year' name='graduation_year' value="<%=education.graduation_year%>"><br><br>
 
-  <button class="esave-button">Save</button>  <button class="ecancel-button">Cancel</button>
+  <button class="eeditsave-button" form-name="edit-education-form" data-id="<%=education.id%>">Save</button>  <button class="eeditcancel-button">Cancel</button>
 
 </form>

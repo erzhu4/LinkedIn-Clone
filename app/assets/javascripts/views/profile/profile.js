@@ -19,7 +19,9 @@ LynxIn.Views.Profile = Backbone.View.extend({
     "click .add-education-button": "renderNewEducation",
     "submit .new-education-form": "addEducation",
     "click .ecancel-button": "cancelNewEd",
-    "click .delete-education-button": "deleteEducation"
+    "click .delete-education-button": "deleteEducation",
+    "click .editable-education": "renderEditEducation",
+    "click .eeditsave-button": "editEducation"
   },
 
   render: function () {
@@ -200,6 +202,38 @@ LynxIn.Views.Profile = Backbone.View.extend({
       method: "DELETE",
       complete: function () { model.fetch(); }
     })
+  },
+
+  renderEditEducation: function (event) {
+    $(event.currentTarget).removeClass("editable-education");
+    var temp = JST["profile/educationedit"];
+    var id = $(event.currentTarget).attr("data-id");
+    var school = this.$(".ed" + id).find(".school").html();
+    var field = this.$(".ed" + id).find(".field").html();
+    var year = this.$(".ed" + id).find(".year").html();
+    var education = {
+          id: id,
+          school: school,
+          field: field,
+          graduation_year: year,
+        }
+    this.$(".ed" + id).html(temp({education: education}));
+  },
+
+  editEducation: function (event) {
+    event.preventDefault();
+    var model = this.model;
+    var attrs = $("." + $(event.target).attr("form-name")).serializeJSON();
+    attrs.id = $(event.target).attr("data-id");
+    $.ajax({
+      url: "/educations/" + attrs.id,
+      method: "PUT",
+      data: attrs,
+      complete: function () {
+        model.fetch();
+        $(".ed" + attrs.id).addClass("editable-education");
+      }
+    });
   }
 
 })//End of everything////////

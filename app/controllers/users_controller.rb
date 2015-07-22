@@ -60,7 +60,7 @@ class UsersController < ApplicationController
   ################################ end of guest log in start of api functions
 
   def home
-    if current_user.admin
+    if current_user && current_user.admin
       @guests = User.where({sample: true})
     end
     render :app
