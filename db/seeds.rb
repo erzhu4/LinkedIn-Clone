@@ -66,7 +66,7 @@ sennacy = User.create({
                         email: "darth@cats.com",
                         password_digest: password,
                         fname: "Darth",
-                        lname: "Vadar",
+                        lname: "Vader",
                         session_token: "rsesdsa",
                         title: "Sith Lord",
                         summary: "I'm your father.",
@@ -258,10 +258,10 @@ Experience.create({
 
 Experience.create({
     user_id: 8,
-    title: "Cat tender",
-    employer: "The Purrrr Blic House",
-    description: "I am the number one server of drinks and cocktails.",
-    start_date: "2011-10-24"
+    title: "Cheese tester",
+    employer: "The United Chesse of America",
+    description: "Lead designer and tester of the latest versions cheese and cheese accessories.",
+    start_date: "2013-11-24"
 })
 
 Experience.create({
@@ -282,6 +282,14 @@ Experience.create({
 })
 
 Experience.create({
+    user_id: 10,
+    title: "Cat tender",
+    employer: "The Purrrr Blic House",
+    description: "I am the number one server of drinks and cocktails.",
+    start_date: "2011-10-24"
+})
+
+Experience.create({
     user_id: 11,
     title: "Assembly Engineer",
     employer: "Volkswagen Group of America",
@@ -292,7 +300,7 @@ Experience.create({
 
 Education.create({
     user_id: 1,
-    school: "Purrrr Doo University",
+    school: "University of Meowaki",
     field: "Computer Science",
     graduation_year: 2007
 })

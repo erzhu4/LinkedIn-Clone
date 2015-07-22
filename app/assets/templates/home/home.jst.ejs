@@ -43,7 +43,7 @@
     <div class="random-users-container group">
       <% randoms.each(function (random) { %>
         <div class="random-users-item">
-          <a href="#profile/<%=user.id%>">
+          <a href="#profile/<%=random.id%>">
           <%if (random.escape('img_url')) {%>
             <img class="home-random-profile-picture" src="<%=random.escape('img_url')%>"><br>
           <%} else {%>
