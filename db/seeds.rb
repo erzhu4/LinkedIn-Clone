@@ -161,13 +161,17 @@ Connection.create({user_id1: 4, user_id2: 10})
 Connection.create({user_id1: 10, user_id2: 4})
 Connection.create({user_id1: 4, user_id2: 11})
 Connection.create({user_id1: 11, user_id2: 4})
+Connection.create({user_id1: 10, user_id2: 8})
+Connection.create({user_id1: 8, user_id2: 10})
+Connection.create({user_id1: 11, user_id2: 10})
+Connection.create({user_id1: 10, user_id2: 11})
 
 Experience.create({
     user_id: 1,
-    title: "Hairball tester",
-    employer: "Fuzz inc",
-    description: "Tested the specs of hairballs to ensure product durability.",
-    start_date: "2015-03-24"
+    title: "Instructor",
+    employer: "Cat Academy",
+    description: "Lead instructor of a 9 week immersive cat development boot camp.",
+    start_date: "2012-03-24"
 })
 
 Experience.create({
@@ -215,7 +219,7 @@ Experience.create({
 Experience.create({
     user_id: 5,
     title: "Actor",
-    employer: "Itchie and Scratchie's Reality Show",
+    employer: "Scratchie's Reality Show",
     description: "Acted in a reality show involving scratching people's faces out of nowhere.",
     start_date: "2014-10-24"
 })
@@ -237,11 +241,27 @@ Experience.create({
 })
 
 Experience.create({
+    user_id: 6,
+    title: "Hairball tester",
+    employer: "Fuzz inc",
+    description: "Tested the specs of hairballs to ensure product durability.",
+    start_date: "2015-03-24"
+})
+
+Experience.create({
     user_id: 7,
     title: "Recruiter",
     employer: "The Dark Side",
     description: "Join the dark side!",
     start_date: "2012-10-24"
+})
+
+Experience.create({
+    user_id: 8,
+    title: "Cat tender",
+    employer: "The Purrrr Blic House",
+    description: "I am the number one server of drinks and cocktails.",
+    start_date: "2011-10-24"
 })
 
 Experience.create({
@@ -268,11 +288,95 @@ Experience.create({
     description: "Worked on exterior quality improvement projects",
     start_date: "2013-10-24",
 })
-  # create_table "experiences", force: :cascade do |t|
-  #   t.integer "user_id"
-  #   t.string  "title"
-  #   t.string  "employer"
-  #   t.text    "description"
-  #   t.date    "start_date"
-  #   t.date    "end_date"
-  # end
+####end of experiences
+
+Education.create({
+    user_id: 1,
+    school: "Purrrr Doo University",
+    field: "Computer Science",
+    graduation_year: 2007
+})
+
+Education.create({
+    user_id: 2,
+    school: "Cat Academy",
+    field: "Cat Development",
+    graduation_year: 2013
+})
+
+Education.create({
+    user_id: 2,
+    school: "University of Meowtana",
+    field: "Electrical Engineering",
+    graduation_year: 2009
+})
+
+Education.create({
+    user_id: 3,
+    school: "Lynx University",
+    field: "Literature",
+    graduation_year: 2012
+})
+
+Education.create({
+    user_id: 4,
+    school: "Purrrr Doo University",
+    field: "Literbox Engineering",
+    graduation_year: 2012
+})
+
+Education.create({
+    user_id: 5,
+    school: "Lynx University",
+    field: "Literbox Engineering",
+    graduation_year: 2004
+})
+
+Education.create({
+    user_id: 6,
+    school: "Cat Academy",
+    field: "Cat Development",
+    graduation_year: 2014
+})
+
+Education.create({
+    user_id: 7,
+    school: "Emperor Palpatine",
+    field: "The Force",
+    graduation_year: 1960
+})
+
+Education.create({
+    user_id: 8,
+    school: "String Cheese Community College",
+    field: "Cheese Appreciation",
+    graduation_year: 2013
+})
+
+Education.create({
+    user_id: 9,
+    school: "University of Meowaki",
+    field: "Civil Engineering",
+    graduation_year: 2003
+})
+
+Education.create({
+    user_id: 10,
+    school: "University of Phoenix",
+    field: "Mechanical Engineering",
+    graduation_year: 2013
+})
+
+Education.create({
+    user_id: 11,
+    school: "University of Tennessee",
+    field: "Electrical Engineering",
+    graduation_year: 2015
+})
+# create_table "educations", force: :cascade do |t|
+#   t.integer "user_id"
+#   t.string  "school",          null: false
+#   t.string  "degree"
+#   t.string  "field"
+#   t.integer "graduation_year"
+# end
