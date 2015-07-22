@@ -65,8 +65,8 @@ sennacy = User.create({
 sennacy = User.create({
                         email: "darth@cats.com",
                         password_digest: password,
-                        fname: "Darth",
-                        lname: "Vader",
+                        fname: "Darth Vader",
+                        lname: "I",
                         session_token: "rsesdsa",
                         title: "Sith Lord",
                         summary: "I'm your father.",
