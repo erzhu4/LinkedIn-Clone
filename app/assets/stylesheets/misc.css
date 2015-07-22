@@ -3,3 +3,18 @@
   margin-right: 10px;
   width: 30px;
 }
+
+.connect-button {
+  color: white;
+  font-size: 15px;
+  border-radius: 5px;
+  background: #069;
+  height: 30px;
+  width: 80px;
+  margin-top: 35px;
+}
+
+.connect-button:hover {
+  border: solid 2px lightgray;
+  cursor: pointer;
+}

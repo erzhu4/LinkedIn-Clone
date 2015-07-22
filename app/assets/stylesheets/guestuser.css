@@ -12,14 +12,23 @@
   opacity: 0;
   left: 500px;
   right: 500px;
-  top: -250px;
+  top: -450px;
   transition: 1.3s;
 }
 
 .info1-ok-button {
+  font-size: 120%;
+  border-radius: 10px;
+  background: lightgreen;
   width: 100px;
   height: 90px;
   margin-top: 50px;
+}
+
+.info1-ok-button:hover {
+  cursor: pointer;
+  font-weight: bold;
+  background: green;
 }
 
 
@@ -45,9 +54,18 @@
 }
 
 .info2-ok-button {
+  font-size: 120%;
+  border-radius: 10px;
+  background: lightgreen;
   margin-top: 20px;
   width: 50px;
   height: 30px;
+}
+
+.info2-ok-button:hover {
+  cursor: pointer;
+  font-weight: bold;
+  background: green;
 }
 
 .slide-in {

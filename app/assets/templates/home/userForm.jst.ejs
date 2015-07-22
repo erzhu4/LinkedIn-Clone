@@ -1,18 +1,17 @@
 <form class="user-form">
-  <label>email
+  <label>email *
     <input type="text" name="user[email]" value="<%=user.escape('email')%>" class="email">
   </label>
-  <label>First Name
+  <label>First Name *
     <input type="text" name="user[fname]" value="<%=user.escape('fname')%>" class="fname">
   </label>
-  <label>Last Name
+  <label>Last Name *
     <input type="text" name="user[lname]" value="<%=user.escape('lname')%>" class="lname">
   </label>
   <label>Title
     <input type="text" name="user[title]" value="<%=user.escape('title')%>" class="title">
   </label>
-  <label>Summary
+  Summary
     <textarea name="user[summary]" class="summary"><%=user.escape('summary')%></textarea>
-  </label>
-  <button class="submit-edit">Submit</button>
+  <button class="submit-edit">Done</button>
 </form>

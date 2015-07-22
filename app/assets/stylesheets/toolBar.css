@@ -90,6 +90,12 @@
 	margin-top: 5px;
 }
 
+.bar-light button {
+	background: lightgreen;
+	font-size: 90%;
+	font-weight: bold;
+}
+
 .bar-light > form {
 	height: 27px;
 }
@@ -184,4 +190,13 @@
 
 .connection-list li:hover {
 	background: white;
+}
+
+.logout-button {
+	background: lightblue;
+}
+
+.logout-button:hover {
+	font-weight: bold;
+	cursor: pointer;
 }

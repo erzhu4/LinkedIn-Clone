@@ -8,7 +8,7 @@
   box-shadow: 2px 2px 2px grey;
   margin-top: 20px;
   width: 650px;
-  height: 140px;
+  min-height: 140px;
 }
 
 .home-user-panel {
