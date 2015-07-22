@@ -15,6 +15,7 @@
 
 .profile-user-info-container{
   float: left;
+  font-size: 85%;
   width: 400px;
   height: 125px;
   padding-left: 20px;
@@ -273,7 +274,7 @@
 }
 
 .editable-education:hover div {
-  text-shadow: 5px 5px 10px gray;
+  text-shadow: 5px 5px 10px blue;
 }
 
 .editable-experience:hover {
@@ -281,5 +282,5 @@
 }
 
 .editable-experience:hover div {
-  text-shadow: 5px 5px 10px gray;
+  text-shadow: 5px 5px 10px blue;
 }

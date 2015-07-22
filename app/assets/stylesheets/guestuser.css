@@ -1,6 +1,6 @@
 .guest-note-container1 {
   z-index: -2;
-  position: relative;
+  position: absolute;
   font-size: 20px;
   text-align: center;
   padding: 20px;
@@ -12,7 +12,7 @@
   opacity: 0;
   left: 500px;
   right: 500px;
-  top: -450px;
+  top: 90px;
   transition: 1.3s;
 }
 
