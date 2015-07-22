@@ -47,10 +47,6 @@ class UsersController < ApplicationController
   def make_guest_user
     user = User.new(email: "guest" + rand(1000).to_s + "@lynxin.com", fname: "Guest", lname: "User", title: "Sample user", password_digest: "faewfsdgaeg",
                     summary: "Sample user summary.", sample: true)
-    guest_users = User.where({sample: true})
-    guest_users.each do |user|
-      user.destroy
-    end
     if user.save
       self.login(user);
       Request.create(sender_id: 11, responder_id: user.id)
@@ -64,6 +60,9 @@ class UsersController < ApplicationController
   ################################ end of guest log in start of api functions
 
   def home
+    if current_user.admin
+      @guests = User.where({sample: true})
+    end
     render :app
   end
 
@@ -96,6 +95,14 @@ class UsersController < ApplicationController
     else
       render ""
     end
+  end
+
+  def delete_all_guests
+    guests = User.where({sample: true})
+    guests.each do |guest|
+      guest.destroy
+    end
+    redirect_to "/site"
   end
 
   private

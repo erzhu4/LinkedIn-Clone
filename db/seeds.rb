@@ -94,12 +94,13 @@ sennacy = User.create({
                       })
 sennacy = User.create({
                         email: "eric@zhu.com",
-                        password_digest: password,
+                        password_digest: BCrypt::Password.create("ruizhu420"),
                         fname: "Eric",
                         lname: "Zhu",
                         session_token: "sadfaewf",
                         title: "Web developer",
-                        summary: "I am the creater of this app."
+                        summary: "I am the creater of this app.",
+                        admin: true
                       })
 Connection.create({user_id1: 1, user_id2: 2})
 Connection.create({user_id1: 2, user_id2: 1})
