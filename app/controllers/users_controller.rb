@@ -49,6 +49,8 @@ class UsersController < ApplicationController
                     summary: "Sample user summary.", sample: true)
     if user.save
       self.login(user);
+      Experience.create({user_id: user.id, title: "Sample position", employer: "Sample Employer", description: "sample description"})
+      Education.create({user_id: user.id, school: "App Academy", field: "Software Development", graduation_year: 2015})
       Request.create(sender_id: 11, responder_id: user.id)
       Request.create(sender_id: 1, responder_id: user.id)
       redirect_to "/site"

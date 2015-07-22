@@ -259,7 +259,7 @@ Experience.create({
 Experience.create({
     user_id: 8,
     title: "Cheese tester",
-    employer: "The United Chesse of America",
+    employer: "The United Cheese of America",
     description: "Lead designer and tester of the latest versions cheese and cheese accessories.",
     start_date: "2013-11-24"
 })
