@@ -14,6 +14,12 @@ class EducationsController < ApplicationController
 
   def update
     @education = Education.find_by({id: params[:id]})
+    @education.update_attributes({
+      school: params[:school],
+      field: params[:field],
+      graduation_year: params[:graduation_year]
+    })
+    render text: ""
   end
 
   def destroy
