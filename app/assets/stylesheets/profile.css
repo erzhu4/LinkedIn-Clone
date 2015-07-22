@@ -1,5 +1,6 @@
 
 .profile-info {
+  position: relative;
   padding: 10px;
   background: white;
   box-shadow: 2px 2px 2px grey;
@@ -134,8 +135,11 @@
 }
 
 .connections {
+  position: absolute;
   text-align: center;
   float: right;
+  bottom: 5px;
+  right: 5px;
 }
 
 .connections-panel {
