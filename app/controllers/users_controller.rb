@@ -49,7 +49,7 @@ class UsersController < ApplicationController
                     summary: "Sample user summary.", sample: true)
     guest_users = User.where({sample: true})
     guest_users.each do |user|
-      user.destroy if !online_guest?(user)
+      user.destroy
     end
     if user.save
       self.login(user);
