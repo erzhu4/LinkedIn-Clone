@@ -42,5 +42,8 @@ class ApplicationController < ActionController::Base
     return @msg
   end
 
+  def online_guest?(user)
+    return user.sample && user.session_token == session[:token]
+  end
 
 end
