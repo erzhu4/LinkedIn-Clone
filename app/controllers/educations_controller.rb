@@ -12,7 +12,13 @@ class EducationsController < ApplicationController
     render text: ""
   end
 
+  def update
+  end
+
   def destroy
+    @education = Education.find_by({id: params[:id].to_i})
+    @education.destroy if @education
+    render json: ""
   end
 
 

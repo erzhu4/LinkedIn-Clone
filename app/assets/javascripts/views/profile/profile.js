@@ -17,7 +17,9 @@ LynxIn.Views.Profile = Backbone.View.extend({
     "click .edit-experience-button": "renderEditForm",
     "submit .edit-experience-form": "editExperience",
     "click .add-education-button": "renderNewEducation",
-    "submit .new-education-form": "addEducation"
+    "submit .new-education-form": "addEducation",
+    "click .ecancel-button": "cancelNewEd",
+    "click .delete-education-button": "deleteEducation"
   },
 
   render: function () {
@@ -181,6 +183,21 @@ LynxIn.Views.Profile = Backbone.View.extend({
       url: "/educations",
       method: "POST",
       data: params,
+      complete: function () { model.fetch(); }
+    })
+  },
+
+  cancelNewEd: function (event) {
+    event.preventDefault();
+    this.render();
+    this.flag = true;
+  },
+
+  deleteEducation: function (event) {
+    var model = this.model;
+    $.ajax({
+      url: "/educations/" + $(event.target).attr("education-id"),
+      method: "DELETE",
       complete: function () { model.fetch(); }
     })
   }

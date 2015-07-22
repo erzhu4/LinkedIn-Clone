@@ -68,6 +68,16 @@
   width: 80px;
 }
 
+.profile-education .delete-education-button {
+  margin-top: 30px;
+  color: white;
+  font-size: 15px;
+  border-radius: 5px;
+  background: #069;
+  height: 30px;
+  width: 80px;
+}
+
 .profile-experiences .edit-experience-button {
   font-size: 15px;
   border-radius: 5px;
@@ -185,6 +195,13 @@
   font-style: oblique;
   font-size: 90%;
   padding-left: 30px;
+}
+
+.education-item {
+  border-top: 1px solid lightgray;
+  margin: auto;
+  margin-bottom: 10px;
+  padding: 30px;
 }
 
 .employer {

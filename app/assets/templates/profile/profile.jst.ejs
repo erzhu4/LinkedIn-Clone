@@ -114,6 +114,10 @@
                       <div class="year"> Graduated in <b><%= education.graduation_year %></b></div>
                     <%}%>
 
+                    <% if (userId === currentId) {%>
+                      <button class="delete-education-button" education-id="<%=education.id%>">Remove</button>
+                    <%}%>
+
                   </div>
                 <% }) %>
 
