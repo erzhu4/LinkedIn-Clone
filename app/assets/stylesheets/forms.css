@@ -69,3 +69,21 @@
   height: 40px;
   width: 70px;
 }
+
+.profile-experiences .ex-edit-save {
+  color: white;
+  font-size: 15px;
+  border-radius: 5px;
+  background: #069;
+  height: 40px;
+  width: 70px;
+}
+
+.profile-experiences .ex-edit-cancel {
+  color: gray;
+  font-size: 15px;
+  border-radius: 5px;
+  background: #f2f2f2;
+  height: 40px;
+  width: 70px;
+}

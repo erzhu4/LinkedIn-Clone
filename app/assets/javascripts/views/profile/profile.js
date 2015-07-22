@@ -14,14 +14,16 @@ LynxIn.Views.Profile = Backbone.View.extend({
     "submit .new-experience-form": "addExperience",
     "click .cancel-button": "cancelNewForm",
     "click .delete-experience-button": "deleteExperience",
-    "click .edit-experience-button": "renderEditForm",
-    "submit .edit-experience-form": "editExperience",
+    "click .editable-experience": "renderEditForm",
+    "click .ex-edit-save": "editExperience",
+    "click .ex-edit-cancel": "cancelEditEx",
     "click .add-education-button": "renderNewEducation",
     "submit .new-education-form": "addEducation",
     "click .ecancel-button": "cancelNewEd",
     "click .delete-education-button": "deleteEducation",
     "click .editable-education": "renderEditEducation",
-    "click .eeditsave-button": "editEducation"
+    "click .eeditsave-button": "editEducation",
+    "click .eeditcancel-button": "cancelEditEd"
   },
 
   render: function () {
@@ -131,8 +133,9 @@ LynxIn.Views.Profile = Backbone.View.extend({
   },
 
   renderEditForm: function (event){
+    $(event.currentTarget).removeClass("editable-experience");
     var temp = JST["profile/editform"];
-    var id = $(event.target).attr("experience-id");
+    var id = $(event.currentTarget).attr("data-id");
     var employer = this.$(".ex" + id).find(".employer").html();
     var title = this.$(".ex" + id).find(".title").html();
     var description = this.$(".ex" + id).find(".description").html();
@@ -149,11 +152,11 @@ LynxIn.Views.Profile = Backbone.View.extend({
     this.$(".ex" + id).html(temp({experience: experience}));
   },
 
-  editExperience: function () {
+  editExperience: function (event) {
     event.preventDefault();
     var model = this.model;
     var id = $(event.target).attr("data-id");
-    var experience = $(event.target).serializeJSON();
+    var experience = $("."+ $(event.target).attr("form-name")).serializeJSON();
     experience.id = id;
     $.ajax({
       url: "/experiences/" + id,
@@ -163,6 +166,11 @@ LynxIn.Views.Profile = Backbone.View.extend({
         model.fetch();
       }
     });
+  },
+
+  cancelEditEx: function (event) {
+    event.preventDefault();
+    this.render();
   },
 
 //end of experiences panel helper_methods////////////////////////////
@@ -191,7 +199,7 @@ LynxIn.Views.Profile = Backbone.View.extend({
 
   cancelNewEd: function (event) {
     event.preventDefault();
-    this.render();
+    $(".new-education-form").remove();
     this.flag = true;
   },
 
@@ -234,6 +242,11 @@ LynxIn.Views.Profile = Backbone.View.extend({
         $(".ed" + attrs.id).addClass("editable-education");
       }
     });
+  },
+
+  cancelEditEd: function (event) {
+    event.preventDefault();
+    this.render();
   }
 
 })//End of everything////////

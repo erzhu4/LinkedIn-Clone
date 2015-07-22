@@ -58,7 +58,7 @@
             <%} else {%>
               <% experiences.forEach( function (experience) { %>
 
-                <div class="experience-panel-item ex<%=experience.id%>">
+                <div class="experience-panel-item ex<%=experience.id%>" data-id="<%=experience.id%>">
 
                     <div class="icon-employer-container group">
                       <img src="https://scontent-lga1-1.xx.fbcdn.net/hphotos-xtp1/v/t1.0-9/11012055_10153480090967095_6732516601998388768_n.jpg?oh=d22fc664adb669e167946f7d97f047f8&oe=56183AA7">
@@ -74,16 +74,10 @@
                       <% if (experience.start_date && !experience.end_date){%>
                         <div class="date-section"><%=experience.start_date%> to Present</div>
                       <%}%>
-
-                  <% if (userId === currentId) {%>
-                    <br>
-                    <button class="delete-experience-button" experience-id="<%=experience.id%>">Remove</button>
-
-                    <button class="edit-experience-button" experience-id="<%=experience.id%>">Edit</button>
-                  <%}%>
-
-                </div>
-
+                  </div>
+                <% if (userId === currentId) {%>
+                  <button class="delete-experience-button" experience-id="<%=experience.id%>">Remove</button>
+                <%}%>
               <% }) %>
 
             <%}%>
@@ -92,6 +86,7 @@
 
           <% if (userId === currentId) {%>
             <div class="add-experience-button">Add a new experience</div>
+            <script>$(".experience-panel-item").addClass("editable-experience")</script>
           <%}%>
       </div>
 

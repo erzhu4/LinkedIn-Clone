@@ -60,6 +60,8 @@
 }
 
 .profile-experiences .delete-experience-button {
+  margin-bottom: 30px;
+  margin-left: 40px;
   color: white;
   font-size: 15px;
   border-radius: 5px;
@@ -271,5 +273,13 @@
 }
 
 .editable-education:hover div {
+  text-shadow: 5px 5px 10px gray;
+}
+
+.editable-experience:hover {
+  cursor: pointer;
+}
+
+.editable-experience:hover div {
   text-shadow: 5px 5px 10px gray;
 }

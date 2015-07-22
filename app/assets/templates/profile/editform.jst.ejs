@@ -1,14 +1,14 @@
 <form class='edit-experience-form' data-id="<%=experience.id%>">
-  Title: <input type='text' name='title' value="<%=experience.title%>"><br>
+  <b>Title</b> * <input type='text' name='title' value="<%=experience.title%>"><br>
 
-  Employer: <input type='text' name='employer' value="<%=experience.employer%>"><br>
+  <b>Employer</b> * <input type='text' name='employer' value="<%=experience.employer%>"><br>
 
-  Start date: <input type='date' name='start_date' value="<%=experience.start_date%>"><br>
+  <b>Start date</b> <input type='date' name='start_date' value="<%=experience.start_date%>"><br>
 
-  End date: <input type='date' name='end_date' value="<%=experience.end_date%>"><br>
+  <b>End date</b> <input type='date' name='end_date' value="<%=experience.end_date%>"><br>
 
-  Description: <textarea name='description'><%= experience.description %></textarea><br>
+  <b>Description</b> <textarea name='description'><%= experience.description %></textarea><br>
 
-  <button>submit</button>
+  <button class="ex-edit-save" form-name="edit-experience-form" data-id="<%=experience.id%>">Save</button>   <button class="ex-edit-cancel">Cancel</button>
 
 </form>
