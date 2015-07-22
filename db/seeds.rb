@@ -8,7 +8,8 @@ sennacy = User.create({
                         lname: "TheGreat",
                         session_token: "sadfaewf",
                         title: "HairBall developer",
-                        summary: "Hi my name is Sennacy, I am app academy's number one cat. Hire me!!."
+                        summary: "Hi my name is Sennacy, I am app academy's number one cat. Hire me!!.",
+                        img_url: "https://scontent-lga1-1.xx.fbcdn.net/hphotos-xtp1/v/t1.0-9/11755921_10153483709572095_7405084489281916087_n.jpg?oh=37211227d50adc2053671d72707587ba&oe=561906CE"
                       })
 sennacy = User.create({
                       email: "rocky@cats.com",
@@ -17,7 +18,8 @@ sennacy = User.create({
                       lname: "Top",
                       session_token: "gfhdjfsg",
                       title: "Meowologist",
-                      summary: "Meow"
+                      summary: "Meow",
+                      img_url: "https://scontent-lga1-1.xx.fbcdn.net/hphotos-xta1/v/l/t1.0-9/11403435_10153483709597095_2627236235187754688_n.jpg?oh=c3930668d019c427ace36e173065e45f&oe=5659BDFC"
                     })
 
 sennacy = User.create({
@@ -27,7 +29,8 @@ sennacy = User.create({
                         lname: "Rountree ",
                         session_token: "5esgserg",
                         title: "Cat painter",
-                        summary: "I draw cats!"
+                        summary: "I draw cats!",
+                        img_url: "https://scontent-lga1-1.xx.fbcdn.net/hphotos-xft1/v/t1.0-9/10982621_10153483709582095_2975616676423318022_n.jpg?oh=ffd147262334b517d2039229835fdda2&oe=560FCAA3"
                       })
 sennacy = User.create({
                         email: "poncho@cats.com",
@@ -36,7 +39,8 @@ sennacy = User.create({
                         lname: "Gonzales",
                         session_token: "rsesdsa",
                         title: "Ball player",
-                        summary: "I play ball"
+                        summary: "I play ball",
+                        img_url: "https://scontent-lga1-1.xx.fbcdn.net/hphotos-xta1/v/t1.0-9/11753743_10153483709642095_9171038869798825304_n.jpg?oh=d6aa60ea4b500c2633dcae09ce2e5e71&oe=5617015C"
                       })
 sennacy = User.create({
                         email: "garr@cats.com",
@@ -45,7 +49,8 @@ sennacy = User.create({
                         lname: "Field",
                         session_token: "rsesdsa",
                         title: "Face scratcher",
-                        summary: "I Scratch up people's faces when they least expect it."
+                        summary: "I Scratch up people's faces when they least expect it.",
+                        img_url: "https://scontent-lga1-1.xx.fbcdn.net/hphotos-xtp1/v/t1.0-9/11760270_10153483709657095_9113542113151758662_n.jpg?oh=cffb25a87338437321820903b65eac8a&oe=5645D210"
                       })
 sennacy = User.create({
                         email: "scottie@cats.com",
@@ -54,7 +59,8 @@ sennacy = User.create({
                         lname: "Ogden",
                         session_token: "rsesdsa",
                         title: "Cattar(guitar for cats) player",
-                        summary: "Musicallity is virtue!"
+                        summary: "Musicallity is virtue!",
+                        img_url: "https://scontent-lga1-1.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/11228021_10153483709847095_1108626942057762600_n.jpg?oh=80e523c25085bbf3ef0499df46b6a187&oe=564C97DF"
                       })
 sennacy = User.create({
                         email: "darth@cats.com",
@@ -63,7 +69,8 @@ sennacy = User.create({
                         lname: "Vadar",
                         session_token: "rsesdsa",
                         title: "Sith Lord",
-                        summary: "I'm your father."
+                        summary: "I'm your father.",
+                        img_url: "https://scontent-lga1-1.xx.fbcdn.net/hphotos-xft1/v/t1.0-9/11143528_10153483709647095_3025970550980381924_n.jpg?oh=80576e2875b3f1d2b0854e7bbd400f48&oe=564B0862"
                       })
 sennacy = User.create({
                         email: "mack@cats.com",
@@ -72,7 +79,8 @@ sennacy = User.create({
                         lname: "Encheez",
                         session_token: "rsesdsa",
                         title: "Cheese eater",
-                        summary: "Never underestimate the power of the cheese."
+                        summary: "Never underestimate the power of the cheese.",
+                        img_url: "https://scontent-lga1-1.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/11224582_10153483709807095_5498257027370573561_n.jpg?oh=f42c58276f0d167c146ce5866c96863c&oe=5657F2BA"
                       })
 sennacy = User.create({
                         email: "wye@cats.com",
@@ -81,7 +89,8 @@ sennacy = User.create({
                         lname: "Fye",
                         session_token: "rsesdsa",
                         title: "Comcats wifi technician",
-                        summary: "I am a skilled professional in the world of analogue electronics!"
+                        summary: "I am a skilled professional in the world of analogue electronics!",
+                        img_url: "https://scontent-lga1-1.xx.fbcdn.net/hphotos-xat1/v/t1.0-9/11173352_10153483709882095_4734105350059447103_n.jpg?oh=80d9048a3cd2f21d27c1ec0f48f9ed28&oe=56473D69"
                       })
 sennacy = User.create({
                         email: "bart@cats.com",
@@ -90,7 +99,8 @@ sennacy = User.create({
                         lname: "Ender",
                         session_token: "rsesdsa",
                         title: "Comedian",
-                        summary: "I make people laugh."
+                        summary: "I make people laugh.",
+                        img_url: "https://scontent-lga1-1.xx.fbcdn.net/hphotos-xtf1/v/t1.0-9/11745344_10153483709872095_3779797333653325614_n.jpg?oh=3652bbeb3b0ab3bb750cbeb3eac4ba08&oe=561C2049"
                       })
 sennacy = User.create({
                         email: "eric@zhu.com",
@@ -100,6 +110,7 @@ sennacy = User.create({
                         session_token: "sadfaewf",
                         title: "Web developer",
                         summary: "I am the creater of this app.",
+                        img_url: "https://scontent-lga1-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/11403082_10153483710077095_8882958025728992289_n.jpg?oh=4110550d58fe127d09dc1cc7b603e01c&oe=565C232B",
                         admin: true
                       })
 Connection.create({user_id1: 1, user_id2: 2})

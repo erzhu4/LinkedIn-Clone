@@ -49,7 +49,6 @@ LynxIn.Views.Profile = Backbone.View.extend({
     } else {
       var educations = [];
     }//for education panel
-
     var content = this.template({
                     user: this.model,
                     userId: parseInt(this.model.escape("id")),
@@ -200,7 +199,7 @@ LynxIn.Views.Profile = Backbone.View.extend({
   cancelNewEd: function (event) {
     event.preventDefault();
     $(".new-education-form").remove();
-    this.flag = true;
+    this.eflag = true;
   },
 
   deleteEducation: function (event) {

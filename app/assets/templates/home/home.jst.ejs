@@ -3,12 +3,13 @@
 
 
     <div class="home-profile-picture">
-      <% if (user.escape("img-url")) { %>
-        <img src="<%=user.escape('img_url')%>">
+      <%if (user.escape('img_url')) {%>
+        <img src="<%=user.escape('img_url')%>"><br>
       <%} else {%>
-      <img src="https://scontent-lga1-1.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/11700831_10153479851122095_4006613064403614225_n.jpg?oh=4b411779d59b81fe9a8fa539ff375604&oe=56565282">
+        <img src="https://scontent-lga1-1.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/11700831_10153479851122095_4006613064403614225_n.jpg?oh=4b411779d59b81fe9a8fa539ff375604&oe=56565282"><br>
       <%}%>
     </div>
+
 
 
     <div class="home-user-info-container">
@@ -40,17 +41,17 @@
     <div class="people-you-may-know-word">People you may know</div>
 
     <div class="random-users-container group">
-      <% randoms.each(function (user) { %>
+      <% randoms.each(function (random) { %>
         <div class="random-users-item">
           <a href="#profile/<%=user.id%>">
-          <%if (user.escape('img_url')) {%>
-            <img class="home-random-profile-picture" src="<%=user.escape('img_url')%>"><br>
+          <%if (random.escape('img_url')) {%>
+            <img class="home-random-profile-picture" src="<%=random.escape('img_url')%>"><br>
           <%} else {%>
             <img class=home-random-profile-picture src="https://scontent-lga1-1.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/11700831_10153479851122095_4006613064403614225_n.jpg?oh=4b411779d59b81fe9a8fa539ff375604&oe=56565282"><br>
           <%}%>
 
-          <%=user.escape("fname") + " " + user.escape("lname")%><br></a>
-          <div class="random-description"><%=user.escape("title")%></div>
+          <%=random.escape("fname") + " " + random.escape("lname")%><br></a>
+          <div class="random-description"><%=random.escape("title")%></div>
         </div>
 
       <%})%>

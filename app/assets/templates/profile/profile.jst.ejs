@@ -6,12 +6,13 @@
 
 
       <div class="profile-profile-picture">
-        <% if (user.escape("img-url")) { %>
+        <% if (user.escape("img_url")) { %>
           <img src="<%=user.escape('img_url')%>">
         <%} else {%>
           <img src="https://scontent-lga1-1.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/11700831_10153479851122095_4006613064403614225_n.jpg?oh=4b411779d59b81fe9a8fa539ff375604&oe=56565282">
         <%}%>
       </div>
+
 
 
       <div class="profile-user-info-container">
@@ -103,7 +104,10 @@
                 <% educations.forEach( function (education) {%>
                   <div class="education-item ed<%=education.id%>" data-id="<%=education.id%>">
 
-                    <div><h2 class="school"><%=education.school%></h2></div>
+                    <div class="icon-school-container group">
+                      <img src="https://scontent-lga1-1.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/11760045_10153483727977095_737193128238210012_n.jpg?oh=79bda97989b4bd23dd1e58cbeeb96c23&oe=56503190">
+                      <h2 class="school"><%=education.school%></h2>
+                    </div>
                     <div class="field"><%=education.field%></div>
                     <% if ((education.graduation_year) && (education.graduation_year > 0)) {%>
                       <div> Graduated in <b class="year"><%= education.graduation_year %></b></div>
@@ -144,8 +148,8 @@
             <% connections.forEach(function (connection) {%>
               <div class="profile-connections-list-item group">
                   <a href="#profile/<%=connection.id%>">
-                    <% if (user.escape("img-url")) { %>
-                      <img class="small-profile-picture" src="<%=user.escape('img_url')%>">
+                    <% if (connection.img_url) { %>
+                      <img class="small-profile-picture" src="<%=connection.img_url%>">
                     <%} else {%>
                       <img class="small-profile-picture" src="https://scontent-lga1-1.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/11700831_10153479851122095_4006613064403614225_n.jpg?oh=4b411779d59b81fe9a8fa539ff375604&oe=56565282">
                     <%}%>
