@@ -58,7 +58,7 @@
             <%} else {%>
               <% experiences.forEach( function (experience) { %>
 
-                <div class="experience-panel-item <%=experience.id%>">
+                <div class="experience-panel-item ex<%=experience.id%>">
 
                     <div class="icon-employer-container group">
                       <img src="https://scontent-lga1-1.xx.fbcdn.net/hphotos-xtp1/v/t1.0-9/11012055_10153480090967095_6732516601998388768_n.jpg?oh=d22fc664adb669e167946f7d97f047f8&oe=56183AA7">
@@ -100,10 +100,38 @@
 
       <div class="profile-education">
           <corner><%=user.escape("fname")%>'s' education</corner><br>
+          <h2 class="experience-word">Education</h2>
+          <div class="education-list">
+            <% if (educations.length === 0) {%>
+                No education to show.
+              <%} else {%>
+                <% educations.forEach( function (education) {%>
+                  <div class="education-item ed<%=education.id%>">
 
-          <br>Stuff goes here
+                    <h2 class="school"><%=education.school%></h2>
+                    <div class="field"><%=education.field%></div>
+                    <% if (education.graduation_year) {%>
+                      <div class="year"> Graduated in <b><%= education.graduation_year %></b></div>
+                    <%}%>
+
+                  </div>
+                <% }) %>
+
+              <%}%>
+
+          </div>
+          <% if (userId === currentId) {%>
+            <div class="add-education-button">Add Education</div>
+          <%}%>
       </div>
+
+
+
   </div>
+
+
+
+
 
 
 <div class="profile-right">

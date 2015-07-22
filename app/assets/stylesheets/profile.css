@@ -37,6 +37,10 @@
   margin: 20px;
 }
 
+.education-list {
+  margin: 20px;
+}
+
 .profile-experiences .save-button {
   color: white;
   font-size: 15px;
@@ -101,6 +105,7 @@
   padding: 5px;
   background: white;
   box-shadow: 2px 2px 2px grey;
+  border-radius: 5px;
   margin-top: 15px;
 }
 
@@ -214,6 +219,31 @@
   background: gray;
 }
 
+.add-education-button {
+  color: gray;
+  width: 648px;
+  margin-left: -5px;
+  margin-bottom: -5px;
+  height: 30px;
+  border: 1px lightgray solid;
+  text-align: center;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-weight: bold;
+  padding-top: 10px;
+  background: #eee;
+}
+
+.add-education-button:hover {
+  color: white;
+  cursor: pointer;
+  background: gray;
+}
+
 .new-experience-form {
-  margin: 10px;
+  margin-top: 10px;
+}
+
+.new-education-form {
+  margin-top: 10px;
 }

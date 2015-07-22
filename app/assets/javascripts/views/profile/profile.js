@@ -15,7 +15,9 @@ LynxIn.Views.Profile = Backbone.View.extend({
     "click .cancel-button": "cancelNewForm",
     "click .delete-experience-button": "deleteExperience",
     "click .edit-experience-button": "renderEditForm",
-    "submit .edit-experience-form": "editExperience"
+    "submit .edit-experience-form": "editExperience",
+    "click .add-education-button": "renderNewEducation",
+    "submit .new-education-form": "addEducation"
   },
 
   render: function () {
@@ -35,6 +37,13 @@ LynxIn.Views.Profile = Backbone.View.extend({
       var experiences = [];
     }// for experiences panel
 
+    this.eflag = true;
+    if (this.model.attributes.educations){
+      var educations = this.model.attributes.educations;
+    } else {
+      var educations = [];
+    }//for education panel
+
     var content = this.template({
                     user: this.model,
                     userId: parseInt(this.model.escape("id")),
@@ -42,7 +51,8 @@ LynxIn.Views.Profile = Backbone.View.extend({
                     connected: this.connected,
                     requested: this.requested,
                     connections: userConnections,
-                    experiences: experiences
+                    experiences: experiences,
+                    educations: educations
                   });
     this.$el.html(content);
 
@@ -119,11 +129,11 @@ LynxIn.Views.Profile = Backbone.View.extend({
   renderEditForm: function (event){
     var temp = JST["profile/editform"];
     var id = $(event.target).attr("experience-id");
-    var employer = this.$("." + id).find(".employer").html();
-    var title = this.$("." + id).find(".title").html();
-    var description = this.$("." + id).find(".description").html();
-    var start = this.$("." + id).find(".start").html();
-    var end = this.$("." + id).find(".end").html();
+    var employer = this.$(".ex" + id).find(".employer").html();
+    var title = this.$(".ex" + id).find(".title").html();
+    var description = this.$(".ex" + id).find(".description").html();
+    var start = this.$(".ex" + id).find(".start").html();
+    var end = this.$(".ex" + id).find(".end").html();
     var experience = {
           id: id,
           employer: employer,
@@ -132,7 +142,7 @@ LynxIn.Views.Profile = Backbone.View.extend({
           start_date: start,
           end_date: end
         }
-    this.$("." + id).html(temp({experience: experience}));
+    this.$(".ex" + id).html(temp({experience: experience}));
   },
 
   editExperience: function () {
@@ -149,8 +159,30 @@ LynxIn.Views.Profile = Backbone.View.extend({
         model.fetch();
       }
     });
-  }
+  },
 
 //end of experiences panel helper_methods////////////////////////////
+
+  renderNewEducation: function () {
+    var temp = JST["profile/educationform"];
+    var form = temp({education: {}});
+    if (this.eflag){
+      this.$(".profile-education").append(form);
+      this.eflag = false;
+    }
+  },
+
+  addEducation: function (event) {
+    event.preventDefault();
+    var params = $(event.target).serializeJSON();
+    this.$(".esave-button").prop("disabled", true);
+    var model = this.model;
+    $.ajax({
+      url: "/educations",
+      method: "POST",
+      data: params,
+      complete: function () { model.fetch(); }
+    })
+  }
 
 })//End of everything////////

@@ -43,6 +43,14 @@ class User < ActiveRecord::Base
     dependent: :destroy
   )
 
+  has_many(
+    :educations,
+    class_name: "Education",
+    foreign_key: :user_id,
+    primary_key: :id,
+    dependent: :destroy
+  )
+
   has_many(:requests, through: :incoming_requests, source: :sender)
 
   def self.find_by_creds(email, password)
