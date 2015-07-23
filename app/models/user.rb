@@ -80,7 +80,7 @@ def self.find_or_create_by_auth_hash(auth_hash)
           fname: auth_hash[:info][:name].split.first,
           lname: auth_hash[:info][:name].split.last,
           email: auth_hash[:info][:nickname], #bad solution
-          password: SecureRandom::urlsafe_base64)
+          password_digest: SecureRandom::urlsafe_base64)
   end
 
   user
