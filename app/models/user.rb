@@ -79,7 +79,7 @@ class User < ActiveRecord::Base
             uid: auth_hash[:uid],
             fname: auth_hash[:info][:name].split.first,
             lname: auth_hash[:info][:name].split.last,
-            email: SecureRandom::urlsafe_base64,
+            email: auth_hash[:info][:nickname] + rand(1000).to_s + "@lynxin.com",
             password_digest: SecureRandom::urlsafe_base64,
             tweet: true
             )
