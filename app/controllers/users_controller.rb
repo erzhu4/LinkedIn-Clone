@@ -74,7 +74,8 @@ class UsersController < ApplicationController
   end
 
   def update_current
-    @user = User.find_by(id: params[:id])
+    @user = User.includes(:requests, :requests,
+    :connections, :experiences, :educations).find_by(id: params[:id])
     @user.update(user_params)
     render text: "something"
   end
