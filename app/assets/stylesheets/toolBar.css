@@ -115,18 +115,20 @@
 }
 
 .list {
+	overflow: auto;
 	color: black;
-  display: none;
+	height: 0px;
   width: 250px;
   position: absolute;
-  top: 29px
+  top: 29px;
+	transition: 0.75s;
 }
-
 .list li {
   border: 1px solid black;
 	padding: 5px;
   height: 70px;
 	border-radius: 5px;
+	background: lightgray;
 }
 
 .list li:hover {
@@ -135,8 +137,8 @@
 
 
 .big:hover .list {
-  display: block;
-	background: lightgray;
+	transition: 0.5s;
+	height: 170px;
 }
 
 .big:hover .icon {

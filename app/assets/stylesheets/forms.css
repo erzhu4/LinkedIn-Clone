@@ -52,7 +52,7 @@
   width: 100%;
 }
 
-.profile-education .esave-button, .eeditsave-button {
+.esave-button, .eeditsave-button {
   color: white;
   font-size: 15px;
   border-radius: 5px;
@@ -61,13 +61,23 @@
   width: 70px;
 }
 
-.profile-education .ecancel-button, .eeditcancel-button {
+.esave-button:hover, .eeditsave-button:hover {
+  cursor: pointer;
+  background: #1b5480
+}
+
+.ecancel-button, .eeditcancel-button {
   color: gray;
   font-size: 15px;
   border-radius: 5px;
   background: #f2f2f2;
   height: 40px;
   width: 70px;
+}
+
+.ecancel-button:hover, .eeditcancel-button:hover {
+  cursor: pointer;
+  background: white;
 }
 
 .profile-experiences .ex-edit-save {
@@ -133,10 +143,18 @@
 .new-ed-form-container {
   overflow: hidden;
   height: 0px;
-  transition: 0.75s
+  background: white;
+  border: 1px 1px 1px solid lightgray;
+  padding: 0px 5px;
+  transition: 0.75s;
 }
 
 .drop-ed {
   height: 280px;
   transition: 0.75s;
+}
+
+.invisible-container-280 {
+  height: 280px;
+  background: transparent;
 }

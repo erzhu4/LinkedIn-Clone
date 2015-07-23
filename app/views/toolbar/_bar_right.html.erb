@@ -12,24 +12,22 @@
     </div>
 
     <div class="big">
-
-
-      <img src="https://scontent-lga1-1.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/10500475_10153476127447095_4419448468542023792_n.jpg?oh=8d37206da2fcb71183cf7ca66108ccf6&oe=5655666D" class="icon">
-        <ul class="list">
-          <% if current_user.requests.length == 0 %>
-              <li>You have no pending requests.</li>
-          <% else %>
-              <% current_user.requests.each_with_index do |requester, idx| %>
-                <li>
-                  <b><a href="#profile/<%=requester.id%>"><%= requester.fname + " " + requester.lname%></a></b> wants to connect with you!
-                  <div id="<%=idx%>">
-                    <button class="accept-button" sender-id="<%=requester.id%>" responder-id="<%=current_user.id%>" form-id="<%=idx%>">Accept</button>
-                    <button class="deny-button" sender-id="<%=requester.id%>" responder-id="<%=current_user.id%>" form-id="<%=idx%>">Deny</button>
-                  </div>
-                </li>
+    <img src="https://scontent-lga1-1.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/10500475_10153476127447095_4419448468542023792_n.jpg?oh=8d37206da2fcb71183cf7ca66108ccf6&oe=5655666D" class="icon">
+            <ul class="list">
+              <% if current_user.requests.length == 0 %>
+                  <li>You have no pending requests.</li>
+              <% else %>
+                  <% current_user.requests.each_with_index do |requester, idx| %>
+                    <li>
+                      <b><a href="#profile/<%=requester.id%>"><%= requester.fname + " " + requester.lname%></a></b> wants to connect with you!
+                      <div id="<%=idx%>">
+                        <button class="accept-button" sender-id="<%=requester.id%>" responder-id="<%=current_user.id%>" form-id="<%=idx%>">Accept</button>
+                        <button class="deny-button" sender-id="<%=requester.id%>" responder-id="<%=current_user.id%>" form-id="<%=idx%>">Deny</button>
+                      </div>
+                    </li>
+                  <% end %>
               <% end %>
-          <% end %>
-        </ul>
+            </ul>
         <% if current_user.requests.length > 0 %>
           <div class="notification-emblum">Pending Requests!</div>
         <% end %>

@@ -91,7 +91,7 @@
   width: 60px;
 }
 
-.profile-experiences .delete-experience-button:hover {
+.profile-experiences .delete-experience-button:hover, .delete-education-button:hover {
   cursor: pointer;
   background: #1b5480
 }
