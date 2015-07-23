@@ -105,8 +105,8 @@ sennacy = User.create({
 sennacy = User.create({
                         email: "eric@zhu.com",
                         password_digest: BCrypt::Password.create("ruizhu420"),
-                        fname: "Eric",
-                        lname: "Zhu",
+                        fname: "Eric Zhu",
+                        lname: "Admin",
                         session_token: "sadfaewf",
                         title: "Web developer",
                         summary: "I am the creater of this app.",
