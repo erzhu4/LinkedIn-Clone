@@ -68,23 +68,23 @@ class User < ActiveRecord::Base
 
 ################################OmniAuth
 
-def self.find_or_create_by_auth_hash(auth_hash)
-  user = User.find_by(
-          provider: auth_hash[:provider],
-          uid: auth_hash[:uid])
+  def self.find_or_create_by_auth_hash(auth_hash)
+    user = User.find_by(
+            provider: auth_hash[:provider],
+            uid: auth_hash[:uid])
 
-  unless user
-    user = User.create!(
-          provider: auth_hash[:provider],
-          uid: auth_hash[:uid],
-          fname: auth_hash[:info][:name].split.first,
-          lname: auth_hash[:info][:name].split.last,
-          email: auth_hash[:info][:nickname], #bad solution
-          password_digest: SecureRandom::urlsafe_base64)
+    unless user
+      user = User.create!(
+            provider: auth_hash[:provider],
+            uid: auth_hash[:uid],
+            fname: auth_hash[:info][:name].split.first,
+            lname: auth_hash[:info][:name].split.last,
+            email: SecureRandom::urlsafe_base64),
+            password_digest: SecureRandom::urlsafe_base64)
+            )
+    end
+    user
   end
-
-  user
-end
 
 
 end#######
