@@ -5,20 +5,7 @@
 
     <div class="connect-big item">
       <a>Connections</a>
-      <ul class="connection-list">
-        <% if current_user.connections.length == 0 %>
-            <li>You have no connections.</li>
-          <% else %>
-            <% current_user.connections.each do |connection| %>
-
-              <li>
-                <a href="#profile/<%=connection.id%>"><%=connection.fname%></a>
-                is a connection.
-              </li>
-
-            <%end%>
-          <% end %>
-      </ul>
+      
     </div>
   </div>
 </div>

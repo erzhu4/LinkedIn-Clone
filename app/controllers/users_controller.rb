@@ -80,7 +80,8 @@ class UsersController < ApplicationController
   end
 
   def profile_user
-    @user = User.find_by(id: params[:id]);
+    @user = User.includes(:requests, :requests,
+    :connections, :experiences, :educations).find_by(id: params[:id]);
     render "user"
   end
 
