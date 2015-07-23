@@ -40,6 +40,9 @@ class UsersController < ApplicationController
 
 
   def destroy
+    @user = User.find_by({id: params[:id]})
+    @user.destroy if @user
+    redirect_to "/site"
   end
 
   ############################## end of basic user functions start of guest log in
@@ -63,6 +66,7 @@ class UsersController < ApplicationController
 
   def home
     if current_user && current_user.admin
+      @twitter_users = User.where({tweet: true})
       @guests = User.where({sample: true})
     end
     render :app

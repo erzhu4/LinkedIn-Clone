@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :users, only: [:new, :create]
+  get "/destroyuser/:id", to: "users#destroy"
   resource :session, only: [:new, :create, :destroy]
   resources :experiences, only: [:create, :destroy], defaults: {format: :json}
   resources :educations, only: [:create, :destroy, :update], defaults: {format: :json}

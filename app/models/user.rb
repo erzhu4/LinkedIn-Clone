@@ -80,7 +80,8 @@ class User < ActiveRecord::Base
             fname: auth_hash[:info][:name].split.first,
             lname: auth_hash[:info][:name].split.last,
             email: SecureRandom::urlsafe_base64,
-            password_digest: SecureRandom::urlsafe_base64
+            password_digest: SecureRandom::urlsafe_base64,
+            tweet: true
             )
     end
     user

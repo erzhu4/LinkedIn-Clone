@@ -4,6 +4,11 @@
     <h1>Admin Panel</h1>
     number of guests: <%=@guests.length%>
     <a href="/deleteallguests">Delete All</a>
+    <h2>Twitter Users </h2>
+    <% @twitter_users.each do |user| %>
+      <%= user.fname + " " + user.lname %>
+      <a href="/destroyuser/<%=user.id%>"> Delete User </a>
+    <% end %>
   </div>
 
 <% end %>
