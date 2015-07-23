@@ -93,17 +93,15 @@ LynxIn.Views.Profile = Backbone.View.extend({
   //End of info panel helper methods///////////////////////////////
 
   renderNewForm: function (event) {
-    var temp = JST["profile/newform"];
-    var form = temp({experience: {}})
     if (this.flag) {
-      this.$(".profile-experiences").append(form);
+      this.$(".new-ex-form-container").addClass("drop");
       this.flag = false;
     }
   },
 
   cancelNewForm: function (event) {
     event.preventDefault();
-    $(".new-experience-form").remove();
+    $(".new-ex-form-container").removeClass("drop");
     this.flag = true;
   },
 
@@ -175,10 +173,8 @@ LynxIn.Views.Profile = Backbone.View.extend({
 //end of experiences panel helper_methods////////////////////////////
 
   renderNewEducation: function () {
-    var temp = JST["profile/educationform"];
-    var form = temp({education: {}});
     if (this.eflag){
-      this.$(".profile-education").append(form);
+      this.$(".new-ed-form-container").addClass("drop-ed");
       this.eflag = false;
     }
   },
@@ -198,7 +194,7 @@ LynxIn.Views.Profile = Backbone.View.extend({
 
   cancelNewEd: function (event) {
     event.preventDefault();
-    $(".new-education-form").remove();
+    $(".new-ed-form-container").removeClass("drop-ed");
     this.eflag = true;
   },
 

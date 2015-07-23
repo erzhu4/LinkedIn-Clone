@@ -89,6 +89,27 @@
             <div class="add-experience-button">Add a new experience</div>
             <script>$(".experience-panel-item").addClass("editable-experience")</script>
           <%}%>
+
+          <div class="new-ex-form-container">
+            <form class='new-experience-form'>
+              <b>Title</b> * <br> <input type='text' name='title'><br><br>
+
+              <b>Employer</b> * <br> <input type='text' name='employer'><br><br>
+
+              <b>Start date</b> <br><input type='date' name='start_date'><br><br>
+
+              <b>End date</b> (leave black if current employer) <br><input type='date' name='end_date'><br><br>
+
+              <b>Description</b> <br><textarea name='description'></textarea><br><br>
+
+              <button class="save-button">Save</button>  <button class="cancel-button">Cancel</button>
+
+            </form>
+          </div>
+
+
+
+
       </div>
 
 
@@ -125,6 +146,20 @@
             <div class="add-education-button">Add Education</div>
             <script> $(".education-item").addClass("editable-education") </script>
           <%}%>
+
+          <div class="new-ed-form-container">
+            <form class='new-education-form'>
+              <b>School</b> * <br> <input type='text' name='school'><br><br>
+
+              <b>Field of Study</b><br> <input type='text' name='field'><br><br>
+
+              <b>Guaduation Year</b> <br><input type='year' name='graduation_year'><br><br>
+
+              <button class="esave-button">Save</button>  <button class="ecancel-button">Cancel</button>
+
+            </form>
+          </div>
+
       </div>
 
 

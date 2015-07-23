@@ -118,3 +118,25 @@
   cursor: pointer;
   border: 2px solid lightgray;
 }
+
+.new-ex-form-container {
+  overflow: hidden;
+  height: 0px;
+  transition: 0.75s;
+}
+
+.drop {
+  height: 475px;
+  transition: 0.75s;
+}
+
+.new-ed-form-container {
+  overflow: hidden;
+  height: 0px;
+  transition: 0.75s
+}
+
+.drop-ed {
+  height: 280px;
+  transition: 0.75s;
+}
