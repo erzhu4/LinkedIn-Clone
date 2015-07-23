@@ -77,8 +77,8 @@ def self.find_or_create_by_auth_hash(auth_hash)
     user = User.create!(
           provider: auth_hash[:provider],
           uid: auth_hash[:uid],
-          first_name: auth_hash[:info][:name].split.first,
-          last_name: auth_hash[:info][:name].split.last,
+          fname: auth_hash[:info][:name].split.first,
+          lname: auth_hash[:info][:name].split.last,
           email: auth_hash[:info][:nickname], #bad solution
           password: SecureRandom::urlsafe_base64)
   end
