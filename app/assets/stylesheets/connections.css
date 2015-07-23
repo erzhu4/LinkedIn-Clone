@@ -1,0 +1,46 @@
+.remove-connection-button{
+  float: left;
+  margin-right: 20px;
+}
+
+.home-connections-list {
+  background: white;
+  width: 600px;
+  border: lightgray solid 1px;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.profile-connections-list-item {
+  margin: 20px;
+}
+
+.remove-connection-button {
+  margin-top: 30px;
+  font-weight: bold;
+  width: 60px;
+  height: 30px;
+  border-radius: 5px;
+  background: lightblue;
+}
+
+.remove-connection-button:hover {
+  border: 2px solid gray;
+  cursor: pointer;
+}
+
+.collapse {
+  overflow: hidden;
+  height: 0px;
+  transition: 1s;
+}
+
+.bigger-profile-picture {
+  width: 100px;
+  margin-right: 5px;
+  float: left;
+}
+
+.bigger-title {
+  font-size: 90%;
+}

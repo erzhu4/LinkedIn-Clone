@@ -94,7 +94,7 @@ class UsersController < ApplicationController
     if logged_in?
       @users = []
       @current_connects = self.current_user.connections
-      users = User.all[0,11]
+      users = User.all.sample(11)
       users.each do |user|
         @users.push(user) if !(@current_connects.include?(user)) && user.id != current_user.id
       end

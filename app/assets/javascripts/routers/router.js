@@ -8,7 +8,9 @@ LynxIn.Routers.Router = Backbone.Router.extend({
 
   routes: {
     "": "index",
-    "profile/:id": "profileShow"
+    "profile/:id": "profileShow",
+    "connections": "connections",
+    "connections/:id": "connectionsof"
   },
 
   index: function () {
@@ -25,6 +27,19 @@ LynxIn.Routers.Router = Backbone.Router.extend({
     var view = new LynxIn.Views.Profile({model: user});
     this.swapView(view);
     this.configureAcceptHandler(view);
+  },
+
+  connections: function () {
+    this.currentUser.fetch();
+    var view = new LynxIn.Views.Connections({model: this.currentUser});
+    this.swapView(view);
+  },
+
+  connectionsof: function (id) {
+    var user = new LynxIn.Models.User({id: parseInt(id)});
+    user.fetch();
+    var view = new LynxIn.Views.ConnectionsOf({model: user});
+    this.swapView(view);
   },
 
   configureAcceptHandler: function (view) {

@@ -1,0 +1,25 @@
+<h1> <%=user.escape("fname")%>'s Connections </h1>
+
+
+
+    <div class="home-connections-list">
+
+        <% if (connections.length === 0){ %>
+          <%=user.escape("fname")%> has no connections.
+          <%} else {%>
+          <% connections.forEach(function (connection) {%>
+            <div class="profile-connections-list-item item<%=connection.id%> group">
+                <a href="#profile/<%=connection.id%>">
+                  <% if (connection.img_url) { %>
+                    <img class="bigger-profile-picture" src="<%=connection.img_url%>">
+                  <%} else {%>
+                    <img class="bigger-profile-picture" src="https://scontent-lga1-1.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/11700831_10153479851122095_4006613064403614225_n.jpg?oh=4b411779d59b81fe9a8fa539ff375604&oe=56565282">
+                  <%}%>
+                </a>
+                <a href="#profile/<%=connection.id%>"><%= connection.fname + " " + connection.lname %></a>
+                <div class="bigger-title"><%=connection.title%></div>
+            </div>
+          <%})%>
+        <%}%>
+
+  </div>
