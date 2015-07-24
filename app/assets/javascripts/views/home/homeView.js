@@ -42,7 +42,7 @@ LynxIn.Views.Home = Backbone.View.extend({
     this.model.set({email: email, fname: fname, lname: lname,
                     title: title, summary: summary})
     this.model.save();
-    this.$el.html(this.template({user: this.model, randoms: this.collection}));
+    this.render();
   },
 
   renderSearch: function (event) {
