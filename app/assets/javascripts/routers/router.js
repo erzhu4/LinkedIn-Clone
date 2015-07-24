@@ -66,6 +66,7 @@ LynxIn.Routers.Router = Backbone.Router.extend({
   },
 
   swapView: function (view){
+    $(".loading").addClass("show-load");
     this.currentView && this.currentView.remove();
     this.currentView = view;
     this.$rootEl.html(this.currentView.render().$el);

@@ -15,27 +15,27 @@
 
 
 
-
+<div class="loading">LOADING...</div>
 
 <% if (logged_in?) %>
   <div class="home-container" current-id="<%=current_user.id%>">
 <% else %>
   <div class="home-container" current-id="0">
 <% end %>
-</div>
-
-  <div class="guest-note-container1">
-    <h2>Welcome to LynxIN!!</h2> You are signed in as a guest and all saved data on this accout will be deleted upon logging out.<br>
-    <button class="info1-ok-button">OK</button>
   </div>
 
-  <div class="guest-note-container2">
-    <div class="info2-text">
-      <h2>Your MiniBar</h2>
-      From here you can view your profile to edit your experiences and education.<br>
-      <button class="info2-ok-button">OK</button>
+    <div class="guest-note-container1">
+      <h2>Welcome to LynxIN!!</h2> You are signed in as a guest and all saved data on this accout will be deleted upon logging out.<br>
+      <button class="info1-ok-button">OK</button>
     </div>
-  </div>
+
+    <div class="guest-note-container2">
+      <div class="info2-text">
+        <h2>Your MiniBar</h2>
+        From here you can view your profile to edit your experiences and education.<br>
+        <button class="info2-ok-button">OK</button>
+      </div>
+    </div>
 
   </div>
 

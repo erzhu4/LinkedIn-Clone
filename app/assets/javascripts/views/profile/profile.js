@@ -2,7 +2,10 @@ LynxIn.Views.Profile = Backbone.View.extend({
   template: JST["profile/profile"],
 
   initialize: function () {
-    this.listenTo(this.model, "sync", this.render);
+    this.listenTo(this.model, "sync", function () {
+      this.render();
+      $(".loading").removeClass("show-load");
+    });
     this.currentId = parseInt($(".home-container").attr("current-id"));
     this.requested = false;
     this.connected = false;

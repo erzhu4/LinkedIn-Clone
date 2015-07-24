@@ -2,8 +2,14 @@ LynxIn.Views.Home = Backbone.View.extend({
   template: JST["home/home"],
 
   initialize: function () {
-    this.listenTo(this.model, "sync", this.render);
-    this.listenTo(this.collection, "sync", this.render);
+    this.listenTo(this.model, "sync", function () {
+      this.render();
+      $(".loading").removeClass("show-load");
+    });
+    this.listenTo(this.collection, "sync", function () {
+      this.render();
+      $(".loading").removeClass("show-load");
+    });
   },
 
   events: {

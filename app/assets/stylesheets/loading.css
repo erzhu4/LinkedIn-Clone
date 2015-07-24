@@ -1,0 +1,12 @@
+.loading {
+  display: none;
+  background: black;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.show-load {
+  display: block;
+  opacity: 0.5;
+}

@@ -2,7 +2,10 @@ LynxIn.Views.Connections = Backbone.View.extend({
   template: JST["connections/connections"],
 
   initialize: function (options) {
-    this.listenTo(this.model, "sync", this.render);
+    this.listenTo(this.model, "sync", function () {
+      this.render();
+      $(".loading").removeClass("show-load");
+    });
   },
 
   events: {
