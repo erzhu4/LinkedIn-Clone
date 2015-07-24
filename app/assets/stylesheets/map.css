@@ -1,0 +1,31 @@
+.search-map-container {
+  margin-top: 20px;
+  background: white;
+  box-shadow: 2px 2px 2px grey;
+  width: 650px;
+  padding: 10px;
+}
+
+.search-map {
+  margin-left: 20px;
+  border: 2px solid black;
+  margin-top: 20px;
+}
+
+.search-form {
+   margin-left: 20px;
+ }
+
+.search-form button {
+  color: white;
+  font-size: 15px;
+  border-radius: 5px;
+  background: #069;
+  height: 40px;
+  width: 70px;
+}
+
+.search-form input {
+  height: 20px;
+  width: 250px;
+}

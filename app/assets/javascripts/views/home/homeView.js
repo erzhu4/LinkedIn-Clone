@@ -10,16 +10,18 @@ LynxIn.Views.Home = Backbone.View.extend({
       this.render();
       $(".loading").removeClass("show-load");
     });
+    this.searchString = "stuff";
   },
 
   events: {
     "click .edit-info-button": "editInfo",
     "submit .user-form": "submitEdit",
-    "accepted": "acceptRequest"
+    "accepted": "acceptRequest",
+    "submit .search-form": "renderSearch"
   },
 
   render: function () {
-    var content = this.template({user: this.model, randoms: this.collection});
+    var content = this.template({user: this.model, randoms: this.collection, searchString: this.searchString});
     this.$el.html(content);
     return this;
   },
@@ -41,6 +43,12 @@ LynxIn.Views.Home = Backbone.View.extend({
                     title: title, summary: summary})
     this.model.save();
     this.$el.html(this.template({user: this.model, randoms: this.collection}));
+  },
+
+  renderSearch: function (event) {
+    event.preventDefault();
+    this.searchString = $(event.target).serializeJSON().searchString;
+    this.render();
   }
 
 })
