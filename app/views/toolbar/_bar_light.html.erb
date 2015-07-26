@@ -1,19 +1,29 @@
 <div class="bar-light">
+    <button class="sign-in-button">Sign In</button>
+</div>
+
   <form action="/session" method="POST" class="login-from-bar">
     <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
-    <button>Sign In</button>
     <label> Email:
       <input type="text" name="email">
     </label>
     <label>Password:
       <input type="password" name="password">
     </label>
+    <button class=button1>Sign In</button>
+    <a href="/" class=button2>Cancel</a>
   </form>
-
-
-  <script>
-    $("form").on("submit", function () {
-      $("button").prop("disabled", true)
-    })
-  </script>
+<div class="hidden-login">
 </div>
+
+
+<script>
+  $("form").on("submit", function () {
+    $("button").prop("disabled", true)
+  });
+
+  $(".sign-in-button").on("click", function (){
+    $(".hidden-login").addClass("show-form");
+    $(".login-from-bar").addClass("show-form");
+  });
+</script>

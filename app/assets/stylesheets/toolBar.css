@@ -30,7 +30,6 @@
 	z-index: 1;
 	position:fixed;
 	width: 100%;
-	color: white;
   background-image: -webkit-linear-gradient(top, dimgrey 0%, #3f3f3f 100%);
 	border-bottom: solid 1px black;
 }
@@ -84,7 +83,7 @@
 .bar-light {
 	position: relative;
 	float: right;
-  width: 520px;
+  width: 80px;
   height: 30px;
   padding: 10px;
 	margin-top: 5px;
@@ -94,6 +93,10 @@
 	background: lightgreen;
 	font-size: 90%;
 	font-weight: bold;
+}
+
+.bar-light button:hover {
+	cursor: pointer;
 }
 
 .bar-light > form {
@@ -111,7 +114,7 @@
   top: -5px;
   width: 30px;
   height: 30px;
-  margin-left: 20px;
+  margin-left: 70px;
 }
 
 .list {
@@ -200,5 +203,55 @@
 
 .logout-button:hover {
 	font-weight: bold;
+	cursor: pointer;
+}
+
+.hidden-login {
+	position: absolute;
+	display: none;
+	width: 4000px;
+	height: 2000px;
+	background: black;
+	opacity: 0.5;
+	left: -400px;
+}
+
+.login-from-bar {
+	padding: 20px;
+	z-index: 2;
+	position: absolute;
+	display: none;
+	top: 200px;
+	margin-left: 370px;
+	width: 300px;
+	height: 230px;
+	background: white;
+	border: solid black 2px;
+	border-radius: 10px;
+	opacity: 1;
+}
+
+.show-form {
+	display: block;
+}
+
+.login-from-bar input {
+	width: 90%;
+	font-size: 25px;
+	height: 30px;
+	margin: 20px;
+}
+
+.login-from-bar button {
+	width: 75px;
+	height: 40px;
+	font-size: 15px;
+	margin: auto;
+	background: lightgreen;
+	margin-left: 70px;
+	margin-right: 10px;
+}
+
+.login-from-bar button:hover {
 	cursor: pointer;
 }

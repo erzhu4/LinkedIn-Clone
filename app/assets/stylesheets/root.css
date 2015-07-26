@@ -63,6 +63,10 @@ corner {
   padding: 5px;
 }
 
+.guest-login-link:hover {
+  border: 5px solid red;
+}
+
 .experience-word {
   font-weight:100;
   margin: 30px 50px;
@@ -75,12 +79,12 @@ corner {
   display: block;
 }
 
+
 .root-container{
 	margin: auto;
 	width: 1000px;
-	height: 600px;
+	height: 620px;
   border-style: ridge;
-  border: gray 2px solid;
 	border-radius: 10px;
 	background-image: url(https://scontent-lga1-1.xx.fbcdn.net/hphotos-xtf1/v/t1.0-9/11262305_10153471063687095_2574111308727366184_n.jpg?oh=85a585dc224381735664e3cd5de3f220&oe=56138CC9);
 }
@@ -123,6 +127,39 @@ corner {
 }
 
 .create-account-button:hover {
-  cursor: crosshair;
+  cursor: pointer;
   background: orange;
+}
+
+.personal-info-form {
+  padding: 30px;
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  background: white;
+}
+
+.personal-info-form input {
+  width: 100%;
+  height: 30px;
+  margin-botton: 20px;
+  font-size: 25px;
+}
+
+.personal-info-form textarea {
+  margin-botton: 20px;
+  font-size: 20px;
+  width: 100%;
+  height: 200px;
+}
+
+.personal-info-form button {
+  width: 75px;
+  height: 40px;
+  background: lightgreen;
+  font-size: 15px;
+}
+
+.personal-info-form button:hover {
+  cursor: pointer;
 }
