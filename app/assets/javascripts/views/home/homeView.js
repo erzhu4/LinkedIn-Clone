@@ -34,13 +34,13 @@ LynxIn.Views.Home = Backbone.View.extend({
 
   submitEdit: function (event) {
     event.preventDefault();
-    var email = this.$(".email").val()
-    var fname = this.$(".fname").val()
-    var lname = this.$(".lname").val()
-    var title = this.$(".title").val()
-    var summary = this.$(".summary").val()
+    var email = this.$(".email").val();
+    var fname = this.$(".fname").val();
+    var lname = this.$(".lname").val();
+    var title = this.$(".title").val();
+    var summary = this.$(".summary").val();
     this.model.set({email: email, fname: fname, lname: lname,
-                    title: title, summary: summary})
+                    title: title, summary: summary});
     this.model.save();
     this.render();
   },
