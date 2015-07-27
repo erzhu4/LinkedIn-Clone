@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150723181145) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "connections", force: :cascade do |t|
     t.integer  "user_id1",   null: false
     t.integer  "user_id2",   null: false
@@ -20,8 +23,8 @@ ActiveRecord::Schema.define(version: 20150723181145) do
     t.datetime "updated_at"
   end
 
-  add_index "connections", ["user_id1"], name: "index_connections_on_user_id1"
-  add_index "connections", ["user_id2"], name: "index_connections_on_user_id2"
+  add_index "connections", ["user_id1"], name: "index_connections_on_user_id1", using: :btree
+  add_index "connections", ["user_id2"], name: "index_connections_on_user_id2", using: :btree
 
   create_table "educations", force: :cascade do |t|
     t.integer "user_id"
@@ -31,7 +34,7 @@ ActiveRecord::Schema.define(version: 20150723181145) do
     t.integer "graduation_year"
   end
 
-  add_index "educations", ["user_id"], name: "index_educations_on_user_id"
+  add_index "educations", ["user_id"], name: "index_educations_on_user_id", using: :btree
 
   create_table "experiences", force: :cascade do |t|
     t.integer "user_id"
@@ -43,7 +46,7 @@ ActiveRecord::Schema.define(version: 20150723181145) do
     t.boolean "current",     default: false
   end
 
-  add_index "experiences", ["user_id"], name: "index_experiences_on_user_id"
+  add_index "experiences", ["user_id"], name: "index_experiences_on_user_id", using: :btree
 
   create_table "requests", force: :cascade do |t|
     t.integer  "sender_id",    null: false
@@ -52,8 +55,8 @@ ActiveRecord::Schema.define(version: 20150723181145) do
     t.datetime "updated_at"
   end
 
-  add_index "requests", ["responder_id"], name: "index_requests_on_responder_id"
-  add_index "requests", ["sender_id"], name: "index_requests_on_sender_id"
+  add_index "requests", ["responder_id"], name: "index_requests_on_responder_id", using: :btree
+  add_index "requests", ["sender_id"], name: "index_requests_on_sender_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string  "email",                           null: false
@@ -72,7 +75,7 @@ ActiveRecord::Schema.define(version: 20150723181145) do
     t.boolean "tweet",           default: false
   end
 
-  add_index "users", ["provider", "uid"], name: "index_users_on_provider_and_uid", unique: true
-  add_index "users", ["sample"], name: "index_users_on_sample"
+  add_index "users", ["provider", "uid"], name: "index_users_on_provider_and_uid", unique: true, using: :btree
+  add_index "users", ["sample"], name: "index_users_on_sample", using: :btree
 
 end
