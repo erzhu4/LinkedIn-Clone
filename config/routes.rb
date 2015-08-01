@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   post "/connections/:id1/:id2", to: "connections#create"
   post "/deleteconnects/:id1/:id2", to: "connections#destroy"
   get "/deleteallguests", to: "users#delete_all_guests"
+  get "/search", to: "search#get_results"
 
   get "/auth/:provider/callback", to: "sessions#omniauth"
   root "site#root"

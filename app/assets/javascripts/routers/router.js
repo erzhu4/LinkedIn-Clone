@@ -10,7 +10,8 @@ LynxIn.Routers.Router = Backbone.Router.extend({
     "": "index",
     "profile/:id": "profileShow",
     "connections": "connections",
-    "connections/:id": "connectionsof"
+    "connections/:id": "connectionsof",
+    "search": "search"
   },
 
   index: function () {
@@ -42,6 +43,19 @@ LynxIn.Routers.Router = Backbone.Router.extend({
     this.swapView(view);
   },
 
+  search: function () {
+    var searchString = $(".search-input").val();
+    var router = this;
+    $.ajax({
+      url: "/search",
+      data: {fname: searchString, lname: searchString},
+      complete: function (resp){
+        var view = new LynxIn.Views.SearchResults({searches: resp.responseJSON});
+        router.swapView(view);
+      }
+    });
+  },
+
   configureAcceptHandler: function (view) {
     $(".accept-button").off("click");
     $(".accept-button").on("click", function (event) {
@@ -63,7 +77,7 @@ LynxIn.Routers.Router = Backbone.Router.extend({
         }
       });
     });
-  },
+  }, // handles request response
 
   swapView: function (view){
     $(".loading").addClass("show-load");
