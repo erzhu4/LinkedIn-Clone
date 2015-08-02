@@ -10,7 +10,7 @@ LynxIn.Views.Home = Backbone.View.extend({
       this.render();
       $(".loading").removeClass("show-load");
     });
-    this.searchString = "stuff";
+    this.searchString = "jobs in new york";
   },
 
   events: {

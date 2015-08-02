@@ -1,13 +1,15 @@
 LynxIn.Views.SearchResults = Backbone.View.extend({
   template: JST["search/search"],
 
-  initialize: function(options){
-    this.searches = options.searches;
+  initialize: function(){
+    this.listenTo(this.collection, "sync", function () {
+      this.render();
+      $(".loading").removeClass("show-load");
+    });
   },
 
   render: function (){
-    $(".loading").removeClass("show-load");
-    var content = this.template({searches: this.searches});
+    var content = this.template({searches: this.collection});
     this.$el.html(content);
     return this;
   }

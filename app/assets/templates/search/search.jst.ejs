@@ -6,10 +6,10 @@
   <%} else {%>
 
     <% searches.forEach( function (search){ %>
-      <div class="group">
+      <div class="search-result group">
         <img src="<%=search.img_url%>" class="small-profile-picture">
-        <%= search.fname + ' ' + search.lname %><br>
-        <%= search.title %>
+        <%= search.escape('fname') + ' ' + search.escape('lname') %><br>
+        <%= search.escape('title') %>
       </div>
     <%})%>
   <%}%>

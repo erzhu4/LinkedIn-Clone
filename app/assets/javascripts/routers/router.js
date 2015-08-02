@@ -46,14 +46,10 @@ LynxIn.Routers.Router = Backbone.Router.extend({
   search: function () {
     var searchString = $(".search-input").val();
     var router = this;
-    $.ajax({
-      url: "/search",
-      data: {fname: searchString, lname: searchString},
-      complete: function (resp){
-        var view = new LynxIn.Views.SearchResults({searches: resp.responseJSON});
-        router.swapView(view);
-      }
-    });
+    var results = new LynxIn.Collections.SearchResults();
+    results.fetch({data: {str: searchString}});
+    var view = new LynxIn.Views.SearchResults({collection: results});
+    this.swapView(view);
   },
 
   configureAcceptHandler: function (view) {
