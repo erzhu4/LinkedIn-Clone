@@ -113,6 +113,36 @@ sennacy = User.create({
                         img_url: "https://scontent-lga1-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/11403082_10153483710077095_8882958025728992289_n.jpg?oh=4110550d58fe127d09dc1cc7b603e01c&oe=565C232B",
                         admin: true
                       })
+sennacy = User.create({
+                        email: "Kat@cats.com",
+                        password_digest: password,
+                        fname: "Kat",
+                        lname: "Meowser",
+                        session_token: "sadfaewf",
+                        title: "Yarn Baller",
+                        summary: "Yarn balls are the driving force of peace.",
+                        img_url: "http://www.louisesparza.net/wp-content/uploads/2015/06/4.jpg"
+                      })
+sennacy = User.create({
+                        email: "John@cats.com",
+                        password_digest: password,
+                        fname: "John",
+                        lname: "Smith",
+                        session_token: "sadfaewf",
+                        title: "Sailor",
+                        summary: "Sailed the ocean blue.",
+                        img_url: "http://rufflifechicago.com/wp-content/uploads/cat-treats.jpg"
+                      })
+sennacy = User.create({
+                        email: "Bob@cats.com",
+                        password_digest: password,
+                        fname: "Bob",
+                        lname: "Meowser",
+                        session_token: "sadfaewf",
+                        title: "Snack Eater",
+                        summary: "Eat eat eat eat EAT!!!!.",
+                        img_url: "https://pbs.twimg.com/profile_images/378800000532546226/dbe5f0727b69487016ffd67a6689e75a.jpeg"
+                      })
 Connection.create({user_id1: 1, user_id2: 2})
 Connection.create({user_id1: 2, user_id2: 1})
 Connection.create({user_id1: 3, user_id2: 4})
@@ -165,6 +195,38 @@ Connection.create({user_id1: 10, user_id2: 8})
 Connection.create({user_id1: 8, user_id2: 10})
 Connection.create({user_id1: 11, user_id2: 10})
 Connection.create({user_id1: 10, user_id2: 11})
+
+Connection.create({user_id1: 12, user_id2: 10})
+Connection.create({user_id1: 10, user_id2: 12})
+Connection.create({user_id1: 12, user_id2: 11})
+Connection.create({user_id1: 11, user_id2: 12})
+Connection.create({user_id1: 12, user_id2: 1})
+Connection.create({user_id1: 1, user_id2: 12})
+Connection.create({user_id1: 12, user_id2: 7})
+Connection.create({user_id1: 7, user_id2: 12})
+
+Connection.create({user_id1: 13, user_id2: 11})
+Connection.create({user_id1: 11, user_id2: 13})
+Connection.create({user_id1: 13, user_id2: 1})
+Connection.create({user_id1: 1, user_id2: 13})
+Connection.create({user_id1: 12, user_id2: 13})
+Connection.create({user_id1: 13, user_id2: 12})
+
+Connection.create({user_id1: 14, user_id2: 10})
+Connection.create({user_id1: 10, user_id2: 14})
+Connection.create({user_id1: 14, user_id2: 6})
+Connection.create({user_id1: 6, user_id2: 14})
+Connection.create({user_id1: 14, user_id2: 1})
+Connection.create({user_id1: 1, user_id2: 14})
+Connection.create({user_id1: 12, user_id2: 14})
+Connection.create({user_id1: 14, user_id2: 12})
+
+Connection.create({user_id1: 15, user_id2: 11})
+Connection.create({user_id1: 11, user_id2: 15})
+Connection.create({user_id1: 15, user_id2: 2})
+Connection.create({user_id1: 2, user_id2: 15})
+Connection.create({user_id1: 12, user_id2: 15})
+Connection.create({user_id1: 15, user_id2: 12})
 
 Experience.create({
     user_id: 1,
@@ -296,6 +358,46 @@ Experience.create({
     description: "Worked on exterior quality improvement projects",
     start_date: "2013-10-24",
 })
+
+Experience.create({
+    user_id: 12,
+    title: "Ball Roller",
+    employer: "The Yarn House",
+    description: "I am the number one roller of Yarn.",
+    start_date: "2011-10-24"
+})
+
+Experience.create({
+    user_id: 13,
+    title: "Yarn Engineer",
+    employer: "Yarn Group of America",
+    description: "Worked on ball quality improvement projects",
+    start_date: "2013-10-24"
+})
+
+Experience.create({
+    user_id: 14,
+    title: "Captain",
+    employer: "S.S. Kittens",
+    description: "Full speed ahead!!",
+    start_date: "2013-10-24"
+})
+
+Experience.create({
+    user_id: 15,
+    title: "Snacker",
+    employer: "Snack Attack",
+    description: "Eat everything!!",
+    start_date: "2013-10-24"
+})
+
+Experience.create({
+    user_id: 12,
+    title: "Yarn Engineer",
+    employer: "Yarn Group of America",
+    description: "Worked on ball quality improvement projects",
+    start_date: "2013-10-24"
+})
 ####end of experiences
 
 Education.create({
@@ -380,6 +482,34 @@ Education.create({
     school: "University of Tennessee",
     field: "Electrical Engineering",
     graduation_year: 2015
+})
+
+Education.create({
+    user_id: 12,
+    school: "University of Tennessee",
+    field: "Yarn Engineering",
+    graduation_year: 2013
+})
+
+Education.create({
+    user_id: 13,
+    school: "University of Meowaki",
+    field: "Kitten Engineering",
+    graduation_year: 2015
+})
+
+Education.create({
+    user_id: 14,
+    school: "Cat Academy",
+    field: "Software Engineering",
+    graduation_year: 2013
+})
+
+Education.create({
+    user_id: 15,
+    school: "The Snack Warehouse",
+    field: "Snake Eating",
+    graduation_year: 2013
 })
 # create_table "educations", force: :cascade do |t|
 #   t.integer "user_id"
