@@ -11,7 +11,7 @@ LynxIn.Routers.Router = Backbone.Router.extend({
     "profile/:id": "profileShow",
     "connections": "connections",
     "connections/:id": "connectionsof",
-    "search": "search"
+    "search": "doSearch"
   },
 
   index: function () {
@@ -43,13 +43,14 @@ LynxIn.Routers.Router = Backbone.Router.extend({
     this.swapView(view);
   },
 
-  search: function () {
+  doSearch: function () {
     var searchString = $(".search-input").val();
     var router = this;
     var results = new LynxIn.Collections.SearchResults();
     results.fetch({data: {str: searchString}});
     var view = new LynxIn.Views.SearchResults({collection: results});
     this.swapView(view);
+    this.configureSearchHandler(view);
   },
 
   configureAcceptHandler: function (view) {
@@ -74,6 +75,14 @@ LynxIn.Routers.Router = Backbone.Router.extend({
       });
     });
   }, // handles request response
+
+  configureSearchHandler: function (view){
+    var router = this;
+    $(".search-button").off("click");
+    $(".search-button").on("click", function () {
+      router.doSearch();
+    });
+  },
 
   swapView: function (view){
     $(".loading").addClass("show-load");

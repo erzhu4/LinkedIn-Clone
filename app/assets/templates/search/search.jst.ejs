@@ -7,8 +7,9 @@
 
     <% searches.forEach( function (search){ %>
       <div class="search-result group">
-        <img src="<%=search.img_url%>" class="small-profile-picture">
-        <%= search.escape('fname') + ' ' + search.escape('lname') %><br>
+        <a href="#profile/<%=search.escape('id')%>">
+        <img src="<%=search.escape('img_url')%>" class="small-profile-picture">
+        <%= search.escape('fname') + ' ' + search.escape('lname') %></a><br>
         <%= search.escape('title') %>
       </div>
     <%})%>
