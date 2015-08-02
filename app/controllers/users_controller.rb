@@ -97,6 +97,7 @@ class UsersController < ApplicationController
       users = User.all.sample(11)
       users.each do |user|
         @users.push(user) if !(@current_connects.include?(user)) && user.id != current_user.id
+        break if @users.length > 2
       end
       @users = @users.sample(3)
       render json: @users
