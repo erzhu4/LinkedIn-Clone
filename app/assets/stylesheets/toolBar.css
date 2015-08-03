@@ -7,6 +7,22 @@
 	float: left;
 }
 
+.accept-button {
+	font-weight: bold;
+	color: white;
+	background: lightgreen;
+}
+
+.deny-button {
+	font-weight: bold;
+	color: white;
+	background: red;
+}
+
+.deny-button:hover, .accept-button:hover {
+	cursor: pointer;
+}
+
 .search {
 	float: left;
 	margin-left: 200px;

@@ -221,13 +221,6 @@ Connection.create({user_id1: 1, user_id2: 14})
 Connection.create({user_id1: 12, user_id2: 14})
 Connection.create({user_id1: 14, user_id2: 12})
 
-Connection.create({user_id1: 15, user_id2: 11})
-Connection.create({user_id1: 11, user_id2: 15})
-Connection.create({user_id1: 15, user_id2: 2})
-Connection.create({user_id1: 2, user_id2: 15})
-Connection.create({user_id1: 12, user_id2: 15})
-Connection.create({user_id1: 15, user_id2: 12})
-
 Experience.create({
     user_id: 1,
     title: "Instructor",
