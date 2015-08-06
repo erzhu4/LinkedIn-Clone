@@ -175,7 +175,7 @@
 <div class="profile-right">
 
   <div class="connections-panel">
-    <corner><%=user.escape("fname")%>'s connections ( <%=connections.length%> )</corner><br>
+    <corner><%=user.escape("fname")%>'s connections ( <%=user.escape("connections") ? user.attributes.connections.length : 0%> )</corner><br>
       <div class="profile-connections-list">
 
           <% if (connections.length === 0){ %>
