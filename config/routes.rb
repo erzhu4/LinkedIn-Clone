@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get "/current", to: "users#user", defaults: {format: :json}
   get "/user/:id", to: "users#profile_user", defaults: {format: :json}
   get "/randomusers", to: "users#random_users"
-  get "/guestuser", to: "users#make_guest_user"
+  get "/guestuser", to: "users#guest_login"
   put "/current", to: "users#update_current"
   put "/experiences/:id", to: "experiences#edit"
   post "request/:id", to: "requests#create"

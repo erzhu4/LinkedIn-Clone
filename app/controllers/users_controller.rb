@@ -47,9 +47,8 @@ class UsersController < ApplicationController
 
   ############################## end of basic user functions start of guest log in
 
-  def make_guest_user
-    user = User.new(email: "guest" + rand(1000).to_s + "@lynxin.com", fname: "Guest", lname: "User", title: "Sample user", password_digest: "faewfsdgaeg",
-                    summary: "Sample user summary.", sample: true)
+  def guest_login
+    user = User.make_guest_user
     if user.save
       self.login(user);
       Experience.create({user_id: user.id, title: "Sample position", employer: "Sample Employer", description: "sample description"})
@@ -77,11 +76,11 @@ class UsersController < ApplicationController
     render "user"
   end
 
-  def update_current
+  def update_current #Updates the current user of profile being viewed.
     @user = User.includes(:requests, :requests,
     :connections, :experiences, :educations).find_by(id: params[:id])
     @user.update(user_params)
-    render text: "something"
+    render text: ""
   end
 
   def profile_user
@@ -92,14 +91,10 @@ class UsersController < ApplicationController
 
   def random_users
     if logged_in?
-      @users = []
-      @current_connects = self.current_user.connections
-      users = User.all.sample(11)
-      users.each do |user|
-        @users.push(user) if !(@current_connects.include?(user)) && user.id != current_user.id
-        break if @users.length > 2
-      end
-      @users = @users.sample(3)
+      @users = User.random_users(
+                                  self.current_user.connections,
+                                  self.current_user.id
+                                  )
       render json: @users
     else
       render ""

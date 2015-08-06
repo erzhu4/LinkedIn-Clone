@@ -66,12 +66,28 @@ class User < ActiveRecord::Base
     self.session_token = SecureRandom::urlsafe_base64(16)
   end
 
+  def self.random_users(current_user_connects, current_user_id)
+    users = []
+    current_connects = current_user_connects
+    users = User.all.sample(11)
+    users.each do |user|
+      users.push(user) if !(current_connects.include?(user)) && user.id != current_user_id
+      break if users.length > 2
+    end
+    users.sample(3)
+  end
+
+  def self.make_guest_user
+    return User.new(email: "guest" + rand(1000).to_s + "@lynxin.com", fname: "Guest", lname: "User", title: "Sample user", password_digest: "faewfsdgaeg", summary: "Sample user summary.", sample: true)
+  end
+
 ################################OmniAuth
 
   def self.find_or_create_by_auth_hash(auth_hash)
     user = User.find_by(
             provider: auth_hash[:provider],
-            uid: auth_hash[:uid])
+            uid: auth_hash[:uid]
+            )
 
     unless user
       user = User.create!(
