@@ -250,7 +250,7 @@ Experience.create({
     user_id: 3,
     title: "Freelance painter",
     employer: "Self Employment",
-    description: "Expereinced painter, please contact to set up appointment!"
+    description: "Experienced painter, please contact to set up appointment!"
 })
 
 Experience.create({

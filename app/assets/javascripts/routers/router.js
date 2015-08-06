@@ -4,14 +4,14 @@ LynxIn.Routers.Router = Backbone.Router.extend({
     this.currentUser = options.user;
     this.randomUsers = options.randomUsers;
     this.$rootEl = options.rootEl;
+    this.configureSearchHandler();
   },
 
   routes: {
     "": "index",
     "profile/:id": "profileShow",
     "connections": "connections",
-    "connections/:id": "connectionsof",
-    "search": "doSearch"
+    "connections/:id": "connectionsof"
   },
 
   index: function () {
@@ -78,11 +78,11 @@ LynxIn.Routers.Router = Backbone.Router.extend({
 
   configureSearchHandler: function (view){
     var router = this;
-    $(".search-button").off("click");
-    $(".search-button").on("click", function () {
+    $(".user-search-form").submit(function (event) {
+      event.preventDefault();
       router.doSearch();
     });
-  },
+  }, //handles search API
 
   swapView: function (view){
     $(".loading").addClass("show-load");
