@@ -16,17 +16,8 @@ form, fieldset, label, article, footer, small {
   background: transparent;
 }
 
-name {
-  font-weight: bold;
-  font-size: 30px;
-}
-
 ul {
 	list-style: none;
-}
-
-temp {
-  background: #e9e9e9;
 }
 
 body {
@@ -44,6 +35,11 @@ img {
   width: 100%;
 }
 
+name {
+  font-weight: bold;
+  font-size: 30px;
+}
+
 corner {
   font-size: 90%;
   font-weight: bold;
@@ -53,6 +49,10 @@ corner {
   margin-left: -5px;
   border-top: 1px solid black;
   border-radius: 2px;
+}
+
+temp {
+  background: #e9e9e9;
 }
 
 .guest-login-link {

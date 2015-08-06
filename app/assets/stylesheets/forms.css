@@ -98,6 +98,16 @@
   width: 70px;
 }
 
+.ex-edit-save:hover {
+  cursor: pointer;
+  background: #1b5480;
+}
+
+.ex-edit-cancel:hover {
+  cursor: pointer;
+  background: white;
+}
+
 .user-form {
   background: #f4f4f4;
   border: 1px solid lightgray;
