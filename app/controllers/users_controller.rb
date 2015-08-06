@@ -1,3 +1,5 @@
+require "byebug"
+
 class UsersController < ApplicationController
 
 
@@ -91,14 +93,13 @@ class UsersController < ApplicationController
 
   def random_users
     if logged_in?
+      connection_ids = self.current_user.connections.pluck(:id)
       @users = User.random_users(
-                                  self.current_user.connections,
+                                  connection_ids,
                                   self.current_user.id
                                   )
-      render json: @users
-    else
-      render ""
     end
+    render json: @users
   end
 
   def delete_all_guests

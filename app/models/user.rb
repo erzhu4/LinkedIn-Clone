@@ -66,15 +66,17 @@ class User < ActiveRecord::Base
     self.session_token = SecureRandom::urlsafe_base64(16)
   end
 
-  def self.random_users(current_user_connects, current_user_id)
+  def self.random_users(connection_ids, current_user_id)
     users = []
-    current_connects = current_user_connects
-    users = User.all.sample(11)
-    users.each do |user|
-      users.push(user) if !(current_connects.include?(user)) && user.id != current_user_id
+    user_ids = User.pluck(:id).shuffle
+    user_ids.each do |id|
+      if (!connection_ids.include?(id)) && (id != current_user_id)
+        user = User.find_by({id: id})
+        users << user
+      end
       break if users.length > 2
     end
-    users.sample(3)
+    users
   end
 
   def self.make_guest_user

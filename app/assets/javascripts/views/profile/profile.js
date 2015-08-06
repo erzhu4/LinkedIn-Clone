@@ -39,14 +39,12 @@ LynxIn.Views.Profile = Backbone.View.extend({
       var userConnections = [];
     }// For connections panel
 
-    this.flag = true;
     if (this.model.attributes.experiences){
       var experiences = this.model.attributes.experiences;
     } else {
       var experiences = [];
     }// for experiences panel
 
-    this.eflag = true;
     if (this.model.attributes.educations){
       var educations = this.model.attributes.educations;
     } else {
@@ -71,7 +69,7 @@ LynxIn.Views.Profile = Backbone.View.extend({
     $.ajax({
       url: "/request/" + this.model.id,
       method: "post"
-    })
+    });
     this.model.fetch();
   },
 
@@ -96,10 +94,7 @@ LynxIn.Views.Profile = Backbone.View.extend({
   //End of info panel helper methods///////////////////////////////
 
   renderNewForm: function (event) {
-    if (this.flag) {
       this.$(".new-ex-form-container").addClass("drop");
-      this.flag = false;
-    }
   },
 
   cancelNewForm: function (event) {
@@ -176,10 +171,7 @@ LynxIn.Views.Profile = Backbone.View.extend({
 //end of experiences panel helper_methods////////////////////////////
 
   renderNewEducation: function () {
-    if (this.eflag){
       this.$(".new-ed-form-container").addClass("drop-ed");
-      this.eflag = false;
-    }
   },
 
   addEducation: function (event) {
@@ -222,7 +214,7 @@ LynxIn.Views.Profile = Backbone.View.extend({
           school: school,
           field: field,
           graduation_year: year,
-        }
+        };
     this.$(".ed" + id).html(temp({education: education}));
   },
 
